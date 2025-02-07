@@ -1,0 +1,82 @@
+{
+  "home": "Home",
+  "about": "About Us",
+  "treatments": "Treatments",
+  "testimonials": "Testimonials",
+  "contact": "Contact",
+  "bookAppointment": "Book an Appointment",
+  "specialties": "Our Specialties",
+  "callNow": "Call Now",
+  "doctorName": "Dr. Kátia Fragoso",
+  "heroDescription": "The Smile You Deserve <br />\nWith the Experience and  <br /> Care You Trust!",
+
+  "implantsTitle": "Dental Implants",
+  "implantsDescription": "Dental implants are titanium devices designed to replace the tooth root and support a prosthesis, thereby improving both aesthetics and chewing function. They are recommended for patients with single, partial, or complete tooth loss. We understand the importance of a complete smile for your self-esteem and quality of life. Our implants are designed to integrate seamlessly with your bone structure, ensuring comfort and functionality.",
+
+  "orthodonticsTitle": "Orthodontics",
+  "orthodonticsDescription": "In modern dental medicine, technological advancements have revolutionized the way we treat crooked or misaligned teeth. One of the greatest breakthroughs has been the development of removable orthodontic treatments, commonly known as invisible or clear aligners. These revolutionary devices have gained popularity due to their effectiveness, convenience, and discretion compared to traditional braces. A perfect smile without having to give up smiling in photos..",
+
+  "veneersTitle": "Veneers",
+  "veneersDescription": "Porcelain and composite resin veneers are advanced aesthetic solutions to correct dental imperfections, providing a more harmonious smile.",
+
+  "treatmentTitle": "Treatments",
+  "whitening": "Teeth Whitening",
+  "whiteningDescription": "Advanced procedures for a whiter and brighter smile.",
+  "braces": "Orthodontic Braces",
+  "bracesDescription": "Modern technology for dental correction with comfort.",
+  "treatment_implants": "Implants",
+  "treatment_implantsDescription": "Single implants and All-on-4 for your chewing comfort.",
+
+  "extractions": "Tooth Extraction",
+  "extractionsDescription": "Wisdom tooth extraction",
+
+  "endodontics": "Endodontics",
+  "endodonticsDescription": "Root canal treatment with advanced technology.",
+  "dentalCleaning": "Dental Cleaning",
+  "dentalCleaningDescription": "Professional cleaning for oral health.",
+
+  "differentialsTitle": "Our Differentials",
+  "advancedTechnology": "Advanced Technology",
+  "advancedTechnologyDescription": "We use state-of-the-art equipment that allows us to perform highly precise and effective treatments.",
+  "specializedTeam": "Specialized Team",
+  "specializedTeamDescription": "Our team consists of highly qualified and experienced professionals.",
+  "humanizedCare": "Humanized Care",
+  "humanizedCareDescription": "Each patient receives personalized and welcoming treatment.",
+
+  "testimonialsTitle": "What Our Clients Say",
+  "testimonial1": "Dr. Kátia is an extremely efficient professional with extensive experience. I was treated with great care and dedication by her and her assistant. Dr. Kátia closely monitored the post-treatment process, always concerned about how I was doing. I highly recommend this professional.",
+  "testimonial1Author": "Rogério Rechia Corrêa",
+  "testimonial2": "n every appointment, we are very well attended to—with professionalism, ethics, competence, and kindness. We are not treated just as another patient, but as a friend—and that’s exactly how we feel!",
+  "testimonial2Author": "Sónia Silva",
+  "testimonial3": "I simply loved it! Dr. Kátia has a gentle touch and does an amazing job! She is also very attentive and explains everything clearly.",
+  "testimonial3Author": "Beatriz Fernandes",
+
+  "aboutTitle": "About Dr. Kátia Fragoso",
+  "aboutDescription": "With over 20 years of dedication to Dentistry, Dr. Kátia has built a professional journey based on a commitment to excellence. Rebuilding smiles is much more than just correcting dental issues—it is about restoring confidence and improving the quality of life for her patients. With extensive experience in general dentistry, her accuracy in diagnosis and treatment planning sets her apart. She is a specialist in Implantology from São Leopoldo Mandic College in Rio de Janeiro and in Dental Prosthetics, in addition to holding a postgraduate degree in Orthodontics. Dedicated to proactive prevention of oral health problems, her passion lies in delivering treatments combined with education on self-care for the community. Dental aesthetics, tissue regeneration using blood cell aggregates, and Invisible Aligners are also among the preferred specialties of this passionate professional.",
+
+  "appointmentTitle": "Appointment",
+  "name": "Name",
+  "namePlaceholder": "Enter your name",
+  "email": "Email",
+  "emailPlaceholder": "Enter your email",
+  "phone": "Phone",
+  "phonePlaceholder": "Enter your phone number",
+  "message": "Message",
+  "messagePlaceholder": "Enter your message",
+  "sendMessage": "Send Message",
+
+  "doctorName": "Dr. Kátia Fragoso",
+  "footerText": "ERS Registration: E149237\nEstablishment License: 19359/2020",
+  "scheduleTitle": "Opening Hours",
+  "scheduleWeek": "Monday to Friday: 9 AM - 7 PM",
+  "scheduleSaturday": "Saturday: 9 AM - 1 PM",
+  "scheduleSunday": "Sunday: Closed",
+  "appointmentSectionTitle": "Appointment",
+  "phoneLabel": "Phone",
+  "emailLabel": "Email",
+  "addressLabel": "Address",
+  "clinicAddress": "Street: Arquitecto Marques da Silva, 285 - Porto - CP 4159-484",
+
+  "rightsReserved": "© 2025 Dr. Kátia Fragoso. All rights reserved.",
+  "complaintsBook": "Complaints Book"
+}

@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-gray-900;
+    background-color: #f8f8f8;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-[#016a6d] hover:text-[#f8a25e] transition-colors relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-[#f8a25e] after:left-0 after:-bottom-1 after:transition-all hover:after:w-full;
+  }
+
+  .btn-primary {
+    @apply bg-[#016a6d] text-white px-6 py-2 rounded-md hover:bg-[#f8a25e] transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+  }
+
+  .section-connector {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-connector::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: inherit;
+    transform: skewY(-3deg);
+    z-index: 1;
+  }
+
+  .section-connector-reverse::after {
+    transform: skewY(3deg);
+  }
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Custom Animation Classes */
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.8s ease-out;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.6s ease-out;
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+.aspect-w-16 {
+  position: relative;
+  padding-bottom: 56.25%;
+}
+
+.aspect-w-16 > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #016a6d 0%, #015456 100%);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.card-hover::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #016a6d, #f8a25e);
+  border-radius: 0.5rem;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-10px);
+  background-color: rgba(1, 106, 109, 0.95);
+}
+
+.card-hover:hover h3,
+.card-hover:hover p,
+.card-hover:hover button {
+  color: white;
+}
+
+.card-hover:hover::before {
+  opacity: 1;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px #016a6d, 0 0 10px #016a6d, 0 0 15px #f8a25e;
+  }
+  to {
+    box-shadow: 0 0 10px #016a6d, 0 0 20px #016a6d, 0 0 30px #f8a25e;
+  }
+}
