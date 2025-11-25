@@ -523,7 +523,18 @@ function App() {
           {/* Direitos reservados e Livro de Reclamações */}
           <div className="mt-12 pt-8 border-t border-white/20 text-center text-gray-300">
             <p>{t('rightsReserved')}</p>
-            <div className="mt-4 flex justify-center items-center">
+            <div className="mt-4 flex justify-center items-center gap-8 flex-wrap">
+              {/* Widget WhatClinic */}
+              <a
+                className="whatclinic-service-score-widget dark square"
+                style={{ width: '150px', height: '150px', display: 'inline-block' }}
+                href="https://www.whatclinic.com/dentists/portugal/porto/dra-katia-fragoso"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatClinic Service Score"
+              ></a>
+              
+              {/* Livro de Reclamações */}
               <a
                 href="https://www.livroreclamacoes.pt/inicio"
                 target="_blank"
