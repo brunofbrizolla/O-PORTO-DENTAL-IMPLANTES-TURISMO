@@ -4,12 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#016a6d',
-        secondary: '#acaba9',
-        accent: '#f8a25e',
+        primary: '#009ca6', // Green-Blue Turquoise
+        'primary-dark': '#007a82',
+        secondary: '#e0f2f1', // Light Turquoise for backgrounds
+        accent: '#c0a062', // Gold/Bronze for sophistication
       },
       backgroundColor: {
-        'primary-light': '#e6f3f3',
+        'primary-light': '#f0fcfc', // Very light turquoise
       }
     },
   },
