@@ -6,7 +6,7 @@ const Branqueamento = () => {
         <div className="pt-20">
             <div className="relative h-[60vh] flex items-center justify-center">
                 <div className="absolute inset-0 overflow-hidden">
-                    <img src="/assets/images/teeth_whitening_happy_patient.png" className="w-full h-full object-cover" alt="Sorriso Branco" />
+                    <img src="/assets/uploads/uploaded_image_3_1767830169024.jpg" className="w-full h-full object-cover" style={{ objectPosition: 'center top' }} alt="Sorriso Branco" />
                     <div className="absolute inset-0 bg-primary/40"></div>
                 </div>
                 <div className="relative z-10 text-center text-white px-4">
