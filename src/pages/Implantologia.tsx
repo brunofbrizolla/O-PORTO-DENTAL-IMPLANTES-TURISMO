@@ -1,196 +1,266 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { CheckCircle2, PhoneCall, ArrowRight } from 'lucide-react';
+import { CheckCircle2, PhoneCall, ArrowRight, Star, ShieldCheck, Clock } from 'lucide-react';
 
 const Implantologia = () => {
     const { t } = useTranslation();
 
     return (
-        <div className="pt-20">
-            {/* 1. Introdução (Hero) */}
-            <section className="relative h-[600px] flex items-center bg-gray-900 overflow-hidden">
-                <div className="absolute inset-0 bg-primary/30 mix-blend-multiply z-10"></div>
+        <div className="animate-fadeIn">
+            {/* SEO Hidden Content */}
+            <h1 className="sr-only">Implantes Dentários All-on-4 Porto - Dentes Fixos em um Dia</h1>
+
+            {/* 1. Hero Section - Full Screen & Cinematic */}
+            <section className="relative h-screen flex items-center justify-end bg-gray-900 overflow-hidden">
                 <div
-                    className="absolute inset-0 bg-cover"
-                    style={{ backgroundImage: 'url("/assets/uploads/uploaded_image_0_1767830169024.jpg")', backgroundPosition: 'center top' }}
+                    className="absolute inset-0 bg-cover bg-[center_top]"
+                    style={{ backgroundImage: 'url("/assets/uploads/doctor_implant_hero_new.png")' }}
                 ></div>
 
-                <div className="relative z-20 max-w-7xl mx-auto px-4 w-full">
-                    <div className="max-w-3xl text-white ml-auto text-right">
-                        <h1 className="text-5xl md:text-6xl font-bold mb-6 font-serif tracking-wide leading-tight">
-                            IMPLANTOLOGIA
-                        </h1>
-                        <h2 className="text-3xl font-light mb-8 text-secondary">
-                            Sorrisos fixos e duradouros com a técnica All-on-4
+                {/* Gradient Overlay - Darker on Right for Text Readability */}
+                <div className="absolute inset-0 bg-gradient-to-l from-gray-900/90 via-gray-900/50 to-transparent z-10"></div>
+
+                <div className="relative z-20 max-w-7xl mx-auto px-4 w-full h-full flex items-center justify-end">
+                    <div className="max-w-2xl text-white pr-4 border-r-4 border-accent animate-slideIn text-right flex flex-col items-end">
+                        <span className="text-accent font-bold tracking-[0.2em] uppercase mb-4 block">Reabilitação Oral Total</span>
+                        <h2 className="text-5xl md:text-7xl font-bold mb-6 font-serif leading-tight">
+                            Protocolo<br />All-on-4
                         </h2>
-                        <div className="bg-primary/80 backdrop-blur-sm p-8 rounded-l-2xl shadow-xl ml-auto border-r-4 border-accent">
-                            <p className="text-xl leading-relaxed">
-                                A perda de dentes afeta muito mais do que a estética. Compromete a mastigação, a fala, a saúde oral e a confiança.
-                                <br /><br />
-                                A implantologia dentária oferece uma solução segura, moderna e duradoura para substituir dentes perdidos e recuperar um sorriso funcional e natural.
-                            </p>
-                            <p className="mt-4 text-lg font-light text-gray-100">
-                                Com a técnica All-on-4, é possível reabilitar uma arcada completa de forma eficiente, muitas vezes com dentes fixos no próprio dia.
-                            </p>
+                        <p className="text-xl md:text-2xl font-light mb-10 text-gray-100 max-w-lg leading-relaxed">
+                            A solução definitiva para recuperar os seus dentes fixos, a estética e a função mastigatória com segurança e conforto.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <a
+                                href="#contact"
+                                className="inline-flex items-center justify-center px-10 py-5 bg-accent text-white rounded-full font-bold text-lg shadow-lg hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105"
+                            >
+                                <PhoneCall className="mr-3 w-5 h-5" />
+                                Agendar Avaliação
+                            </a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* 2. O que é a Implantologia */}
-            <section className="py-20 bg-white">
+            {/* 2. Introduction: The Problem & Solution */}
+            <section className="py-24 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid md:grid-cols-2 gap-16 items-center">
-                        <div className="order-2 md:order-1">
-                            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
+                        <div className="order-2 md:order-1 relative group">
+                            <div className="absolute -inset-4 bg-gray-900/5 rounded-3xl transform -rotate-3 transition-transform group-hover:rotate-0 duration-500"></div>
+                            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-black flex items-center justify-center">
                                 <img
-                                    src="/assets/images/dental_implants_all_on_4.png"
-                                    alt="Implante Dentário Esquema"
-                                    className="w-full h-full object-cover"
+                                    src="/assets/all_on_4_diagram.png"
+                                    alt="Esquema Protocolo All-on-4 Implantes Porto"
+                                    className="w-full object-contain p-4 transition-transform duration-700 group-hover:scale-105"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-8">
-                                    <p className="text-white font-medium">Soluções biocompatíveis e duradouras.</p>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8">
+                                    <p className="text-white font-medium text-lg border-l-4 border-accent pl-4">A excelência da técnica All-on-4: Apenas 4 implantes para um sorriso completo.</p>
                                 </div>
                             </div>
                         </div>
                         <div className="order-1 md:order-2">
-                            <h2 className="text-3xl font-bold text-primary mb-6 font-serif border-l-4 border-accent pl-4">
-                                O que é a Implantologia?
+                            <span className="text-accent font-bold uppercase tracking-wider mb-2 block">Liberdade de Sorrir</span>
+                            <h2 className="text-4xl font-bold text-primary mb-8 font-serif leading-tight">
+                                Gostaria de voltar a ter dentes fixos?
                             </h2>
-                            <p className="text-gray-600 mb-6 leading-relaxed text-lg">
-                                A implantologia é a área da medicina dentária dedicada à substituição de dentes através de implantes dentários. Estes implantes são pequenas estruturas em titânio, biocompatíveis, que funcionam como raízes artificiais, integrando-se no osso de forma segura e estável.
+                            <p className="text-gray-600 mb-6 leading-relaxed text-lg text-justify">
+                                Sente incómodo sempre que tenta comer ou falar com a sua prótese removível? O <strong>Protocolo All-on-4</strong> é a resposta que procura. Um tratamento revolucionário de reabilitação total com prótese fixa que lhe devolve a segurança imediata ao sorrir, falar e mastigar.
                             </p>
-                            <p className="text-gray-600 leading-relaxed text-lg">
-                                Sobre estes implantes são colocadas coroas ou próteses fixas, devolvendo a função e a estética do sorriso.
+                            <p className="text-gray-600 leading-relaxed text-lg mb-6 text-justify">
+                                Muitas pessoas sofrem com a perda dentária total. As próteses removíveis (dentaduras) tradicionais, embora comuns, acabam por não ser a solução mais confortável, causando insegurança e exigindo substituições frequentes, novas moldagens e desconforto contínuo.
                             </p>
+                            <div className="bg-primary-light/30 p-6 rounded-xl border-l-4 border-primary">
+                                <p className="text-primary font-medium italic">
+                                    "A Implantodontia renovou este tratamento para ser mais seguro e confortável para si, através do protocolo All-on-4."
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* 3. Técnica All-on-4 */}
-            <section className="py-20 bg-primary-light">
+            {/* 3. Detailed Explanation & Advantages */}
+            <section className="py-24 bg-gray-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl font-bold text-primary mb-6 font-serif">Técnica All-on-4</h2>
-                        <p className="max-w-3xl mx-auto text-gray-600 text-lg">
-                            A técnica All-on-4 permite a colocação de uma prótese fixa completa suportada por apenas quatro implantes estrategicamente posicionados. Esta abordagem reduz a necessidade de enxertos ósseos e acelera todo o processo de reabilitação.
+                    <div className="text-center mb-16 max-w-3xl mx-auto">
+                        <span className="text-accent font-bold uppercase tracking-wider mb-2 block">Tecnologia Avançada</span>
+                        <h2 className="text-4xl font-bold text-primary mb-6 font-serif">O que é o Protocolo All-on-4?</h2>
+                        <p className="text-gray-600 text-lg leading-relaxed">
+                            É uma técnica inovadora onde a prótese dentária total é fixada por <strong>apenas quatro implantes</strong>, colocados em pontos estratégicos do osso maxilar, dois deles com uma inclinação de 45°. Isto permite que utilize uma única prótese fixa para toda a arcada, sem necessidade de a retirar.
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <h3 className="text-2xl font-bold text-primary mb-8">Principais vantagens:</h3>
-                            <div className="space-y-6">
-                                {[
-                                    { title: 'Menor tempo de tratamento', desc: 'Recupere o seu sorriso mais rapidamente.' },
-                                    { title: 'Recuperação mais rápida', desc: 'Procedimento otimizado para o seu conforto.' },
-                                    { title: 'Dentes fixos e naturais', desc: 'Estabilidade total para comer e falar.' },
-                                    { title: 'Solução duradoura', desc: 'Conforto e segurança a longo prazo.' }
-                                ].map((item, idx) => (
-                                    <div key={idx} className="flex items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border-l-4 border-accent">
-                                        <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1 mr-4" />
-                                        <div>
-                                            <h4 className="font-bold text-gray-800">{item.title}</h4>
-                                            <p className="text-gray-600 text-sm">{item.desc}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                        <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl group">
-                            <img
-                                src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80"
-                                alt="All on 4"
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            />
-                            <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* 4. Para quem é indicado */}
-            <section className="py-20 bg-primary text-white">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="bg-white/10 backdrop-blur-md rounded-3xl p-12 border border-white/20">
-                        <h2 className="text-3xl font-bold mb-10 text-center font-serif">Para quem é indicado?</h2>
-                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                            {[
-                                'Pessoas que perderam vários dentes ou todos os dentes',
-                                'Utilizadores de próteses removíveis desconfortáveis',
-                                'Pacientes que procuram uma solução fixa e definitiva',
-                                'Casos com perda óssea moderada'
-                            ].map((item, idx) => (
-                                <div key={idx} className="bg-primary-dark/50 p-6 rounded-xl text-center hover:bg-white/10 transition-colors">
-                                    <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
-                                        {idx + 1}
-                                    </div>
-                                    <p className="font-medium text-lg">{item}</p>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {[
+                            {
+                                title: 'Conforto Total',
+                                text: 'Esqueça a necessidade de colas ou o desconforto das próteses móveis que oscilam.',
+                                icon: <Star className="w-8 h-8" />
+                            },
+                            {
+                                title: 'Segurança ao Comer',
+                                text: 'Volte a mastigar os seus alimentos favoritos com a firmeza de dentes naturais.',
+                                icon: <ShieldCheck className="w-8 h-8" />
+                            },
+                            {
+                                title: 'Menos Invasivo',
+                                text: 'Ideal para pacientes com pouca estrutura óssea, muitas vezes dispensando enxertos complexos.',
+                                icon: <CheckCircle2 className="w-8 h-8" />
+                            },
+                            {
+                                title: 'Procedimento Rápido',
+                                text: 'Cirurgia otimizada com poucas horas de recuperação e possibilidade de carga imediata.',
+                                icon: <Clock className="w-8 h-8" />
+                            },
+                            {
+                                title: 'Previsibilidade',
+                                text: 'Planeamento digital avançado que permite visualizar o seu novo sorriso antes do procedimento.',
+                                icon: <ArrowRight className="w-8 h-8" />
+                            },
+                            {
+                                title: 'Solução Definitiva',
+                                text: 'Com os devidos cuidados, é um tratamento desenhado para durar uma vida inteira.',
+                                icon: <ShieldCheck className="w-8 h-8" />
+                            }
+                        ].map((item, idx) => (
+                            <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                                    {item.icon}
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* 5. Como funciona e 6. Resultados */}
-            <section className="py-20 bg-white">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid md:grid-cols-2 gap-16">
-                        <div>
-                            <h2 className="text-3xl font-bold text-primary mb-8 font-serif">Como funciona o tratamento</h2>
-                            <div className="space-y-0 relative border-l-2 border-primary/20 ml-4 pl-8 pb-4">
-                                {[
-                                    'Avaliação clínica e exames digitais',
-                                    'Planeamento personalizado',
-                                    'Colocação dos implantes',
-                                    'Fixação da prótese provisória',
-                                    'Acompanhamento e prótese definitiva'
-                                ].map((step, idx) => (
-                                    <div key={idx} className="relative mb-10 last:mb-0">
-                                        <div className="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-accent border-4 border-white shadow-sm"></div>
-                                        <h4 className="text-xl font-bold text-gray-800 mb-2">{step}</h4>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-
-                        <div>
-                            <h2 className="text-3xl font-bold text-primary mb-6 font-serif">Resultados e Durabilidade</h2>
-                            <div className="bg-primary-light p-8 rounded-2xl mb-8">
-                                <p className="text-gray-700 leading-relaxed text-lg">
-                                    Com os cuidados adequados e acompanhamento regular, os implantes dentários podem durar muitos anos, oferecendo conforto, segurança e um sorriso natural.
+                                <h3 className="text-xl font-bold text-primary mb-3">{item.title}</h3>
+                                <p className="text-gray-600 leading-relaxed">
+                                    {item.text}
                                 </p>
                             </div>
-                            <div className="h-64 rounded-xl overflow-hidden shadow-lg relative">
-                                <img src="/assets/uploads/uploaded_image_1_1767830169024.jpg" alt="Equipa em consulta" className="w-full h-full object-cover" />
-                                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent text-white">
-                                    <p className="font-medium">Confiança recuperada.</p>
-                                </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* 4. Who is it for? */}
+            <section className="py-24 bg-[#197E8C] text-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div className="grid md:grid-cols-2 gap-16 items-center">
+                        <div>
+                            <h2 className="text-3xl md:text-4xl font-bold mb-8 font-serif leading-tight">Quem pode realizar este tratamento?</h2>
+                            <p className="text-primary-light text-lg mb-8 leading-relaxed">
+                                O protocolo All-on-4 é especialmente indicado para pacientes que perderam todos os dentes de uma arcada e que atualmente utilizam dentaduras.
+                            </p>
+                            <p className="text-primary-light text-lg mb-8 leading-relaxed">
+                                É inclusive uma excelente opção para quem tem <strong>pouca qualidade óssea</strong>, pois a angulação dos implantes permite fixação em osso de maior densidade, dispensando muitas vezes a necessidade de enxerto ósseo prévio. Mesmo pacientes com condições como diabetes (controlada) podem ser candidatos elegíveis.
+                            </p>
+                            <a href="#contact" className="inline-flex items-center text-white font-bold border-b-2 border-accent pb-1 hover:text-accent transition-colors">
+                                Agende a sua avaliação hoje <ArrowRight className="ml-2 w-5 h-5" />
+                            </a>
+                        </div>
+                        <div className="relative">
+                            <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
+                                <img src="/assets/uploads/senior_smiling_dental.png" alt="Paciente sénior a sorrir na Porto Implantes" className="w-full h-full object-cover" />
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* 7. Chamada para ação */}
-            <section className="py-24 bg-accent relative overflow-hidden">
-                <div className="absolute inset-0 bg-primary mix-blend-multiply opacity-50"></div>
-                <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
-                    <h2 className="text-4xl font-bold text-white mb-6 font-serif">
-                        Recupere o prazer de sorrir, falar e comer com confiança.
+            {/* 5. Process Timeline */}
+            <section className="py-24 bg-white">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold text-primary font-serif mb-4">Como funciona o tratamento?</h2>
+                        <p className="text-gray-600 max-w-2xl mx-auto">Um processo transparente e acompanhado em cada etapa.</p>
+                    </div>
+
+                    <div className="space-y-12">
+                        {[
+                            {
+                                step: "01",
+                                title: "Avaliação e Diagnóstico",
+                                text: "Na primeira consulta, o Implantodontista realiza exames detalhados (TAC, fotografias e vídeos) para avaliar a sua saúde oral e estrutura óssea."
+                            },
+                            {
+                                step: "02",
+                                title: "Planeamento Digital",
+                                text: "Com base nos exames, planeamos a cirurgia e a prótese ao pormenor. Poderá ver uma previsão de como ficará o seu novo sorriso."
+                            },
+                            {
+                                step: "03",
+                                title: "O Procedimento",
+                                text: "Realiza-se a fixação dos 4 implantes. Em muitos casos, o paciente sai da clínica já com uma prótese fixa provisória no mesmo dia (Carga Imediata)."
+                            },
+                            {
+                                step: "04",
+                                title: "Osseointegração",
+                                text: "Durante cerca de 4 a 6 meses, os implantes integram-se no osso. É um período de cicatrização fundamental para a estabilidade a longo prazo."
+                            },
+                            {
+                                step: "05",
+                                title: "Prótese Definitiva",
+                                text: "Após a cicatrização, é colocada a prótese fixa final, desenhada para ser esteticamente perfeita e duradoura (10 a 15 anos ou mais, com os devidos cuidados)."
+                            }
+                        ].map((phase, idx) => (
+                            <div key={idx} className="flex flex-col md:flex-row gap-6 items-center md:items-start max-w-4xl mx-auto group">
+                                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl shadow-lg group-hover:bg-accent transition-colors">
+                                    {phase.step}
+                                </div>
+                                <div className="flex-1 bg-gray-50 p-6 rounded-2xl hover:shadow-md transition-shadow">
+                                    <h3 className="text-xl font-bold text-primary mb-2">{phase.title}</h3>
+                                    <p className="text-gray-600">{phase.text}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* 6. FAQ / Aftercare */}
+            <section className="py-24 bg-primary-light/30">
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 className="text-3xl font-bold text-primary font-serif mb-8">Cuidados e Durabilidade</h2>
+                    <div className="bg-white p-8 rounded-3xl shadow-lg text-left">
+                        <div className="mb-8">
+                            <h3 className="font-bold text-xl text-primary mb-3 flex items-center">
+                                <ShieldCheck className="w-6 h-6 mr-2 text-accent" /> Quanto tempo dura?
+                            </h3>
+                            <p className="text-gray-600 leading-relaxed">
+                                Estima-se uma durabilidade média de <strong>10 a 15 anos</strong> para a prótese, podendo os implantes durar uma vida inteira. A longevidade depende diretamente dos cuidados de manutenção e das particularidades fisiológicas de cada paciente.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 className="font-bold text-xl text-primary mb-3 flex items-center">
+                                <Star className="w-6 h-6 mr-2 text-accent" /> Cuidados Essenciais
+                            </h3>
+                            <p className="text-gray-600 leading-relaxed mb-4">
+                                Para garantir o sucesso a longo prazo, é fundamental manter uma higiene oral rigorosa:
+                            </p>
+                            <ul className="grid md:grid-cols-2 gap-4">
+                                <li className="flex items-center text-gray-700 bg-gray-50 p-3 rounded-lg"><CheckCircle2 className="w-4 h-4 mr-2 text-accent" /> Escovagem correta após as refeições</li>
+                                <li className="flex items-center text-gray-700 bg-gray-50 p-3 rounded-lg"><CheckCircle2 className="w-4 h-4 mr-2 text-accent" /> Uso de fio dental específico ou irrigador oral</li>
+                                <li className="flex items-center text-gray-700 bg-gray-50 p-3 rounded-lg"><CheckCircle2 className="w-4 h-4 mr-2 text-accent" /> Visitas regulares ao dentista (6 em 6 meses)</li>
+                                <li className="flex items-center text-gray-700 bg-gray-50 p-3 rounded-lg"><CheckCircle2 className="w-4 h-4 mr-2 text-accent" /> Evitar hábitos como fumar</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 7. CTA Final */}
+            <section id="contact" className="py-24 bg-white text-center">
+                <div className="max-w-5xl mx-auto px-4">
+                    <span className="text-accent font-bold uppercase tracking-wider mb-2 block">Dê o primeiro passo</span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8 font-serif">
+                        Sorria com Confiança
                     </h2>
-                    <p className="text-2xl text-white/90 mb-10 font-light">
-                        Marque a sua avaliação e descubra se a implantologia é a solução ideal para si.
+                    <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+                        Agende uma avaliação na Porto Implantes e descubra se o Protocolo All-on-4 é a solução ideal para si.
                     </p>
                     <a
                         href="/#appointment"
-                        className="inline-flex items-center px-10 py-5 bg-white text-primary text-xl font-bold rounded-full hover:bg-gray-100 transform hover:scale-105 transition-all shadow-2xl"
+                        className="inline-flex items-center px-12 py-6 bg-accent text-white text-xl font-bold rounded-full hover:bg-primary shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all"
                     >
                         <PhoneCall className="mr-3 w-6 h-6" />
-                        Agendar Avaliação
-                        <ArrowRight className="ml-3 w-6 h-6" />
+                        Marcar Consulta
                     </a>
                 </div>
             </section>

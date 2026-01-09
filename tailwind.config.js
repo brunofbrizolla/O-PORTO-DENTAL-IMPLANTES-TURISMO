@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#009ca6', // Green-Blue Turquoise
-        'primary-dark': '#007a82',
+        primary: '#197E8C', // Updated Teal as requested
+        'primary-dark': '#125D68', // Darker shade
         secondary: '#e0f2f1', // Light Turquoise for backgrounds
         accent: '#c0a062', // Gold/Bronze for sophistication
       },
