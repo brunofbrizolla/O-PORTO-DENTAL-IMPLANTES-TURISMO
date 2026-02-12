@@ -35,13 +35,30 @@
   "specializedTeamDescription": "Our team consists of highly qualified and experienced professionals.",
   "humanizedCare": "Humanized Care",
   "humanizedCareDescription": "Each patient receives personalized and welcoming treatment.",
-  "testimonialsTitle": "What Our Clients Say",
-  "testimonial1": "Dr. Kátia is an extremely efficient professional with extensive experience. I was treated with great care and dedication by her and her assistant. Dr. Kátia closely monitored the post-treatment process, always concerned about how I was doing. I highly recommend this professional.",
-  "testimonial1Author": "Rogério Rechia Corrêa",
-  "testimonial2": "n every appointment, we are very well attended to—with professionalism, ethics, competence, and kindness. We are not treated just as another patient, but as a friend—and that’s exactly how we feel!",
-  "testimonial2Author": "Sónia Silva",
-  "testimonial3": "I simply loved it! Dr. Kátia has a gentle touch and does an amazing job! She is also very attentive and explains everything clearly.",
-  "testimonial3Author": "Beatriz Fernandes",
+  "testimonialsTitle": "What our patients say",
+  "testimonialsSubtitle": "Our greatest satisfaction is our patients' smiles",
+  "googleReviews": "See all reviews on Google",
+  "readReview": "See review on Google",
+  "reviews": {
+    "1": {
+      "name": "Isabel Curval",
+      "text": "Dr. Kátia Fragoso is an excellent professional who applies her deep technical knowledge with extreme dedication to the patient. Throughout the procedure, she demonstrated great professionalism, was very perfectionist, and took great care of the patient's well-being. The confidence I felt in her hands was fundamental to making me feel relaxed and overcoming any obstacle. Now it's the ongoing process that will certainly have a result of excellence! Thank you and I recommend without any doubt.",
+      "time": "a month ago",
+      "link": "https://maps.app.goo.gl/JTpLkJEsfbp8JkFv6"
+    },
+    "2": {
+      "name": "Kelly Macedo",
+      "text": "Excellent experience with Dr. Kátia Fragoso! I was attended with great attention, patience, and professionalism. The service was impeccable and I felt very safe throughout the process. Highly recommend for those looking for quality service!",
+      "time": "2 months ago",
+      "link": "https://maps.app.goo.gl/bhddYbPcDZnmSHLR6"
+    },
+    "3": {
+      "name": "Machete Pereira",
+      "text": "I had my treatment with Dr. Kátia Fragoso and I can only say it was an excellent experience. She showed enormous professionalism, care, and attention to every detail. The result exceeded all my expectations, completely transformed my smile! Highly recommend to anyone looking for quality work and close, human service.",
+      "time": "3 months ago",
+      "link": "https://maps.app.goo.gl/46xA4W7dBbuFyYFh6"
+    }
+  },
   "aboutTitle": "About Dr. Kátia Fragoso",
   "aboutDescription": "With over 20 years of dedication to Dentistry, Dr. Kátia has built a professional journey based on a commitment to excellence. Rebuilding smiles is much more than just correcting dental issues—it is about restoring confidence and improving the quality of life for her patients. With extensive experience in general dentistry, her accuracy in diagnosis and treatment planning sets her apart. She is a specialist in Implantology from São Leopoldo Mandic College in Rio de Janeiro and in Dental Prosthetics, in addition to holding a postgraduate degree in Orthodontics. Dedicated to proactive prevention of oral health problems, her passion lies in delivering treatments combined with education on self-care for the community. Dental aesthetics, tissue regeneration using blood cell aggregates, and Invisible Aligners are also among the preferred specialties of this passionate professional.",
   "appointmentTitle": "Appointment",

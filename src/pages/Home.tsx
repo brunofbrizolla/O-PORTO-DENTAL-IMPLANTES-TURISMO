@@ -399,29 +399,91 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Testimonials */}
-            <section id="testimonials" className="py-24 bg-white">
+            {/* Testimonials - Google Reviews Style */}
+            <section id="testimonials" className="py-24 bg-gray-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-3xl font-bold text-center mb-16 text-primary font-serif">
-                        {t('testimonialsTitle')}
-                    </h2>
+                    <div className="text-center mb-16">
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                            alt="Google"
+                            className="w-12 h-12 mx-auto mb-4 bg-white rounded-full p-2 shadow-sm"
+                        />
+                        <h2 className="text-3xl font-bold text-primary font-serif mb-4">
+                            {t('testimonialsTitle')}
+                        </h2>
+                        <div className="flex justify-center items-center gap-2 mb-4">
+                            <span className="font-bold text-2xl text-gray-800">5.0</span>
+                            <div className="flex text-[#F4B400]">
+                                {[...Array(5)].map((_, i) => (
+                                    <Star key={i} className="w-6 h-6 fill-current" />
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[1, 2, 3].map((num) => (
-                            <div key={num} className="bg-gray-50 p-10 rounded-2xl hover:shadow-xl transition-shadow border border-gray-100">
-                                <div className="flex mb-6 text-accent">
-                                    {[...Array(5)].map((_, i) => (
-                                        <Star key={i} className="w-5 h-5 fill-current" />
-                                    ))}
-                                </div>
-                                <p className="text-gray-600 mb-6 italic text-lg leading-relaxed">"{t(`testimonial${num}`)}"</p>
-                                <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-xl">
-                                        {t(`testimonial${num}Author`).charAt(0)}
+                            <div key={num} className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col h-full">
+                                {/* Header: Avatar & Name */}
+                                <div className="flex items-start gap-4 mb-4">
+                                    <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-lg ${num === 1 ? 'bg-orange-600' : num === 2 ? 'bg-blue-600' : 'bg-green-600'
+                                        }`}>
+                                        {t(`reviews.${num}.name`).charAt(0)}
                                     </div>
-                                    <p className="font-bold text-primary">{t(`testimonial${num}Author`)}</p>
+                                    <div>
+                                        <h4 className="font-bold text-gray-900 text-sm">{t(`reviews.${num}.name`)}</h4>
+                                        <div className="flex items-center gap-2">
+                                            <div className="flex text-[#F4B400] text-xs">
+                                                {[...Array(5)].map((_, i) => (
+                                                    <Star key={i} className="w-3.5 h-3.5 fill-current" />
+                                                ))}
+                                            </div>
+                                            <span className="text-xs text-gray-500">{t(`reviews.${num}.time`)}</span>
+                                        </div>
+                                    </div>
+                                    <img
+                                        src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                                        alt="Google"
+                                        className="w-5 h-5 ml-auto opacity-50"
+                                    />
                                 </div>
+
+                                {/* Review Text */}
+                                <div className="flex-1">
+                                    <p className="text-gray-600 text-[15px] leading-relaxed line-clamp-6 mb-4">
+                                        {t(`reviews.${num}.text`)}
+                                    </p>
+                                </div>
+
+                                {/* Link */}
+                                <a
+                                    href={t(`reviews.${num}.link`)}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="pt-4 border-t border-gray-100 block"
+                                >
+                                    <button className="text-blue-600 font-medium text-sm hover:underline flex items-center">
+                                        {t('readReview')}
+                                    </button>
+                                </a>
                             </div>
                         ))}
+                    </div>
+
+                    <div className="text-center mt-12">
+                        <a
+                            href="https://maps.app.goo.gl/pLkRCz28tnqeccdx5"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center px-8 py-3 bg-white text-gray-800 font-medium rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all border border-gray-100"
+                        >
+                            <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                                alt="Google"
+                                className="w-5 h-5 mr-3"
+                            />
+                            {t('googleReviews')}
+                        </a>
                     </div>
                 </div>
             </section>

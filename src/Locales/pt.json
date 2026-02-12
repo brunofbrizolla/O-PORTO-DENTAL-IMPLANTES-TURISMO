@@ -35,13 +35,30 @@
   "specializedTeamDescription": "Nossa equipe é formada por profissionais altamente qualificados e experientes.",
   "humanizedCare": "Atendimento Humanizado",
   "humanizedCareDescription": "Cada paciente recebe um tratamento personalizado e acolhedor.",
-  "testimonialsTitle": "O Que Nossos Clientes Dizem",
-  "testimonial1": "A Dra Kátia é uma profissional extremamente eficiente e com um vasto tempo de experiência.  Fui tratado com muito carinho e dedicação por ela e pela sua auxiliar auxiliar, a Dra Kátia acompanhou de perto o pós tratamento sempre preocupada em saber como eu estava. Eu altamente recomendo esta profissional.",
-  "testimonial1Author": "Rogério Rechia Corrêa",
-  "testimonial2": "Em todas as consultas somos muito bem atendidos - com profissionalismo, ética, competência e amizade. Não somos recebidos apenas como mais um paciente, mas sim como um amigo; e assim nos sentimos!",
-  "testimonial2Author": "Sónia Silva",
-  "testimonial3": "Simplesmente amei! Dra. Kátia tem a mão leve e faz um trabalho maravilhoso! Além de ser muito atenciosa e didática.",
-  "testimonial3Author": "Beatriz Fernandes",
+  "testimonialsTitle": "O que dizem os nossos pacientes",
+  "testimonialsSubtitle": "A nossa maior satisfação é o sorriso dos nossos pacientes",
+  "googleReviews": "Ver todas as avaliações no Google",
+  "readReview": "Veja o comentário no Google",
+  "reviews": {
+    "1": {
+      "name": "Isabel Curval",
+      "text": "A Dra. Kátia Fragoso é uma profissional excelente que aplica o seu profundo conhecimento técnico, com uma dedicação extrema ao paciente. Durante todo o procedimento demonstrou um grande profissionalismo, muito perfeccionista e um grande cuidado com o bem-estar do paciente. Nas suas mãos a confiança que senti, foi fundamental para me sentir relaxada e ultrapassar qualquer obstáculo. Agora é o decorrer de um processo que terá com certeza um resultado final de excelência! Obrigada e recomendo sem qualquer dúvida.",
+      "time": "um mês atrás",
+      "link": "https://maps.app.goo.gl/JTpLkJEsfbp8JkFv6"
+    },
+    "2": {
+      "name": "Kelly Macedo",
+      "text": "Excelente experiência com a Dra. Kátia Fragoso! Fui atendida com muita atenção, paciência e profissionalismo. O serviço ficou impecável e me senti muito segura durante todo o processo. Super recomendo para quem busca um atendimento de qualidade!",
+      "time": "2 meses atrás",
+      "link": "https://maps.app.goo.gl/bhddYbPcDZnmSHLR6"
+    },
+    "3": {
+      "name": "Machete Pereira",
+      "text": "Fiz o meu tratamento com a Dra. Kátia Fragoso e só posso dizer que foi uma experiência excelente. Mostrou enorme profissionalismo, cuidado e atenção em cada detalhe. O resultado superou todas as minhas expectativas, transformou completamente o meu sorriso! Recomendo vivamente a quem procura um trabalho de qualidade e um atendimento próximo e humano.",
+      "time": "3 meses atrás",
+      "link": "https://maps.app.goo.gl/46xA4W7dBbuFyYFh6"
+    }
+  },
   "aboutTitle": "Sobre a Dra. Kátia Fragoso",
   "aboutDescription": "Com mais de 20 anos de dedicação à Odontologia, Dra. Kátia tem uma jornada profissional pautada no compromisso com a excelência. Reconstruir sorrisos é muito mais que corrigir problemas dentários. É devolver confiança e qualidade de vida aos seus pacientes. Com larga experiência em clínica generalista, a assertividade no diagnóstico e planejamento é um diferencial. Especialista em Implantologia pela Faculdade São Leopoldo Mandic, no Rio de Janeiro, e em Prótese Dentária, além de possuir pós-graduação em Ortodontia. Atua na Prevenção Ostensiva dos problemas bucais, sua paixão é entregar tratamentos aliados à educação em autocuidados para a população. Estética Dentária e regeneração tecidual com agregados de células sanguíneas e Alinhadores Invisíveis também fazem parte do cardápio preferencial desta profissional apaixonada pelo que faz.<br/><br/>Acreditamos que um sorriso saudável transforma vidas. A nossa missão é proporcionar cuidados de excelência, num ambiente onde se sinta em casa.",
   "appointmentTitle": "Agendamento",
