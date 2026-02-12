@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Calendar, User, Clock } from 'lucide-react';
@@ -35,7 +34,7 @@ const Blog = () => {
             date: '28 Dez 2023',
             author: 'Porto Implantes',
             readTime: '7 min',
-            image: '/assets/logo_kv_final.png',
+            image: '/assets/uploads/home_hero_new.jpg',
             category: 'Turismo'
         },
         {
@@ -46,7 +45,7 @@ const Blog = () => {
             date: '15 Fev 2024',
             author: 'Porto Implantes',
             readTime: '10 min',
-            image: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f72?auto=format&fit=crop&q=80',
+            image: '/assets/uploads/alinhadores_hero_new.jpg',
             category: 'Alinhadores'
         },
         {
@@ -57,7 +56,7 @@ const Blog = () => {
             date: '20 Fev 2024',
             author: 'Porto Implantes',
             readTime: '7 min',
-            image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&q=80',
+            image: '/assets/uploads/facetas_hero_new.jpg',
             category: 'Estética'
         },
         {
@@ -79,7 +78,7 @@ const Blog = () => {
             date: '02 Mar 2024',
             author: 'Porto Implantes',
             readTime: '8 min',
-            image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80',
+            image: '/assets/uploads/clinic_waiting_room_1.jpg',
             category: 'Bem-estar'
         },
         {
@@ -90,7 +89,7 @@ const Blog = () => {
             date: '10 Mar 2024',
             author: 'Porto Implantes',
             readTime: '9 min',
-            image: '/assets/uploads/doctor_implant_hero_new.png',
+            image: '/assets/uploads/implantologia_highlight.jpg',
             category: 'Implantologia'
         },
         {
@@ -101,7 +100,7 @@ const Blog = () => {
             date: '15 Mar 2024',
             author: 'Porto Implantes',
             readTime: '6 min',
-            image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80',
+            image: '/assets/uploads/clinic_office.jpg',
             category: 'Tecnologia'
         }
     ];
@@ -114,8 +113,8 @@ const Blog = () => {
                 <meta name="keywords" content="blog dentista porto, implantes dentários blog, saúde oral porto, dicas dentista" />
             </Helmet>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <div className="text-center mb-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <div className="text-center mb-8">
                     <span className="text-accent font-bold tracking-wider uppercase mb-2 block">O Nosso Blog</span>
                     <h1 className="text-4xl md:text-5xl font-bold text-primary font-serif mb-6">Notícias & Artigos</h1>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">

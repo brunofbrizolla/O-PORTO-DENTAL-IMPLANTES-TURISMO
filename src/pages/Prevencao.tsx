@@ -1,9 +1,6 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
 import { ShieldCheck, HeartPulse, Sparkles, CheckCircle2, ArrowRight, Stethoscope } from 'lucide-react';
 
 const Prevencao = () => {
-    const { t } = useTranslation();
 
     return (
         <div>
@@ -20,10 +17,10 @@ const Prevencao = () => {
                 <div className="relative z-20 max-w-7xl mx-auto px-4 w-full h-full flex items-center">
                     <div className="max-w-2xl text-white pl-4 border-l-4 border-accent animate-slideIn">
                         <span className="text-accent font-bold tracking-[0.2em] uppercase mb-4 block">Saúde Oral</span>
-                        <h1 className="text-5xl md:text-7xl font-bold mb-6 font-serif leading-tight">
+                        <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif leading-tight">
                             Prevenção &<br />Manutenção
                         </h1>
-                        <p className="text-xl md:text-2xl font-light mb-10 text-gray-200 leading-relaxed max-w-xl">
+                        <p className="text-xl md:text-2xl font-light mb-8 text-gray-200 leading-relaxed max-w-xl">
                             O segredo para um sorriso saudável e duradouro começa com o cuidado preventivo regular.
                         </p>
                         <a
@@ -38,9 +35,9 @@ const Prevencao = () => {
             </section>
 
             {/* 2. Intro Section */}
-            <section className="py-24 bg-white">
+            <section className="py-6 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid md:grid-cols-2 gap-16 items-center">
+                    <div className="grid md:grid-cols-2 gap-10 items-center">
                         <div className="relative group">
                             <div className="absolute -inset-4 bg-primary/5 rounded-3xl transform rotate-3 transition-transform group-hover:rotate-0 duration-500"></div>
                             <img
@@ -51,7 +48,7 @@ const Prevencao = () => {
                         </div>
                         <div>
                             <span className="text-accent font-bold uppercase tracking-wider mb-2 block">Longevidade</span>
-                            <h2 className="text-4xl font-bold text-primary mb-6 font-serif leading-tight">
+                            <h2 className="text-3xl font-bold text-primary mb-6 font-serif leading-tight">
                                 Mais do que tratar,<br />cuidamos de si.
                             </h2>
                             <p className="text-gray-600 mb-6 leading-relaxed text-lg">
@@ -77,10 +74,10 @@ const Prevencao = () => {
             </section>
 
             {/* 3. What is included */}
-            <section className="py-24 bg-gray-50">
+            <section className="py-6 bg-gray-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary font-serif mb-4">O que inclui a consulta?</h2>
+                    <div className="text-center mb-8">
+                        <h2 className="text-3xl md:text-3xl font-bold text-primary font-serif mb-4">O que inclui a consulta?</h2>
                         <p className="text-gray-600 max-w-2xl mx-auto">Um protocolo completo de higienização e diagnóstico.</p>
                     </div>
 
@@ -113,10 +110,10 @@ const Prevencao = () => {
             </section>
 
             {/* 4. CTA Final */}
-            <section className="py-20 bg-primary text-white text-center">
+            <section className="py-6 bg-primary text-white text-center">
                 <div className="max-w-4xl mx-auto px-4">
-                    <h2 className="text-3xl md:text-4xl font-bold font-serif mb-6">Mantenha o seu sorriso saudável</h2>
-                    <p className="text-xl text-primary-light mb-10">
+                    <h2 className="text-3xl md:text-3xl font-bold font-serif mb-6">Mantenha o seu sorriso saudável</h2>
+                    <p className="text-xl text-primary-light mb-8">
                         A prevenção é o melhor investimento que pode fazer pela sua saúde.
                     </p>
                     <a

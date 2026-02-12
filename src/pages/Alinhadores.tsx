@@ -1,9 +1,6 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
 import { ArrowRight, ScanFace, MousePointerClick, Smile, CalendarCheck } from 'lucide-react';
 
 const Alinhadores = () => {
-    const { t } = useTranslation();
 
     return (
         <div>
@@ -11,7 +8,7 @@ const Alinhadores = () => {
             <section className="relative h-screen flex items-center bg-gray-900 overflow-hidden">
                 <div
                     className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: 'url("/assets/uploads/alinhadores_hero_new.png")' }}
+                    style={{ backgroundImage: 'url("/assets/uploads/alinhadores_hero_new.jpg")' }}
                 ></div>
 
                 {/* Gradient Overlay */}
@@ -20,10 +17,10 @@ const Alinhadores = () => {
                 <div className="relative z-20 max-w-7xl mx-auto px-4 w-full h-full flex items-center">
                     <div className="max-w-3xl text-white pl-4 border-l-4 border-accent animate-slideIn">
                         <span className="text-accent font-bold tracking-[0.2em] uppercase mb-4 block">Ortodontia Digital</span>
-                        <h1 className="text-5xl md:text-7xl font-bold mb-6 font-serif leading-tight">
+                        <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif leading-tight">
                             Alinhamento<br />Invisível
                         </h1>
-                        <p className="text-xl md:text-2xl font-light mb-10 text-gray-200 leading-relaxed max-w-2xl">
+                        <p className="text-xl md:text-2xl font-light mb-8 text-gray-200 leading-relaxed max-w-2xl">
                             A tecnologia mais avançada para alinhar o seu sorriso de forma discreta, confortável e eficaz.
                         </p>
                         <a
@@ -38,9 +35,9 @@ const Alinhadores = () => {
             </section>
 
             {/* 2. O que são */}
-            <section className="py-24 bg-white">
+            <section className="py-6 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid md:grid-cols-2 gap-16 items-center">
+                    <div className="grid md:grid-cols-2 gap-10 items-center">
                         <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl group">
                             <div className="absolute inset-0 bg-primary/10 z-10"></div>
                             <img
@@ -51,7 +48,7 @@ const Alinhadores = () => {
                         </div>
                         <div>
                             <span className="text-accent font-bold uppercase tracking-wider mb-2 block">Liberdade & Conforto</span>
-                            <h2 className="text-4xl font-bold text-primary mb-8 font-serif leading-tight">
+                            <h2 className="text-3xl font-bold text-primary mb-8 font-serif leading-tight">
                                 A evolução do aparelho dentário
                             </h2>
                             <p className="text-gray-600 mb-6 leading-relaxed text-lg">
@@ -66,11 +63,11 @@ const Alinhadores = () => {
             </section>
 
             {/* 3. Como funciona (Timeline Style) */}
-            <section className="py-24 bg-primary-light/30">
+            <section className="py-6 bg-primary-light/30">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-20">
+                    <div className="text-center mb-8">
                         <span className="text-accent font-bold uppercase tracking-wider mb-2 block">Processo Simples</span>
-                        <h2 className="text-4xl font-bold text-primary font-serif">A sua jornada para um sorriso novo</h2>
+                        <h2 className="text-3xl font-bold text-primary font-serif">A sua jornada para um sorriso novo</h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
@@ -81,7 +78,7 @@ const Alinhadores = () => {
                             { step: '04', title: 'Sorriso', desc: 'Acompanhamento e resultado final.', icon: <CalendarCheck className="w-8 h-8" /> }
                         ].map((item, idx) => (
                             <div key={idx} className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:-translate-y-2 transition-all duration-300 relative group">
-                                <span className="absolute top-4 right-4 text-4xl font-bold text-gray-100 group-hover:text-accent/20 transition-colors">{item.step}</span>
+                                <span className="absolute top-4 right-4 text-3xl font-bold text-gray-100 group-hover:text-accent/20 transition-colors">{item.step}</span>
                                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
                                     {item.icon}
                                 </div>
@@ -94,10 +91,10 @@ const Alinhadores = () => {
             </section>
 
             {/* 5. Vantagens (Grid) */}
-            <section className="py-24 bg-primary text-white relative overflow-hidden">
+            <section className="py-6 bg-primary text-white relative overflow-hidden">
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 font-serif">Porquê escolher alinhadores?</h2>
+                    <h2 className="text-3xl md:text-3xl font-bold text-center mb-8 font-serif">Porquê escolher alinhadores?</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[
                             { t: 'Invisível', d: 'Ninguém nota que está a usar aparelho.' },
@@ -117,7 +114,7 @@ const Alinhadores = () => {
             </section>
 
             {/* CTA Final */}
-            <section id="contact" className="py-24 bg-white text-center">
+            <section id="contact" className="py-6 bg-white text-center">
                 <div className="max-w-4xl mx-auto px-4">
                     <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8 font-serif">
                         Alinhe o seu sorriso sem mudar a sua rotina.

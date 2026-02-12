@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
@@ -20,6 +20,8 @@ import Prevencao from './pages/Prevencao';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import LocationSection from './components/LocationSection';
+import ScrollToTop from './components/ScrollToTop';
+import ChatBot from './components/ChatBot';
 
 function App() {
   const { t } = useTranslation();
@@ -27,18 +29,27 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
+        <ScrollToTop />
+        <ChatBot />
         <div className="min-h-screen bg-primary-light font-sans text-gray-800">
+
 
           {/* Navbar */}
           <nav className="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 transition-all duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-24 items-center">
               <Link to="/" className="flex items-center group gap-2">
-                <span className="text-2xl font-serif font-bold text-primary tracking-wide">Porto Implantes</span>
+                <div className="h-20 w-20 overflow-hidden rounded-full border-2 border-primary/10 bg-white flex items-center justify-center shadow-md">
+                  <img
+                    src="/assets/uploads/logo_header.png"
+                    alt="Porto Implantes"
+                    className="h-full w-full object-contain transform scale-[1.35]"
+                  />
+                </div>
               </Link>
 
               <div className="hidden md:flex items-center space-x-10">
                 <Link to="/" className="nav-link text-gray-600 hover:text-primary font-medium uppercase tracking-wide text-sm transition-colors">{t('home')}</Link>
-                <Link to="/#about" className="nav-link text-gray-600 hover:text-primary font-medium uppercase tracking-wide text-sm transition-colors">{t('about')}</Link>
+
 
                 <div className="relative group">
                   <button className="nav-link text-gray-600 hover:text-primary font-medium uppercase tracking-wide text-sm transition-colors flex items-center">

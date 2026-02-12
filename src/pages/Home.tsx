@@ -7,9 +7,7 @@ import {
     CheckCircle2,
     Award,
     Users,
-    MessageCircle,
     Star,
-    Quote,
     Loader2,
     MessageCircleMore,
     ArrowRight,
@@ -65,7 +63,8 @@ const Home = () => {
                 id="home"
                 className="relative h-screen bg-cover bg-center animate-fadeIn"
                 style={{
-                    backgroundImage: 'url("/assets/uploads/uploaded_image_0_1767826009596.jpg")',
+                    backgroundImage: 'url("/assets/uploads/home_hero_new.jpg")',
+                    backgroundPosition: 'center top',
                     backgroundAttachment: 'fixed'
                 }}
             >
@@ -77,10 +76,10 @@ const Home = () => {
                         <span className="text-accent font-bold tracking-[0.2em] uppercase mb-4 block text-sm md:text-base">
                             Excelência em Medicina Dentária
                         </span>
-                        <h1 className="text-5xl md:text-7xl font-bold mb-6 font-serif leading-tight">
+                        <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif leading-tight">
                             O Seu Sorriso,<br />A Nossa Paixão
                         </h1>
-                        <p className="text-xl md:text-2xl mb-10 text-gray-100 font-light max-w-lg leading-relaxed">
+                        <p className="text-xl md:text-2xl mb-8 text-gray-100 font-light max-w-lg leading-relaxed">
                             Cuidamos da sua saúde oral com tecnologia de ponta e uma equipa dedicada ao seu conforto e bem-estar.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
@@ -103,11 +102,11 @@ const Home = () => {
             </section>
 
             {/* Experience & Trust Section (Livedent style: Icons + Whitespace) */}
-            <section className="py-24 bg-white relative overflow-hidden">
+            <section className="py-6 bg-white relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-64 h-64 bg-primary/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="text-center mb-16 max-w-3xl mx-auto">
-                        <h2 className="text-4xl font-bold text-primary font-serif mb-6">Porque escolher a Porto Implantes?</h2>
+                    <div className="text-center mb-8 max-w-3xl mx-auto">
+                        <h2 className="text-3xl font-bold text-primary font-serif mb-6">Porque escolher a Porto Implantes?</h2>
                         <p className="text-gray-600 text-lg">
                             Combinamos ciência, arte e tecnologia para lhe oferecer tratamentos personalizados num ambiente acolhedor.
                         </p>
@@ -146,12 +145,12 @@ const Home = () => {
             </section>
 
             {/* Main Services - Clean, Large Cards */}
-            <section id="services" className="py-24 bg-gray-50">
+            <section id="services" className="py-6 bg-gray-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+                    <div className="flex flex-col md:flex-row justify-between items-end mb-8">
                         <div className="max-w-2xl">
                             <span className="text-accent font-bold uppercase tracking-wider mb-2 block">Especialidades</span>
-                            <h2 className="text-4xl font-bold text-primary font-serif">Tratamentos de Referência</h2>
+                            <h2 className="text-3xl font-bold text-primary font-serif">Tratamentos de Referência</h2>
                         </div>
                         <a href="#appointment" className="hidden md:flex items-center text-primary font-semibold hover:text-accent transition-colors mt-4 md:mt-0">
                             Marcar uma consulta <ArrowRight className="ml-2 w-5 h-5" />
@@ -162,7 +161,7 @@ const Home = () => {
                         {/* Implantologia */}
                         <Link to="/implantologia" className="group cursor-pointer">
                             <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl">
-                                <img src="/assets/doctor_implants.jpg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Implantologia" />
+                                <img src="/assets/uploads/doctor_implant_hero_new.jpg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Implantologia" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8">
                                     <h3 className="text-3xl font-bold text-white mb-2">Implantologia</h3>
                                     <p className="text-gray-200 mb-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
@@ -178,7 +177,7 @@ const Home = () => {
                         {/* Facetas */}
                         <Link to="/facetas" className="group cursor-pointer">
                             <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl">
-                                <img src="/assets/doctor_consultation.jpg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Facetas" />
+                                <img src="/assets/uploads/facetas_hero_new.jpg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Facetas" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8">
                                     <h3 className="text-3xl font-bold text-white mb-2">Facetas Dentárias</h3>
                                     <p className="text-gray-200 mb-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
@@ -194,7 +193,7 @@ const Home = () => {
                         {/* Alinhadores */}
                         <Link to="/alinhadores" className="group cursor-pointer">
                             <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl">
-                                <img src="/assets/clear_aligners_realistic.png" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Ortodontia" />
+                                <img src="/assets/uploads/alinhadores_hero_new.jpg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Ortodontia" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8">
                                     <h3 className="text-3xl font-bold text-white mb-2">Alinhadores Invisíveis</h3>
                                     <p className="text-gray-200 mb-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
@@ -239,40 +238,42 @@ const Home = () => {
             </section>
 
             {/* About Section - Using the specific doctor image requested earlier */}
-            <section id="about" className="py-24 bg-white">
+            <section id="about" className="py-6 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
-                        <div className="flex justify-end order-2 lg:order-1 lg:pr-12">
-                            <div className="max-w-lg">
-                                <span className="text-accent font-bold uppercase tracking-wider mb-2 block">Direção Clínica</span>
-                                <h2 className="text-4xl md:text-5xl font-bold mb-8 text-primary font-serif">
-                                    {t('aboutTitle')}
-                                </h2>
-                                <p className="text-gray-600 leading-relaxed text-lg mb-8 leading-loose">
-                                    {t('aboutDescription')}
-                                    <br /><br />
-                                    Acreditamos que um sorriso saudável transforma vidas. A nossa missão é proporcionar cuidados de excelência, num ambiente onde se sinta em casa.
-                                </p>
-                                <div className="flex items-center gap-8">
-                                    <div className="pl-4 border-l-4 border-accent">
-                                        <p className="font-bold text-primary text-3xl">15+</p>
-                                        <p className="text-sm text-gray-500 uppercase tracking-wide">Anos de<br />Experiência</p>
-                                    </div>
-                                    <div className="pl-4 border-l-4 border-accent">
-                                        <p className="font-bold text-primary text-3xl">5k+</p>
-                                        <p className="text-sm text-gray-500 uppercase tracking-wide">Pacientes<br />Satisfeitos</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="order-1 lg:order-2">
-                            <div className="relative group">
-                                <div className="absolute inset-0 bg-accent rounded-3xl transform translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
+                        {/* Imagem (Agora menor e mais integrada) */}
+                        <div className="order-1 lg:order-2 flex justify-center">
+                            <div className="relative group max-w-sm w-full">
+                                <div className="absolute inset-0 bg-accent rounded-3xl transform translate-x-3 translate-y-3 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
                                 <img
                                     src="/assets/uploads/clinic_doctor_desk.jpg"
                                     alt="Dra. Diretora Clínica"
-                                    className="relative rounded-3xl shadow-2xl object-cover w-full h-[600px] z-10"
+                                    className="relative rounded-3xl shadow-xl object-cover w-full h-auto max-h-[350px] z-10"
                                 />
+                            </div>
+                        </div>
+
+                        {/* Texto Compacto */}
+                        <div className="flex flex-col order-2 lg:order-1 lg:pr-8">
+                            <div>
+                                <span className="text-accent font-bold uppercase tracking-wider mb-1 block text-sm">Direção Clínica</span>
+                                <h2 className="text-3xl md:text-3xl font-bold mb-4 text-primary font-serif tight-leading">
+                                    {t('aboutTitle')}
+                                </h2>
+                                <p className="text-gray-600 leading-relaxed text-base mb-4 text-justify">
+                                    {/* Text rendered via HTML to support line breaks if needed, or just standard */}
+                                    <span dangerouslySetInnerHTML={{ __html: t('aboutDescription') }}></span>
+                                </p>
+                                <div className="flex items-center gap-6 mt-2">
+                                    <div className="pl-3 border-l-4 border-accent">
+                                        <p className="font-bold text-primary text-2xl">15+</p>
+                                        <p className="text-xs text-gray-500 uppercase tracking-wide">Anos de<br />Experiência</p>
+                                    </div>
+                                    <div className="pl-3 border-l-4 border-accent">
+                                        <p className="font-bold text-primary text-2xl">5k+</p>
+                                        <p className="text-xs text-gray-500 uppercase tracking-wide">Pacientes<br />Satisfeitos</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -280,9 +281,9 @@ const Home = () => {
             </section>
 
             {/* Clinic Gallery Section - "Our Space" (Split Layout) */}
-            <section className="py-24 bg-white overflow-hidden">
+            <section className="py-6 bg-white overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+                    <div className="grid lg:grid-cols-2 gap-10 items-center">
                         {/* Text Content - Left Side */}
                         <div className="order-1">
                             <span className="text-accent font-bold uppercase tracking-wider mb-2 block">O Nosso Espaço</span>
@@ -343,7 +344,7 @@ const Home = () => {
             {/* Testimonials */}
             <section id="testimonials" className="py-24 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-4xl font-bold text-center mb-16 text-primary font-serif">
+                    <h2 className="text-3xl font-bold text-center mb-16 text-primary font-serif">
                         {t('testimonialsTitle')}
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -368,15 +369,15 @@ const Home = () => {
             </section>
 
             {/* Appointment Form */}
-            <section id="appointment" className="py-24 bg-primary relative overflow-hidden">
+            <section id="appointment" className="py-6 bg-primary relative overflow-hidden">
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+                    <div className="grid lg:grid-cols-2 gap-10 items-center">
                         <div className="text-white">
                             <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">
                                 {t('appointmentTitle')}
                             </h2>
-                            <p className="text-xl mb-10 text-primary-light opacity-90 leading-relaxed">
+                            <p className="text-xl mb-8 text-primary-light opacity-90 leading-relaxed">
                                 Agende a sua avaliação e dê o primeiro passo para o sorriso que sempre desejou. Estamos à sua espera.
                             </p>
                             <div className="space-y-6">

@@ -11,7 +11,7 @@ const Facetas = () => {
             <section className="relative h-screen flex items-center bg-gray-900 overflow-hidden">
                 <div
                     className="absolute inset-0 bg-cover bg-[center_top]"
-                    style={{ backgroundImage: 'url("/assets/uploads/facetas_hero_new.png")' }}
+                    style={{ backgroundImage: 'url("/assets/uploads/facetas_hero_new.jpg")' }}
                 ></div>
 
                 {/* Gradient Overlay */}
@@ -20,10 +20,10 @@ const Facetas = () => {
                 <div className="relative z-20 max-w-7xl mx-auto px-4 w-full h-full flex items-center">
                     <div className="max-w-2xl text-white pl-4 border-l-4 border-accent animate-slideIn">
                         <span className="text-accent font-bold tracking-[0.2em] uppercase mb-4 block">Estética Dentária</span>
-                        <h1 className="text-5xl md:text-7xl font-bold mb-6 font-serif leading-tight">
+                        <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif leading-tight">
                             A Arte de<br />Criar Sorrisos
                         </h1>
-                        <p className="text-xl md:text-2xl font-light mb-10 text-gray-200 leading-relaxed">
+                        <p className="text-xl md:text-2xl font-light mb-8 text-gray-200 leading-relaxed">
                             Transforme a cor, a forma e a harmonia dos seus dentes com facetas de alta precisão.
                         </p>
                         <a
@@ -38,12 +38,12 @@ const Facetas = () => {
             </section>
 
             {/* 2. O que são (Clean Layout) */}
-            <section className="py-24 bg-white">
+            <section className="py-6 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid md:grid-cols-2 gap-16 items-center">
+                    <div className="grid md:grid-cols-2 gap-10 items-center">
                         <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl group">
                             <img
-                                src="https://images.unsplash.com/photo-1571408381831-70bfd56c7024?auto=format&fit=crop&q=80"
+                                src="/assets/uploads/facetas_hero_new.png"
                                 alt="Facetas Dentárias Close-up"
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
@@ -53,7 +53,7 @@ const Facetas = () => {
                         </div>
                         <div>
                             <span className="text-accent font-bold uppercase tracking-wider mb-2 block">Definição</span>
-                            <h2 className="text-4xl font-bold text-primary mb-8 font-serif leading-tight">
+                            <h2 className="text-3xl font-bold text-primary mb-8 font-serif leading-tight">
                                 O que são facetas?
                             </h2>
                             <p className="text-gray-600 mb-6 leading-relaxed text-lg">
@@ -68,9 +68,9 @@ const Facetas = () => {
             </section>
 
             {/* 3. Comparação (Modern Cards) */}
-            <section className="py-24 bg-primary-light/30">
+            <section className="py-6 bg-primary-light/30">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-4xl font-bold text-center mb-16 text-primary font-serif">Porcelana ou Resina?</h2>
+                    <h2 className="text-3xl font-bold text-center mb-8 text-primary font-serif">Porcelana ou Resina?</h2>
 
                     <div className="grid md:grid-cols-2 gap-12">
                         {/* Porcelana */}
@@ -110,10 +110,10 @@ const Facetas = () => {
             </section>
 
             {/* 4. Indicações (Grid) */}
-            <section className="py-24 bg-primary text-white relative overflow-hidden">
+            <section className="py-6 bg-primary text-white relative overflow-hidden">
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 font-serif">Quando recomendamos facetas?</h2>
+                    <h2 className="text-3xl md:text-3xl font-bold text-center mb-8 font-serif">Quando recomendamos facetas?</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {[
                             'Dentes com manchas profundas',
@@ -132,7 +132,7 @@ const Facetas = () => {
             </section>
 
             {/* CTA Final */}
-            <section id="contact" className="py-24 bg-white text-center">
+            <section id="contact" className="py-6 bg-white text-center">
                 <div className="max-w-4xl mx-auto px-4">
                     <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8 font-serif">
                         Um novo sorriso pode mudar tudo.

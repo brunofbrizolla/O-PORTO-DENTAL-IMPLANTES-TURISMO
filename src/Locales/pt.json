@@ -9,32 +9,25 @@
   "callNow": "Ligar Agora",
   "doctorName": "Dra. Kátia Fragoso",
   "heroDescription": "O Sorriso que Você Merece<br />Com a Experiência e Cuidado <br /> que Você Confia!",
-
   "implantsTitle": "Implantes Dentários",
   "implantsDescription": "Os implantes dentários são dispositivos feitos em titânio que servem para substituir a raiz do dente e dar suporte a uma prótese, contribuindo assim para melhorar a estética e função mastigatória. Eles são indicados para pacientes com perda unitária, parcial ou de todos os dentes. Entendemos a importância de um sorriso completo para a sua autoestima e qualidade de vida. Nossos implantes são projetados para se integrar perfeitamente à sua estrutura óssea, garantindo conforto e funcionalidade.",
-
   "orthodonticsTitle": "Medicina Dentaria",
   "orthodonticsDescription": "Na medicina dentária moderna, os avanços tecnológicos revolucionaram a forma como tratamos os problemas de dentes tortos ou mal posicionados. Um dos maiores avanços foi a criação de tratamentos ortodônticos removíveis, comumente conhecidos como alinhadores invisíveis ou transparentes. Esses dispositivos revolucionários ganharam popularidade devido à sua eficácia, comodidade e discrição em comparação com os brackets tradicionais. Sorriso perfeito sem ter que abrir mão das fotos a sorrir.",
-
   "veneersTitle": "Facetas",
   "veneersDescription": "Tratamentos com tecnologia dental avançada em porcelana, resina composta e fragmentos dentários para recuperar a estética dos seus dentes com qualidade e segurança.",
-
   "treatmentTitle": "Tratamentos",
   "whitening": "Branqueamento",
   "whiteningDescription": "Procedimentos avançados para um sorriso mais branco e brilhante.",
   "braces": "Próteses Dentárias",
   "bracesDescription": "Próteses fixas, removíveis e sobre implante.",
-
   "treatment_implants": "Implantes",
   "treatment_implantsDescription": "Implantes unitários e All-on-4 para o conforto da sua mastigação.",
-
   "extractions": "Extração Dentária",
   "extractionsDescription": "Extração de siso",
   "endodontics": "Endodontia",
   "endodonticsDescription": "Tratamento de canal com tecnologia avançada.",
   "dentalCleaning": "Limpeza Dentária",
   "dentalCleaningDescription": "Limpeza dentária, destartarização e tratamento de gengivite.",
-
   "differentialsTitle": "Nossos Diferenciais",
   "advancedTechnology": "Tecnologia Avançada",
   "advancedTechnologyDescription": "Utilizamos equipamentos de última geração que nos permitem realizar tratamentos altamente precisos e eficazes.",
@@ -42,7 +35,6 @@
   "specializedTeamDescription": "Nossa equipe é formada por profissionais altamente qualificados e experientes.",
   "humanizedCare": "Atendimento Humanizado",
   "humanizedCareDescription": "Cada paciente recebe um tratamento personalizado e acolhedor.",
-
   "testimonialsTitle": "O Que Nossos Clientes Dizem",
   "testimonial1": "A Dra Kátia é uma profissional extremamente eficiente e com um vasto tempo de experiência.  Fui tratado com muito carinho e dedicação por ela e pela sua auxiliar auxiliar, a Dra Kátia acompanhou de perto o pós tratamento sempre preocupada em saber como eu estava. Eu altamente recomendo esta profissional.",
   "testimonial1Author": "Rogério Rechia Corrêa",
@@ -50,10 +42,8 @@
   "testimonial2Author": "Sónia Silva",
   "testimonial3": "Simplesmente amei! Dra. Kátia tem a mão leve e faz um trabalho maravilhoso! Além de ser muito atenciosa e didática.",
   "testimonial3Author": "Beatriz Fernandes",
-
   "aboutTitle": "Sobre a Dra. Kátia Fragoso",
-  "aboutDescription": "Com mais de 20 anos de dedicação à Odontologia, Dra. Kátia tem uma jornada profissional pautada no compromisso com a excelência. Reconstruir sorrisos é muito mais que corrigir problemas dentários. É devolver confiança e qualidade de vida aos seus pacientes. Com larga experiência em clínica generalista, a assertividade no diagnóstico e planejamento é um diferencial. Especialista em Implantologia pela Faculdade São Leopoldo Mandic, no Rio de Janeiro, e em Prótese Dentária, além de possuir pós-graduação em Ortodontia. Atua na Prevenção Ostensiva dos problemas bucais, sua paixão é entregar tratamentos aliados à educação em autocuidados para a população. Estética Dentária e regeneração tecidual com agregados de células sanguíneas e Alinhadores Invisíveis também fazem parte do cardápio preferencial desta profissional apaixonada pelo que faz.",
-
+  "aboutDescription": "Com mais de 20 anos de dedicação à Odontologia, Dra. Kátia tem uma jornada profissional pautada no compromisso com a excelência. Reconstruir sorrisos é muito mais que corrigir problemas dentários. É devolver confiança e qualidade de vida aos seus pacientes. Com larga experiência em clínica generalista, a assertividade no diagnóstico e planejamento é um diferencial. Especialista em Implantologia pela Faculdade São Leopoldo Mandic, no Rio de Janeiro, e em Prótese Dentária, além de possuir pós-graduação em Ortodontia. Atua na Prevenção Ostensiva dos problemas bucais, sua paixão é entregar tratamentos aliados à educação em autocuidados para a população. Estética Dentária e regeneração tecidual com agregados de células sanguíneas e Alinhadores Invisíveis também fazem parte do cardápio preferencial desta profissional apaixonada pelo que faz.<br/><br/>Acreditamos que um sorriso saudável transforma vidas. A nossa missão é proporcionar cuidados de excelência, num ambiente onde se sinta em casa.",
   "appointmentTitle": "Agendamento",
   "name": "Nome",
   "namePlaceholder": "Digite seu nome",
@@ -64,13 +54,11 @@
   "message": "Mensagem",
   "messagePlaceholder": "Digite sua mensagem",
   "sendMessage": "Enviar Mensagem",
-
   "contactTitle": "Entre em Contacto",
   "phoneLabel": "Telefone",
   "emailLabel": "Email",
   "addressLabel": "Endereço",
   "clinicAddress": "Rua Arquitecto Marques da Silva, 285 - Porto - CP 4159-484",
-
   "footerText": "Registo de ERS: E149237\nLicença Estabelecimento: 19359/2020",
   "scheduleTitle": "Horário de Atendimento",
   "scheduleWeek": "Segunda a Sexta: 9h - 19h",

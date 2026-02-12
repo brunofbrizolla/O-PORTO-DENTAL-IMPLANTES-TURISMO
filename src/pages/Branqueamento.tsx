@@ -1,9 +1,6 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
 import { ArrowRight, Sparkles, Clock, ShieldCheck, Sun } from 'lucide-react';
 
 const Branqueamento = () => {
-    const { t } = useTranslation();
     return (
         <div>
             {/* 1. Hero Section - Cinematic (Matches others but Right Aligned) */}
@@ -20,10 +17,10 @@ const Branqueamento = () => {
                 <div className="relative z-20 max-w-7xl mx-auto px-4 w-full h-full flex items-center">
                     <div className="max-w-3xl text-white pl-4 border-l-4 border-accent animate-slideIn">
                         <span className="text-accent font-bold tracking-[0.2em] uppercase mb-4 block">Estética Facial</span>
-                        <h1 className="text-5xl md:text-7xl font-bold mb-6 font-serif drop-shadow-lg leading-tight">
+                        <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif drop-shadow-lg leading-tight">
                             Branqueamento<br />Dentário
                         </h1>
-                        <p className="text-xl md:text-2xl opacity-90 max-w-xl mb-10 font-light leading-relaxed">
+                        <p className="text-xl md:text-2xl opacity-90 max-w-xl mb-8 font-light leading-relaxed">
                             Recupere a luminosidade natural do seu sorriso com um tratamento seguro, rápido e eficaz.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
@@ -40,9 +37,9 @@ const Branqueamento = () => {
             </section>
 
             {/* 2. O que é (Clean Layout) */}
-            <section className="py-24 bg-white">
+            <section className="py-6 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid md:grid-cols-2 gap-16 items-center">
+                    <div className="grid md:grid-cols-2 gap-10 items-center">
                         <div className="order-2 md:order-1 relative group">
                             <div className="absolute -inset-4 bg-primary/5 rounded-3xl transform rotate-3 transition-transform group-hover:rotate-0 duration-500"></div>
                             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
@@ -58,7 +55,7 @@ const Branqueamento = () => {
                         </div>
                         <div className="order-1 md:order-2">
                             <span className="text-accent font-bold uppercase tracking-wider mb-2 block">O Tratamento</span>
-                            <h2 className="text-4xl font-bold text-primary mb-8 font-serif leading-tight">
+                            <h2 className="text-3xl font-bold text-primary mb-8 font-serif leading-tight">
                                 Ilumine o seu sorriso
                             </h2>
                             <p className="text-gray-600 mb-6 leading-relaxed text-lg">
@@ -73,9 +70,9 @@ const Branqueamento = () => {
             </section>
 
             {/* 3. Vantagens (Clean Cards) */}
-            <section className="py-24 bg-primary-light/30">
+            <section className="py-6 bg-primary-light/30">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-8">
                         <h2 className="text-3xl font-bold text-primary mb-4 font-serif">Porquê branquear connosco?</h2>
                         <p className="text-gray-600">Priorizamos a saúde do seu dente acima de tudo.</p>
                     </div>
@@ -99,7 +96,7 @@ const Branqueamento = () => {
             </section>
 
             {/* 7. CTA Final */}
-            <section id="contact" className="py-24 bg-white text-center">
+            <section id="contact" className="py-6 bg-white text-center">
                 <div className="max-w-4xl mx-auto px-4">
                     <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8 font-serif">
                         O seu sorriso merece brilhar.
