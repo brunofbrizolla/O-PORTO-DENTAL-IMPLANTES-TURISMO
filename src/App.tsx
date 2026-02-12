@@ -59,9 +59,9 @@ function App() {
 
           {/* Navbar */}
           <nav className="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 transition-all duration-300">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-24 items-center">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
               <Link to="/" className="flex items-center group gap-2">
-                <div className="h-20 w-20 overflow-hidden rounded-full border-2 border-primary/10 bg-white flex items-center justify-center shadow-md">
+                <div className="h-12 w-12 overflow-hidden rounded-full border-2 border-primary/10 bg-white flex items-center justify-center shadow-md">
                   <img
                     src="/assets/uploads/logo_header.png"
                     alt="Porto Implantes"

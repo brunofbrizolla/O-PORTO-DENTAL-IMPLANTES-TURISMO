@@ -255,11 +255,11 @@ const ChatBot = () => {
     }
 
     return (
-        <div className={`fixed z-50 transition-all duration-300 ${isMinimized ? 'bottom-24 right-6 w-72' : 'bottom-24 right-4 md:bottom-24 md:right-6 w-[90%] md:w-80'} max-w-[350px]`}>
+        <div className={`fixed z-[60] transition-all duration-300 ${isMinimized ? 'bottom-24 right-6 w-72' : 'bottom-6 right-6 md:bottom-24 md:right-6 w-[90%] md:w-80'} max-w-[350px]`}>
             {isMinimized && (
                 <button
                     onClick={() => setIsOpen(false)}
-                    className="absolute -top-3 -right-3 bg-white text-gray-500 rounded-full p-1 shadow-md hover:bg-red-50 hover:text-red-500 transition-colors z-50"
+                    className="absolute -top-3 -right-3 bg-white text-gray-500 rounded-full p-1 shadow-md hover:bg-red-50 hover:text-red-500 transition-colors z-[60]"
                 >
                     <X className="w-4 h-4" />
                 </button>
