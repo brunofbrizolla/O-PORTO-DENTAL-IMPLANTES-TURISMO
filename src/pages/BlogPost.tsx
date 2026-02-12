@@ -444,12 +444,7 @@ const BlogPost = () => {
 
     const data = postContent[slug as keyof typeof postContent];
 
-    import { blogPosts } from '../data/blogPosts';
-    import { logEvent } from '../utils/analytics';
 
-    // ... (existing imports, keep existing content structure)
-
-    // Helper to get related posts (excluding current)
     const getRelatedPosts = (currentSlug: string | undefined) => {
         if (!currentSlug) return [];
         return blogPosts
