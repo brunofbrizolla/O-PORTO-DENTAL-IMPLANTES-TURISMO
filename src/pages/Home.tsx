@@ -508,6 +508,9 @@ const Home = () => {
                                     <div>
                                         <h4 className="font-bold text-lg">{t('callUs')}</h4>
                                         <p className="opacity-80">+351 912 092 209</p>
+                                        <br />
+                                        <h4 className="font-bold text-lg">{t('emergencyPhone')}</h4>
+                                        <p className="opacity-80">963 086 963</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
