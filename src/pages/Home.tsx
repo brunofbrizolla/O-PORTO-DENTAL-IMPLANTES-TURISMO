@@ -15,6 +15,10 @@ import {
     Heart
 } from 'lucide-react';
 
+import SEO from '../components/SEO';
+import { Helmet } from 'react-helmet-async';
+import { logEvent } from '../utils/analytics';
+
 const Home = () => {
     const { t } = useTranslation();
     const formRef = useRef<HTMLFormElement>(null);
@@ -41,10 +45,11 @@ const Home = () => {
                 'meaA1Ni7_dJtElS0x'
             );
             setShowSuccess(true);
+            logEvent('Contact', 'Form Submission', 'Home Page Appointment');
             setFormData({ name: '', email: '', phone: '', message: '' });
             setTimeout(() => setShowSuccess(false), 5000);
         } catch (err) {
-            setError('Erro ao enviar a mensagem. Por favor, tente novamente.');
+            setError(t('formErrorMessage'));
             console.error('EmailJS Error:', err);
         } finally {
             setIsSubmitting(false);
@@ -56,8 +61,58 @@ const Home = () => {
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
+    const schemaData = {
+        "@context": "https://schema.org",
+        "@type": "Dentist",
+        "name": "Porto Implantes - Dra. Kátia Fragoso",
+        "image": "https://portoimplantes.pt/assets/uploads/logo_header.png",
+        "@id": "https://portoimplantes.pt",
+        "url": "https://portoimplantes.pt",
+        "telephone": "+351912092209",
+        "priceRange": "$$",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rua Arquitecto Marques da Silva, 285",
+            "addressLocality": "Porto",
+            "postalCode": "4150-484",
+            "addressCountry": "PT"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 41.1610424,
+            "longitude": -8.6291605
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "19:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "09:00",
+                "closes": "13:00"
+            }
+        ],
+        "sameAs": [
+            "https://www.facebook.com/katiabritodentaria",
+            "https://www.instagram.com/portoimplantes"
+        ]
+    };
+
     return (
         <>
+            <SEO
+                title={t('metaTitleHome')}
+                description={t('metaDescHome')}
+            />
+            <Helmet>
+                <script type="application/ld+json">
+                    {JSON.stringify(schemaData)}
+                </script>
+            </Helmet>
             {/* Hero Section - Full Screen, Cinematic, Emotional */}
             <section
                 id="home"
@@ -74,27 +129,28 @@ const Home = () => {
                 <div className="relative max-w-7xl mx-auto px-4 h-full flex items-center">
                     <div className="text-white max-w-2xl animate-slideIn pl-4 border-l-4 border-accent">
                         <span className="text-accent font-bold tracking-[0.2em] uppercase mb-4 block text-sm md:text-base">
-                            Excelência em Medicina Dentária
+                            {t('heroSubtitle')}
                         </span>
                         <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif leading-tight">
-                            O Seu Sorriso,<br />A Nossa Paixão
+                            <span dangerouslySetInnerHTML={{ __html: t('heroTitle') }}></span>
                         </h1>
                         <p className="text-xl md:text-2xl mb-8 text-gray-100 font-light max-w-lg leading-relaxed">
-                            Cuidamos da sua saúde oral com tecnologia de ponta e uma equipa dedicada ao seu conforto e bem-estar.
+                            {t('heroText')}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <a
                                 href="#appointment"
+                                onClick={() => logEvent('CTA', 'Hero Appointment Click', 'Home Hero')}
                                 className="flex items-center justify-center px-8 py-4 text-lg font-medium bg-accent hover:bg-white hover:text-primary text-white rounded-full shadow-xl transition-all duration-300 transform hover:scale-105"
                             >
                                 <PhoneCall className="h-5 w-5 mr-3" />
-                                Marcar Consulta
+                                {t('heroCtaAppointment')}
                             </a>
                             <a
                                 href="#services"
                                 className="flex items-center justify-center px-8 py-4 text-lg font-medium border-2 border-white text-white hover:bg-white hover:text-primary rounded-full transition-all duration-300"
                             >
-                                Nossos Tratamentos
+                                {t('heroCtaTreatments')}
                             </a>
                         </div>
                     </div>
@@ -106,9 +162,9 @@ const Home = () => {
                 <div className="absolute top-0 left-0 w-64 h-64 bg-primary/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="text-center mb-8 max-w-3xl mx-auto">
-                        <h2 className="text-3xl font-bold text-primary font-serif mb-6">Porque escolher a Porto Implantes?</h2>
+                        <h2 className="text-3xl font-bold text-primary font-serif mb-6">{t('whyChooseTitle')}</h2>
                         <p className="text-gray-600 text-lg">
-                            Combinamos ciência, arte e tecnologia para lhe oferecer tratamentos personalizados num ambiente acolhedor.
+                            {t('whyChooseSubtitle')}
                         </p>
                     </div>
 
@@ -117,27 +173,27 @@ const Home = () => {
                             <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-md group-hover:bg-accent transition-colors">
                                 <Sparkles className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
                             </div>
-                            <h3 className="text-xl font-bold text-primary mb-4">Tecnologia Avançada</h3>
+                            <h3 className="text-xl font-bold text-primary mb-4">{t('featureTechnology')}</h3>
                             <p className="text-gray-600 leading-relaxed">
-                                Utilizamos os equipamentos mais modernos para diagnósticos precisos e tratamentos minimamente invasivos.
+                                {t('featureTechnologyDesc')}
                             </p>
                         </div>
                         <div className="bg-primary-light/50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 group text-center">
                             <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-md group-hover:bg-accent transition-colors">
                                 <Heart className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
                             </div>
-                            <h3 className="text-xl font-bold text-primary mb-4">Atendimento Humanizado</h3>
+                            <h3 className="text-xl font-bold text-primary mb-4">{t('featureHumanized')}</h3>
                             <p className="text-gray-600 leading-relaxed">
-                                Cada paciente é único. Dedicamos tempo a ouvir as suas necessidades e preocupações.
+                                {t('featureHumanizedDesc')}
                             </p>
                         </div>
                         <div className="bg-primary-light/50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 group text-center">
                             <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-md group-hover:bg-accent transition-colors">
                                 <Award className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
                             </div>
-                            <h3 className="text-xl font-bold text-primary mb-4">Corpo Clínico Especializado</h3>
+                            <h3 className="text-xl font-bold text-primary mb-4">{t('featureSpecialized')}</h3>
                             <p className="text-gray-600 leading-relaxed">
-                                Uma equipa de especialistas em constante formação para lhe garantir os melhores resultados.
+                                {t('featureSpecializedDesc')}
                             </p>
                         </div>
                     </div>
@@ -149,11 +205,11 @@ const Home = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col md:flex-row justify-between items-end mb-8">
                         <div className="max-w-2xl">
-                            <span className="text-accent font-bold uppercase tracking-wider mb-2 block">Especialidades</span>
-                            <h2 className="text-3xl font-bold text-primary font-serif">Tratamentos de Referência</h2>
+                            <span className="text-accent font-bold uppercase tracking-wider mb-2 block">{t('specialtiesSubtitle')}</span>
+                            <h2 className="text-3xl font-bold text-primary font-serif">{t('specialtiesTitle')}</h2>
                         </div>
                         <a href="#appointment" className="hidden md:flex items-center text-primary font-semibold hover:text-accent transition-colors mt-4 md:mt-0">
-                            Marcar uma consulta <ArrowRight className="ml-2 w-5 h-5" />
+                            {t('bookAppointment')} <ArrowRight className="ml-2 w-5 h-5" />
                         </a>
                     </div>
 
@@ -161,14 +217,14 @@ const Home = () => {
                         {/* Implantologia */}
                         <Link to="/implantologia" className="group cursor-pointer">
                             <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl">
-                                <img src="/assets/uploads/doctor_implant_hero_new.jpg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Implantologia" />
+                                <img src="/assets/uploads/doctor_implant_hero_new.jpg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Implantologia" loading="lazy" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8">
-                                    <h3 className="text-3xl font-bold text-white mb-2">Implantologia</h3>
+                                    <h3 className="text-3xl font-bold text-white mb-2">{t('cardImplantTitle')}</h3>
                                     <p className="text-gray-200 mb-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                                        Reabilitação oral completa com implantes dentários de última geração.
+                                        {t('cardImplantDesc')}
                                     </p>
                                     <span className="flex items-center text-accent font-medium group-hover:translate-x-2 transition-transform">
-                                        Saber mais <ArrowRight className="ml-2 w-4 h-4" />
+                                        {t('knowMore')} <ArrowRight className="ml-2 w-4 h-4" />
                                     </span>
                                 </div>
                             </div>
@@ -177,14 +233,14 @@ const Home = () => {
                         {/* Facetas */}
                         <Link to="/facetas" className="group cursor-pointer">
                             <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl">
-                                <img src="/assets/uploads/facetas_hero_new.jpg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Facetas" />
+                                <img src="/assets/uploads/facetas_hero_new.jpg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Facetas" loading="lazy" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8">
-                                    <h3 className="text-3xl font-bold text-white mb-2">Facetas Dentárias</h3>
+                                    <h3 className="text-3xl font-bold text-white mb-2">{t('cardVeneersTitle')}</h3>
                                     <p className="text-gray-200 mb-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                                        Transforme a estética do seu sorriso com porcelana de alta durabilidade.
+                                        {t('cardVeneersDesc')}
                                     </p>
                                     <span className="flex items-center text-accent font-medium group-hover:translate-x-2 transition-transform">
-                                        Saber mais <ArrowRight className="ml-2 w-4 h-4" />
+                                        {t('knowMore')} <ArrowRight className="ml-2 w-4 h-4" />
                                     </span>
                                 </div>
                             </div>
@@ -193,14 +249,14 @@ const Home = () => {
                         {/* Alinhadores */}
                         <Link to="/alinhadores" className="group cursor-pointer">
                             <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl">
-                                <img src="/assets/uploads/alinhadores_hero_new.jpg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Ortodontia" />
+                                <img src="/assets/uploads/alinhadores_hero_new.jpg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Ortodontia" loading="lazy" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8">
-                                    <h3 className="text-3xl font-bold text-white mb-2">Alinhadores Invisíveis</h3>
+                                    <h3 className="text-3xl font-bold text-white mb-2">{t('cardAlignersTitle')}</h3>
                                     <p className="text-gray-200 mb-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                                        Correção dentária discreta e confortável para um sorriso alinhado.
+                                        {t('cardAlignersDesc')}
                                     </p>
                                     <span className="flex items-center text-accent font-medium group-hover:translate-x-2 transition-transform">
-                                        Saber mais <ArrowRight className="ml-2 w-4 h-4" />
+                                        {t('knowMore')} <ArrowRight className="ml-2 w-4 h-4" />
                                     </span>
                                 </div>
                             </div>
@@ -210,10 +266,10 @@ const Home = () => {
                     <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
                         <Link to="/branqueamento" className="group relative bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all flex items-center overflow-hidden">
                             <div className="relative z-10 flex-1">
-                                <h4 className="text-2xl font-bold text-primary mb-2">Branqueamento Dentário</h4>
-                                <p className="text-gray-600 mb-4">Recupere a luminosidade natural dos seus dentes de forma segura.</p>
+                                <h4 className="text-2xl font-bold text-primary mb-2">{t('whitening')}</h4>
+                                <p className="text-gray-600 mb-4">{t('whiteningDescription')}</p>
                                 <span className="text-accent font-medium flex items-center group-hover:translate-x-2 transition-transform">
-                                    Ver detalhes <ArrowRight className="ml-2 w-4 h-4" />
+                                    {t('seeDetails')} <ArrowRight className="ml-2 w-4 h-4" />
                                 </span>
                             </div>
                             <div className="w-24 h-24 bg-primary-light rounded-full flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
@@ -223,10 +279,10 @@ const Home = () => {
 
                         <Link to="/prevencao" className="group relative bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all flex items-center overflow-hidden">
                             <div className="relative z-10 flex-1">
-                                <h4 className="text-2xl font-bold text-primary mb-2">Higiene Oral e Prevenção</h4>
-                                <p className="text-gray-600 mb-4">Check-ups regulares e limpeza profissional para a sua saúde.</p>
+                                <h4 className="text-2xl font-bold text-primary mb-2">{t('preventiveCare')}</h4>
+                                <p className="text-gray-600 mb-4">{t('preventiveCareDescription')}</p>
                                 <span className="text-accent font-medium flex items-center group-hover:translate-x-2 transition-transform">
-                                    Ver detalhes <ArrowRight className="ml-2 w-4 h-4" />
+                                    {t('seeDetails')} <ArrowRight className="ml-2 w-4 h-4" />
                                 </span>
                             </div>
                             <div className="w-24 h-24 bg-primary-light rounded-full flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
@@ -248,6 +304,7 @@ const Home = () => {
                                 <img
                                     src="/assets/uploads/clinic_doctor_desk.jpg"
                                     alt="Dra. Diretora Clínica"
+                                    loading="lazy"
                                     className="relative rounded-3xl shadow-xl object-cover w-full h-auto max-h-[350px] z-10"
                                 />
                             </div>
@@ -256,7 +313,7 @@ const Home = () => {
                         {/* Texto Compacto */}
                         <div className="flex flex-col order-2 lg:order-1 lg:pr-8">
                             <div>
-                                <span className="text-accent font-bold uppercase tracking-wider mb-1 block text-sm">Direção Clínica</span>
+                                <span className="text-accent font-bold uppercase tracking-wider mb-1 block text-sm">{t('clinicDirector')}</span>
                                 <h2 className="text-3xl md:text-3xl font-bold mb-4 text-primary font-serif tight-leading">
                                     {t('aboutTitle')}
                                 </h2>
@@ -267,11 +324,15 @@ const Home = () => {
                                 <div className="flex items-center gap-6 mt-2">
                                     <div className="pl-3 border-l-4 border-accent">
                                         <p className="font-bold text-primary text-2xl">15+</p>
-                                        <p className="text-xs text-gray-500 uppercase tracking-wide">Anos de<br />Experiência</p>
+                                        <p className="text-xs text-gray-500 uppercase tracking-wide">
+                                            <span dangerouslySetInnerHTML={{ __html: t('yearsExperience') }}></span>
+                                        </p>
                                     </div>
                                     <div className="pl-3 border-l-4 border-accent">
                                         <p className="font-bold text-primary text-2xl">5k+</p>
-                                        <p className="text-xs text-gray-500 uppercase tracking-wide">Pacientes<br />Satisfeitos</p>
+                                        <p className="text-xs text-gray-500 uppercase tracking-wide">
+                                            <span dangerouslySetInnerHTML={{ __html: t('satisfiedPatients') }}></span>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -286,18 +347,16 @@ const Home = () => {
                     <div className="grid lg:grid-cols-2 gap-10 items-center">
                         {/* Text Content - Left Side */}
                         <div className="order-1">
-                            <span className="text-accent font-bold uppercase tracking-wider mb-2 block">O Nosso Espaço</span>
+                            <span className="text-accent font-bold uppercase tracking-wider mb-2 block">{t('ourSpaceTitle')}</span>
                             <h2 className="text-4xl md:text-5xl font-bold text-primary font-serif mb-8 leading-tight">
-                                Criado para o seu<br />Conforto e Bem-Estar
+                                <span dangerouslySetInnerHTML={{ __html: t('ourSpaceHeading') }}></span>
                             </h2>
                             <p className="text-gray-600 text-lg leading-loose mb-8 text-justify">
-                                Na Porto Implantes, acreditamos que o ambiente é parte fundamental do tratamento.
-                                <br /><br />
-                                Desenhámos a nossa clínica para ser um refúgio de tranquilidade, longe da frieza dos consultórios tradicionais. Instalações modernas, luminosas e equipadas com tecnologia de ponta, pensadas para que a sua visita seja uma experiência relaxante e acolhedora desde o primeiro momento.
+                                <span dangerouslySetInnerHTML={{ __html: t('ourSpaceDesc') }}></span>
                             </p>
                             <div className="flex gap-4">
                                 <Link to="/implantologia" className="px-8 py-3 bg-primary text-white rounded-full font-medium hover:bg-primary-dark transition-colors shadow-lg">
-                                    Conheça a Clínica
+                                    {t('meetClinic')}
                                 </Link>
                             </div>
                         </div>
@@ -378,7 +437,7 @@ const Home = () => {
                                 {t('appointmentTitle')}
                             </h2>
                             <p className="text-xl mb-8 text-primary-light opacity-90 leading-relaxed">
-                                Agende a sua avaliação e dê o primeiro passo para o sorriso que sempre desejou. Estamos à sua espera.
+                                {t('appointmentSubtitle')}
                             </p>
                             <div className="space-y-6">
                                 <div className="flex items-start gap-4">
@@ -386,7 +445,7 @@ const Home = () => {
                                         <PhoneCall className="w-6 h-6 text-white" />
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-lg">Ligue-nos</h4>
+                                        <h4 className="font-bold text-lg">{t('callUs')}</h4>
                                         <p className="opacity-80">+351 912 092 209</p>
                                     </div>
                                 </div>
@@ -395,7 +454,7 @@ const Home = () => {
                                         <Users className="w-6 h-6 text-white" />
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-lg">Visite-nos</h4>
+                                        <h4 className="font-bold text-lg">{t('visitUs')}</h4>
                                         <p className="opacity-80">Rua Doutor Eduardo Torres 329<br />4450-116 Matosinhos</p>
                                     </div>
                                 </div>
@@ -406,7 +465,7 @@ const Home = () => {
                             {showSuccess && (
                                 <div className="mb-6 bg-green-50 text-green-700 px-6 py-4 rounded-xl flex items-center gap-3 animate-fadeIn">
                                     <CheckCircle2 className="h-5 w-5" />
-                                    <span className="font-medium">Mensagem enviada com sucesso!</span>
+                                    <span className="font-medium">{t('successMessage')}</span>
                                 </div>
                             )}
 
@@ -480,7 +539,7 @@ const Home = () => {
                                     ) : (
                                         <MessageCircleMore className="h-5 w-5" />
                                     )}
-                                    <span>{isSubmitting ? 'A enviar...' : t('sendMessage')}</span>
+                                    <span>{isSubmitting ? t('sending') : t('sendMessage')}</span>
                                 </button>
                             </form>
                         </div>

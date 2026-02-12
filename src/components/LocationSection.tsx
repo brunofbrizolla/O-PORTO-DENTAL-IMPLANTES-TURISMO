@@ -26,12 +26,12 @@ const LocationSection = () => {
                     {/* Right: Contact Info */}
                     <div className="order-1 md:order-2 space-y-8 animate-slideIn">
                         <div>
-                            <span className="text-accent font-bold tracking-[0.2em] uppercase mb-4 block">Localização</span>
+                            <span className="text-accent font-bold tracking-[0.2em] uppercase mb-4 block">{t('locationTag')}</span>
                             <h2 className="text-4xl font-bold text-primary mb-6 font-serif">
-                                Onde Estamos
+                                {t('locationTitle')}
                             </h2>
                             <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                                Visite a nossa clínica no coração do Porto. Um espaço moderno, acolhedor e preparado para cuidar do seu sorriso.
+                                {t('locationDesc')}
                             </p>
                         </div>
 
@@ -41,8 +41,8 @@ const LocationSection = () => {
                                     <MapPin className="w-6 h-6" />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-gray-900 mb-1">Endereço</h3>
-                                    <p className="text-gray-600">Rua Arquitecto Marques da Silva, 285<br />4150-484 Porto, Portugal</p>
+                                    <h3 className="font-bold text-gray-900 mb-1">{t('addressLabel')}</h3>
+                                    <p className="text-gray-600">{t('footerAddressStreet')}<br />{t('footerAddressCity')}</p>
                                 </div>
                             </div>
 
@@ -51,7 +51,7 @@ const LocationSection = () => {
                                     <Phone className="w-6 h-6" />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-gray-900 mb-1">Telefone</h3>
+                                    <h3 className="font-bold text-gray-900 mb-1">{t('phoneLabel')}</h3>
                                     <a href="tel:+351912092209" className="text-gray-600 hover:text-primary transition-colors">+351 912 092 209</a>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@ const LocationSection = () => {
                                     <Mail className="w-6 h-6" />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-gray-900 mb-1">Email</h3>
+                                    <h3 className="font-bold text-gray-900 mb-1">{t('emailLabel')}</h3>
                                     <a href="mailto:contacto@portoimplantes.pt" className="text-gray-600 hover:text-primary transition-colors">contacto@portoimplantes.pt</a>
                                 </div>
                             </div>
@@ -73,7 +73,7 @@ const LocationSection = () => {
                                 className="inline-flex items-center px-8 py-4 bg-accent text-white rounded-full font-bold text-lg shadow-lg hover:bg-primary transition-all duration-300 transform hover:-translate-y-1"
                             >
                                 <Calendar className="mr-3 w-5 h-5" />
-                                Agendar Consulta Agora
+                                {t('locationCta')}
                             </a>
                         </div>
                     </div>

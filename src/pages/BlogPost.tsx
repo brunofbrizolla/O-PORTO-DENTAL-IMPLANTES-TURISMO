@@ -2,8 +2,12 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calendar, User, Clock, Share2, Tag } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { blogPosts } from '../data/blogPosts';
+import { logEvent } from '../utils/analytics';
 
 const BlogPost = () => {
+    const { t } = useTranslation();
     const { slug } = useParams();
 
     // Expanded Content for improved SEO
@@ -440,11 +444,35 @@ const BlogPost = () => {
 
     const data = postContent[slug as keyof typeof postContent];
 
+    import { blogPosts } from '../data/blogPosts';
+    import { logEvent } from '../utils/analytics';
+
+    // ... (existing imports, keep existing content structure)
+
+    // Helper to get related posts (excluding current)
+    const getRelatedPosts = (currentSlug: string | undefined) => {
+        if (!currentSlug) return [];
+        return blogPosts
+            .filter(post => post.slug !== currentSlug)
+            .sort(() => 0.5 - Math.random()) // Simple shuffle
+            .slice(0, 3);
+    };
+
+    const relatedPosts = getRelatedPosts(slug);
+
+    // Track page view for blog post content
+    React.useEffect(() => {
+        if (data) {
+            logEvent('Blog', 'Read Article', data.title);
+        }
+    }, [data]);
+
+
     if (!data) {
         return (
             <div className="pt-32 text-center pb-20">
-                <h1 className="text-2xl font-bold">Artigo não encontrado</h1>
-                <Link to="/blog" className="text-primary hover:underline mt-4 block">Voltar ao Blog</Link>
+                <h1 className="text-2xl font-bold">{t('articleNotFound')}</h1>
+                <Link to="/blog" className="text-primary hover:underline mt-4 block">{t('backToBlog')}</Link>
             </div>
         );
     }
@@ -465,7 +493,7 @@ const BlogPost = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                     <div className="absolute bottom-0 left-0 w-full p-6 md:p-16 text-white max-w-5xl mx-auto">
                         <Link to="/blog" className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors group">
-                            <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" /> Voltar ao Blog
+                            <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" /> {t('backToBlog')}
                         </Link>
                         <div className="flex flex-wrap gap-4 mb-4">
                             <span className="bg-accent text-white px-3 py-1 rounded-full text-sm font-bold uppercase tracking-wider flex items-center shadow-lg">
@@ -478,7 +506,7 @@ const BlogPost = () => {
                         <div className="flex flex-wrap items-center text-sm md:text-base text-gray-200 space-x-6 gap-y-2">
                             <div className="flex items-center"><Calendar className="w-5 h-5 mr-2" /> <span itemProp="datePublished">{data.date}</span></div>
                             <div className="flex items-center"><User className="w-5 h-5 mr-2" /> <span itemProp="author">{data.author}</span></div>
-                            <div className="flex items-center"><Clock className="w-5 h-5 mr-2" /> {data.readTime} leitura</div>
+                            <div className="flex items-center"><Clock className="w-5 h-5 mr-2" /> {data.readTime} {t('readingTime')}</div>
                         </div>
                     </div>
                 </div>
@@ -491,10 +519,11 @@ const BlogPost = () => {
 
                     {/* Share / Footer */}
                     <div className="mt-16 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
-                        <span className="font-bold text-primary text-lg">Achou este artigo útil?</span>
+                        <span className="font-bold text-primary text-lg">{t('usefulArticle')}</span>
                         <div className="flex space-x-4">
                             <button
                                 onClick={() => {
+                                    logEvent('Blog', 'Share Click', data.title);
                                     if (navigator.share) {
                                         navigator.share({
                                             title: data.title,
@@ -502,17 +531,59 @@ const BlogPost = () => {
                                         }).catch(console.error);
                                     } else {
                                         navigator.clipboard.writeText(window.location.href);
-                                        alert('Link copiado!');
+                                        alert(t('linkCopied'));
                                     }
                                 }}
                                 className="flex items-center bg-gray-100 hover:bg-accent hover:text-white px-6 py-3 rounded-full transition-all duration-300 font-medium"
                             >
-                                <Share2 className="w-5 h-5 mr-2" /> Partilhar Artigo
+                                <Share2 className="w-5 h-5 mr-2" /> {t('shareArticle')}
                             </button>
                         </div>
                     </div>
                 </div>
             </article>
+
+            {/* Related Articles Section */}
+            <section className="bg-gray-50 py-16 border-t border-gray-200">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h3 className="text-3xl font-bold text-primary mb-10 font-serif text-center">{t('relatedArticles')}</h3>
+                    <div className="grid md:grid-cols-3 gap-8">
+                        {relatedPosts.map((post) => (
+                            <div key={post.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col group h-full">
+                                <Link to={`/blog/${post.slug}`} onClick={() => logEvent('Blog', 'Related Article Click', post.title)} className="block h-full flex flex-col">
+                                    <div className="relative h-48 overflow-hidden">
+                                        <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors z-10"></div>
+                                        <img
+                                            src={post.image}
+                                            alt={post.title}
+                                            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                            loading="lazy"
+                                        />
+                                        <span className="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider z-20">
+                                            {post.category}
+                                        </span>
+                                    </div>
+                                    <div className="p-6 flex flex-col flex-1">
+                                        <div className="flex items-center text-xs text-gray-500 mb-3 space-x-4">
+                                            <div className="flex items-center"><Calendar className="w-3 h-3 mr-1" /> {post.date}</div>
+                                            <div className="flex items-center"><Clock className="w-3 h-3 mr-1" /> {post.readTime}</div>
+                                        </div>
+                                        <h4 className="text-xl font-bold text-primary mb-3 font-serif leading-tight group-hover:text-accent transition-colors line-clamp-2">
+                                            {post.title}
+                                        </h4>
+                                        <p className="text-gray-600 mb-4 line-clamp-3 text-sm flex-1">
+                                            {post.excerpt}
+                                        </p>
+                                        <div className="mt-auto flex items-center text-accent font-bold text-sm">
+                                            {t('readMore')} <ArrowLeft className="w-4 h-4 ml-1 rotate-180" />
+                                        </div>
+                                    </div>
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
         </div>
     );
 };
