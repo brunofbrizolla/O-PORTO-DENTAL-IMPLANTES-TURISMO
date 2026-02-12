@@ -15,7 +15,7 @@ const Branqueamento = () => {
             {/* 1. Hero Section - Cinematic (Standard Left Aligned) */}
             <section className="relative h-screen flex items-center bg-gray-900 overflow-hidden">
                 <div
-                    className="absolute inset-0 bg-cover bg-center"
+                    className="absolute inset-0 bg-cover bg-[70%_center] md:bg-center"
                     style={{ backgroundImage: 'url("/assets/uploads/branqueamento_hero_v2.png")' }}
                 ></div>
 

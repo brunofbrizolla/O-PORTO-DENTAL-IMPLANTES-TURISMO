@@ -55,7 +55,7 @@ const Implantologia = () => {
             {/* 1. Hero Section - Full Screen & Cinematic (Preserved as requested) */}
             <section className="relative h-screen flex items-center justify-end bg-gray-900 overflow-hidden">
                 <div
-                    className="absolute inset-0 bg-cover bg-center"
+                    className="absolute inset-0 bg-cover bg-[30%_center] md:bg-center"
                     style={{
                         backgroundImage: 'url("/assets/uploads/doctor_implant_hero_new.jpg")'
                     }}

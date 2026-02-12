@@ -116,10 +116,9 @@ const Home = () => {
             {/* Hero Section - Full Screen, Cinematic, Emotional */}
             <section
                 id="home"
-                className="relative h-screen bg-cover bg-center animate-fadeIn"
+                className="relative h-screen bg-cover animate-fadeIn bg-[70%_center] md:bg-[center_top]"
                 style={{
                     backgroundImage: 'url("/assets/uploads/home_hero_new.jpg")',
-                    backgroundPosition: 'center top',
                     backgroundAttachment: 'fixed'
                 }}
             >
