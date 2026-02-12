@@ -23,18 +23,18 @@ const Branqueamento = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10"></div>
 
                 <div className="relative z-20 max-w-7xl mx-auto px-4 w-full h-full flex items-center">
-                    <div className="max-w-3xl text-white pl-4 border-l-4 border-accent animate-slideIn">
-                        <span className="text-accent font-bold tracking-[0.2em] uppercase mb-4 block">{t('whiteningHeroSubtitle')}</span>
-                        <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif drop-shadow-lg leading-tight">
+                    <div className="max-w-2xl text-white pl-4 border-l-4 border-accent animate-slideIn">
+                        <span className="text-accent font-bold tracking-[0.2em] uppercase mb-4 block text-sm">{t('whiteningHeroSubtitle')}</span>
+                        <h1 className="text-3xl md:text-5xl font-bold mb-6 font-serif drop-shadow-lg leading-tight">
                             <span dangerouslySetInnerHTML={{ __html: t('whiteningHeroTitle') }} />
                         </h1>
-                        <p className="text-xl md:text-2xl opacity-90 max-w-xl mb-8 font-light leading-relaxed">
+                        <p className="text-lg md:text-xl opacity-90 max-w-lg mb-8 font-light leading-relaxed">
                             {t('whiteningHeroText')}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <a
                                 href="#contact"
-                                className="inline-flex items-center justify-center px-10 py-5 bg-accent text-white rounded-full font-bold text-lg shadow-lg hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105"
+                                className="inline-flex items-center justify-center px-8 py-4 bg-accent text-white rounded-full font-bold text-base shadow-lg hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105"
                             >
                                 <Sun className="mr-3 w-5 h-5" />
                                 {t('whiteningCta')}

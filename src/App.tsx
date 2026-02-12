@@ -220,7 +220,10 @@ function App() {
                       <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mr-3 group-hover:bg-accent transition-colors">
                         <Phone className="h-4 w-4" />
                       </div>
-                      <span className="text-primary-light/80 group-hover:text-white transition-colors">+351 912 092 209</span>
+                      <div>
+                        <span className="text-primary-light/80 group-hover:text-white transition-colors block">+351 912 092 209</span>
+                        <span className="text-primary-light/60 text-xs group-hover:text-white transition-colors block mt-1">{t('emergencyPhone')}: 963 086 963</span>
+                      </div>
                     </a>
                     <a href="mailto:contacto@portoimplantes.pt" onClick={() => logEvent('Contact', 'Email Click', 'Footer')} className="flex items-center group">
                       <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mr-3 group-hover:bg-accent transition-colors">

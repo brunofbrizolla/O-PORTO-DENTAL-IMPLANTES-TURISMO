@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { MapPin, Phone, Mail, Calendar } from 'lucide-react';
 
@@ -52,7 +52,10 @@ const LocationSection = () => {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-gray-900 mb-1">{t('phoneLabel')}</h3>
-                                    <a href="tel:+351912092209" className="text-gray-600 hover:text-primary transition-colors">+351 912 092 209</a>
+                                    <a href="tel:+351912092209" className="text-gray-600 hover:text-primary transition-colors block mb-3">+351 912 092 209</a>
+
+                                    <h3 className="font-bold text-gray-900 mb-1">{t('emergencyPhone')}</h3>
+                                    <a href="tel:+351963086963" className="text-gray-600 hover:text-primary transition-colors">963 086 963</a>
                                 </div>
                             </div>
 

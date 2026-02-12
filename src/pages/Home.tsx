@@ -126,28 +126,28 @@ const Home = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
 
                 <div className="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-                    <div className="text-white max-w-2xl animate-slideIn pl-4 border-l-4 border-accent">
-                        <span className="text-accent font-bold tracking-[0.2em] uppercase mb-4 block text-sm md:text-base">
+                    <div className="text-white max-w-xl animate-slideIn pl-4 border-l-4 border-accent">
+                        <span className="text-accent font-bold tracking-[0.2em] uppercase mb-4 block text-xs md:text-sm">
                             {t('heroSubtitle')}
                         </span>
-                        <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif leading-tight">
+                        <h1 className="text-3xl md:text-5xl font-bold mb-6 font-serif leading-tight">
                             <span dangerouslySetInnerHTML={{ __html: t('heroTitle') }}></span>
                         </h1>
-                        <p className="text-xl md:text-2xl mb-8 text-gray-100 font-light max-w-lg leading-relaxed">
+                        <p className="text-lg md:text-xl mb-8 text-gray-100 font-light max-w-md leading-relaxed">
                             {t('heroText')}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <a
                                 href="#appointment"
                                 onClick={() => logEvent('CTA', 'Hero Appointment Click', 'Home Hero')}
-                                className="flex items-center justify-center px-8 py-4 text-lg font-medium bg-accent hover:bg-white hover:text-primary text-white rounded-full shadow-xl transition-all duration-300 transform hover:scale-105"
+                                className="flex items-center justify-center px-6 py-3 text-base font-medium bg-accent hover:bg-white hover:text-primary text-white rounded-full shadow-xl transition-all duration-300 transform hover:scale-105"
                             >
                                 <PhoneCall className="h-5 w-5 mr-3" />
                                 {t('heroCtaAppointment')}
                             </a>
                             <a
                                 href="#services"
-                                className="flex items-center justify-center px-8 py-4 text-lg font-medium border-2 border-white text-white hover:bg-white hover:text-primary rounded-full transition-all duration-300"
+                                className="flex items-center justify-center px-6 py-3 text-base font-medium border-2 border-white text-white hover:bg-white hover:text-primary rounded-full transition-all duration-300"
                             >
                                 {t('heroCtaTreatments')}
                             </a>
