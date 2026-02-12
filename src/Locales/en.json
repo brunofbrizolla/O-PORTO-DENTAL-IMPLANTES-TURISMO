@@ -304,5 +304,66 @@
   "metaDescPrevention": "Oral hygiene appointments and dental check-ups in Porto. Prevention of cavities and gum diseases for a healthy smile.",
   "preventiveCare": "Prevention and Cleaning",
   "preventiveCareDescription": "Regular check-ups and professional cleaning to keep your smile healthy.",
-  "relatedArticles": "Related Articles"
+  "relatedArticles": "Related Articles",
+  "chat": {
+    "greetingPrincipal": "Hello! 👋 I'm Porto Implantes' virtual assistant.",
+    "greetingName": "Nice to meet you, {{name}}! 😊 How can I help you today?",
+    "helpQuestion": "Hi! Can I help you?",
+    "online": "Online Now",
+    "agentName": "Sofia",
+    "typing": "Typing...",
+    "menu": {
+      "treatments": "Learn about Treatments",
+      "contact": "Talk to the Team"
+    },
+    "treatments": {
+      "prompt": "Excellent! Which treatment would you like to know more about?",
+      "implants": {
+        "title": "Dental Implants",
+        "text": "Implants replace the tooth root and support a prosthesis. Recommended for those who have lost one or more teeth, restoring function and aesthetics naturally."
+      },
+      "veneers": {
+        "title": "Dental Veneers",
+        "text": "Thin porcelain or resin shells applied over teeth. They correct color, shape, and size, providing a harmonious and bright smile."
+      },
+      "aligners": {
+        "title": "Invisible Aligners",
+        "text": "Transparent and removable devices to align teeth discreetly. They offer more comfort and aesthetics than traditional braces."
+      },
+      "whitening": {
+        "title": "Whitening",
+        "text": "Safe procedure to whiten teeth, removing stains and yellowing, ensuring a younger and brighter smile."
+      },
+      "prevention": {
+        "title": "Prevention and Cleaning",
+        "text": "Oral health maintenance with professional cleaning, scaling, and complete check-up to avoid future problems."
+      }
+    },
+    "flow": {
+      "askMore": "Would you like more information about this treatment?",
+      "askOther": "No problem! Which other treatment would you like to know about?",
+      "askContact": "Certainly. Please leave your contact (WhatsApp or Email) so our team can get in touch with you shortly.",
+      "askContactSpecific": "Understood. To explain better, please leave your contact (WhatsApp or Email):",
+      "askContactYes": "Perfect! What is your WhatsApp number or Email? Our team will contact you to answer all questions.",
+      "confirmSend": "Thank you! Can I send this data to Dr. Kátia for analysis and for us to return the contact?",
+      "sending": "Sending your information... ⏳",
+      "success": "We received your message! ✅ Our team will contact you very soon.",
+      "error": "There was an error sending. Please try again or use WhatsApp."
+    },
+    "options": {
+      "yes": "Yes, I want to know more",
+      "others": "See other treatments",
+      "send": "Yes, send",
+      "implants": "Implants",
+      "veneers": "Veneers",
+      "aligners": "Aligners",
+      "whitening": "Whitening",
+      "prevention": "Prevention"
+    },
+    "input": {
+      "name": "Enter your name...",
+      "contact": "Your phone or email...",
+      "message": "Type your message..."
+    }
+  }
 }

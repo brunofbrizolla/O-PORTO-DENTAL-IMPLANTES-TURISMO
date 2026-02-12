@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, User, ChevronDown, Minimize2 } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import { useTranslation } from 'react-i18next';
 
 interface Message {
     id: number;
@@ -16,39 +17,47 @@ interface UserData {
     interest: string;
 }
 
-const TREATMENTS = {
-    'implantes': {
-        title: 'Implantes Dentários',
-        text: 'Os implantes substituem a raiz do dente e dão suporte a uma prótese. São indicados para quem perdeu um ou mais dentes, devolvendo a função e estética com naturalidade.'
-    },
-    'facetas': {
-        title: 'Facetas Dentárias',
-        text: 'Lâminas finas de porcelana ou resina aplicadas sobre os dentes. Corrigem a cor, formato e tamanho, proporcionando um sorriso harmonioso e brilhante.'
-    },
-    'alinhadores': {
-        title: 'Alinhadores Invisíveis',
-        text: 'Aparelhos transparentes e removíveis para alinhar os dentes discretamente. Oferecem mais conforto e estética do que os aparelhos tradicionais.'
-    },
-    'branqueamento': {
-        title: 'Branqueamento',
-        text: 'Procedimento seguro para clarear os dentes, removendo manchas e o amarelado, garantindo um sorriso mais jovem e iluminado.'
-    },
-    'prevencao': {
-        title: 'Prevenção e Limpeza',
-        text: 'Manutenção da saúde oral com limpeza profissional, destartarização e check-up completo para evitar problemas futuros.'
-    }
-};
-
 const ChatBot = () => {
+    const { t } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
     const [isMinimized, setIsMinimized] = useState(false);
     const [messages, setMessages] = useState<Message[]>([
-        { id: 1, text: "Olá! 👋 Sou a assistente virtual da Porto Implantes.", sender: 'bot' },
+        { id: 1, text: t('chat.greetingPrincipal'), sender: 'bot' },
     ]);
     const [inputValue, setInputValue] = useState('');
     const [step, setStep] = useState<'GREETING' | 'NAME' | 'MENU' | 'TREATMENTS' | 'EXPLAIN' | 'CONTACT' | 'CONFIRM' | 'SENDING' | 'SUCCESS'>('GREETING');
     const [userData, setUserData] = useState<UserData>({ name: '', contact: '', interest: 'Geral' });
     const messagesEndRef = useRef<HTMLDivElement>(null);
+
+    const TREATMENTS = {
+        'implantes': {
+            title: t('chat.treatments.implants.title'),
+            text: t('chat.treatments.implants.text')
+        },
+        'facetas': {
+            title: t('chat.treatments.veneers.title'),
+            text: t('chat.treatments.veneers.text')
+        },
+        'alinhadores': {
+            title: t('chat.treatments.aligners.title'),
+            text: t('chat.treatments.aligners.text')
+        },
+        'branqueamento': {
+            title: t('chat.treatments.whitening.title'),
+            text: t('chat.treatments.whitening.text')
+        },
+        'prevencao': {
+            title: t('chat.treatments.prevention.title'),
+            text: t('chat.treatments.prevention.text')
+        }
+    };
+
+    // Update initial message when language changes if it's the only message
+    useEffect(() => {
+        if (messages.length === 1 && messages[0].sender === 'bot') {
+            setMessages([{ id: 1, text: t('chat.greetingPrincipal'), sender: 'bot' }]);
+        }
+    }, [t]);
 
     // Auto-scroll
     useEffect(() => {
@@ -80,22 +89,28 @@ const ChatBot = () => {
         const lowerInput = input.toLowerCase();
 
         // Global Navigation / Intents (To allow changing mind at any step)
-        if (lowerInput.includes('conhecer tratamentos') || lowerInput === 'tratamentos') {
+        if (lowerInput.includes('conhecer tratamentos') ||
+            lowerInput.includes('learn about treatments') ||
+            lowerInput === 'tratamentos' ||
+            lowerInput === 'treatments') {
             setStep('TREATMENTS');
-            addBotMessage("Excelente! Sobre qual tratamento gostaria de saber mais?", [
-                { label: 'Implantes', value: 'implantes' },
-                { label: 'Facetas', value: 'facetas' },
-                { label: 'Alinhadores', value: 'alinhadores' },
-                { label: 'Branqueamento', value: 'branqueamento' },
-                { label: 'Prevenção', value: 'prevencao' }
+            addBotMessage(t('chat.treatments.prompt'), [
+                { label: t('chat.options.implants'), value: 'implantes' },
+                { label: t('chat.options.veneers'), value: 'facetas' },
+                { label: t('chat.options.aligners'), value: 'alinhadores' },
+                { label: t('chat.options.whitening'), value: 'branqueamento' },
+                { label: t('chat.options.prevention'), value: 'prevencao' }
             ]);
             return;
         }
 
-        if (lowerInput.includes('falar com a equipa') || lowerInput === 'contacto' || lowerInput === 'contact') {
+        if (lowerInput.includes('falar com a equipa') ||
+            lowerInput.includes('talk to the team') ||
+            lowerInput === 'contacto' ||
+            lowerInput === 'contact') {
             setStep('CONTACT');
             setUserData(prev => ({ ...prev, interest: 'Contacto Geral' }));
-            addBotMessage("Com certeza. Por favor, deixe o seu contacto (WhatsApp ou Email) para que a nossa equipa possa entrar em contacto consigo brevemente.");
+            addBotMessage(t('chat.flow.askContact'));
             return;
         }
 
@@ -104,73 +119,80 @@ const ChatBot = () => {
                 // Logic handled in startFlow/Initial, usually waiting for NAME
                 setUserData(prev => ({ ...prev, name: input }));
                 setStep('MENU');
-                addBotMessage(`Muito prazer, ${input}! 😊 Como posso ajudar hoje?`, [
-                    { label: 'Conhecer Tratamentos', value: 'tratamentos' },
-                    { label: 'Falar com a Equipa', value: 'contacto' }
+                addBotMessage(t('chat.greetingName', { name: input }), [
+                    { label: t('chat.menu.treatments'), value: 'tratamentos' },
+                    { label: t('chat.menu.contact'), value: 'contacto' }
                 ]);
                 break;
 
             case 'MENU':
                 // Logic handled by Global Check primarily, but kept for fallback
-                if (input.toLowerCase().includes('tratamento')) {
+                if (input.toLowerCase().includes('tratamento') || input.toLowerCase().includes('treatment')) {
                     setStep('TREATMENTS');
-                    addBotMessage("Excelente! Sobre qual tratamento gostaria de saber mais?", [
-                        { label: 'Implantes', value: 'implantes' },
-                        { label: 'Facetas', value: 'facetas' },
-                        { label: 'Alinhadores', value: 'alinhadores' },
-                        { label: 'Branqueamento', value: 'branqueamento' },
-                        { label: 'Prevenção', value: 'prevencao' }
+                    addBotMessage(t('chat.treatments.prompt'), [
+                        { label: t('chat.options.implants'), value: 'implantes' },
+                        { label: t('chat.options.veneers'), value: 'facetas' },
+                        { label: t('chat.options.aligners'), value: 'alinhadores' },
+                        { label: t('chat.options.whitening'), value: 'branqueamento' },
+                        { label: t('chat.options.prevention'), value: 'prevencao' }
                     ]);
                 } else {
                     setStep('CONTACT');
                     setUserData(prev => ({ ...prev, interest: 'Contacto Geral' }));
-                    addBotMessage("Com certeza. Por favor, deixe o seu contacto (WhatsApp ou Email) para que a nossa equipa possa entrar em contacto consigo brevemente.");
+                    addBotMessage(t('chat.flow.askContact'));
                 }
                 break;
 
             case 'TREATMENTS':
-                const key = Object.keys(TREATMENTS).find(k => input.toLowerCase().includes(k)) as keyof typeof TREATMENTS | undefined;
+                // Check both Portuguese and English keywords
+                let key: keyof typeof TREATMENTS | undefined;
+                if (lowerInput.includes('implant')) key = 'implantes';
+                else if (lowerInput.includes('faceta') || lowerInput.includes('veneer')) key = 'facetas';
+                else if (lowerInput.includes('alinhador') || lowerInput.includes('aligner')) key = 'alinhadores';
+                else if (lowerInput.includes('branqueamento') || lowerInput.includes('whiten')) key = 'branqueamento';
+                else if (lowerInput.includes('preven') || lowerInput.includes('clean')) key = 'prevencao';
+
                 if (key) {
                     setUserData(prev => ({ ...prev, interest: TREATMENTS[key].title }));
                     setStep('EXPLAIN');
                     addBotMessage(TREATMENTS[key].text);
                     setTimeout(() => {
-                        addBotMessage("Gostaria de receber mais informações sobre este tratamento?", [
-                            { label: 'Sim, quero saber mais', value: 'sim' },
-                            { label: 'Ver outros tratamentos', value: 'outros' }
+                        addBotMessage(t('chat.flow.askMore'), [
+                            { label: t('chat.options.yes'), value: 'sim' },
+                            { label: t('chat.options.others'), value: 'outros' }
                         ]);
                     }, 1000);
                 } else {
                     // Fallback or "Outros"
-                    if (input.toLowerCase().includes('outros')) {
-                        addBotMessage("Sem problemas! Sobre qual outro tratamento gostaria de saber?", [
-                            { label: 'Implantes', value: 'implantes' },
-                            { label: 'Facetas', value: 'facetas' },
-                            { label: 'Alinhadores', value: 'alinhadores' },
-                            { label: 'Branqueamento', value: 'branqueamento' },
-                            { label: 'Prevenção', value: 'prevencao' }
+                    if (lowerInput.includes('outros') || lowerInput.includes('other')) {
+                        addBotMessage(t('chat.flow.askOther'), [
+                            { label: t('chat.options.implants'), value: 'implantes' },
+                            { label: t('chat.options.veneers'), value: 'facetas' },
+                            { label: t('chat.options.aligners'), value: 'alinhadores' },
+                            { label: t('chat.options.whitening'), value: 'branqueamento' },
+                            { label: t('chat.options.prevention'), value: 'prevencao' }
                         ]);
                         return;
                     }
 
                     setStep('CONTACT');
                     setUserData(prev => ({ ...prev, interest: input }));
-                    addBotMessage("Entendi. Para explicar melhor, deixe o seu contacto (WhatsApp ou Email):");
+                    addBotMessage(t('chat.flow.askContactSpecific'));
                 }
                 break;
 
             case 'EXPLAIN':
-                if (input.toLowerCase().includes('sim') || input.toLowerCase().includes('quero')) {
+                if (lowerInput.includes('sim') || lowerInput.includes('quero') || lowerInput.includes('yes') || lowerInput.includes('want')) {
                     setStep('CONTACT');
-                    addBotMessage("Perfeito! Qual é o seu número de WhatsApp ou Email? A nossa equipa entrará em contacto consigo para esclarecer todas as dúvidas.");
+                    addBotMessage(t('chat.flow.askContactYes'));
                 } else {
                     setStep('TREATMENTS');
-                    addBotMessage("Sem problemas! Sobre qual outro tratamento gostaria de saber?", [
-                        { label: 'Implantes', value: 'implantes' },
-                        { label: 'Facetas', value: 'facetas' },
-                        { label: 'Alinhadores', value: 'alinhadores' },
-                        { label: 'Branqueamento', value: 'branqueamento' },
-                        { label: 'Prevenção', value: 'prevencao' }
+                    addBotMessage(t('chat.flow.askOther'), [
+                        { label: t('chat.options.implants'), value: 'implantes' },
+                        { label: t('chat.options.veneers'), value: 'facetas' },
+                        { label: t('chat.options.aligners'), value: 'alinhadores' },
+                        { label: t('chat.options.whitening'), value: 'branqueamento' },
+                        { label: t('chat.options.prevention'), value: 'prevencao' }
                     ]);
                 }
                 break;
@@ -178,13 +200,13 @@ const ChatBot = () => {
             case 'CONTACT':
                 setUserData(prev => ({ ...prev, contact: input }));
                 setStep('CONFIRM');
-                addBotMessage("Obrigada! Posso enviar estes dados para a Dra. Kátia analisar e retornarmos o contacto?", [
-                    { label: 'Sim, enviar', value: 'enviar' }
+                addBotMessage(t('chat.flow.confirmSend'), [
+                    { label: t('chat.options.send'), value: 'enviar' }
                 ]);
                 break;
 
             case 'CONFIRM':
-                if (input.toLowerCase().includes('sim') || input.toLowerCase().includes('enviar')) {
+                if (lowerInput.includes('sim') || lowerInput.includes('enviar') || lowerInput.includes('yes') || lowerInput.includes('send')) {
                     await sendEmail();
                 }
                 break;
@@ -193,14 +215,14 @@ const ChatBot = () => {
 
     const startFlow = () => {
         if (messages.length === 1) {
-            addBotMessage("Seja bem-vindo(a)! Para começarmos, qual é o seu nome?");
+            addBotMessage(t('chat.input.name'));
             setStep('GREETING');
         }
     };
 
     const sendEmail = async () => {
         setStep('SENDING');
-        addBotMessage("A enviar as suas informações... ⏳");
+        addBotMessage(t('chat.flow.sending'));
 
         try {
             // Build Transcript
@@ -222,11 +244,11 @@ const ChatBot = () => {
                 'meaA1Ni7_dJtElS0x'
             );
 
-            addBotMessage("Recebemos a sua mensagem! ✅ A nossa equipa entrará em contacto consigo muito em breve.");
+            addBotMessage(t('chat.flow.success'));
             setStep('SUCCESS');
         } catch (error) {
             console.error('Erro ao enviar:', error);
-            addBotMessage("Houve um erro ao enviar. Por favor, tente novamente ou utilize o WhatsApp.");
+            addBotMessage(t('chat.flow.error'));
             setStep('CONFIRM');
         }
     };
@@ -235,7 +257,7 @@ const ChatBot = () => {
         return (
             <div className="fixed bottom-24 right-6 z-50 flex flex-col items-end gap-2 group animate-fadeIn">
                 <div className="bg-white px-4 py-2 rounded-xl shadow-xl mb-2 mr-2 relative animate-bounce-slow origin-bottom-right">
-                    <p className="text-sm font-medium text-gray-700">Olá! Posso ajudar?</p>
+                    <p className="text-sm font-medium text-gray-700">{t('chat.helpQuestion')}</p>
                     <div className="absolute -bottom-2 right-4 w-4 h-4 bg-white transform rotate-45"></div>
                 </div>
 
@@ -278,10 +300,10 @@ const ChatBot = () => {
                             <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 rounded-full border-2 border-primary"></div>
                         </div>
                         <div>
-                            <h3 className="font-bold text-sm leading-tight">Sofia</h3>
+                            <h3 className="font-bold text-sm leading-tight">{t('chat.agentName')}</h3>
                             <div className="flex items-center gap-1">
                                 <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
-                                <p className="text-[10px] text-primary-light/90 uppercase tracking-wide font-medium">Online Agora</p>
+                                <p className="text-[10px] text-primary-light/90 uppercase tracking-wide font-medium">{t('chat.online')}</p>
                             </div>
                         </div>
                     </div>
@@ -343,9 +365,10 @@ const ChatBot = () => {
                                     value={inputValue}
                                     onChange={(e) => setInputValue(e.target.value)}
                                     onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                                    placeholder={step === 'NAME' ? "Digite o seu nome..." : step === 'CONTACT' ? "O seu telemóvel ou email..." : "Digite a sua mensagem..."}
+                                    placeholder={step === 'NAME' ? t('chat.input.name') : step === 'CONTACT' ? t('chat.input.contact') : t('chat.input.message')}
                                     className="flex-1 bg-transparent outline-none text-sm text-gray-700"
                                     disabled={step === 'SENDING' || step === 'SUCCESS'}
+                                // Remove 'required' if it was present implicitly, just standard input
                                 />
                                 <button
                                     onClick={() => handleSendMessage()}

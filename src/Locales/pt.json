@@ -304,5 +304,66 @@
   "metaDescPrevention": "Consultas de higiene oral e check-up dentário no Porto. Prevenção de cáries e doenças gengivais para um sorriso saudável.",
   "preventiveCare": "Prevenção e Limpeza",
   "preventiveCareDescription": "Check-ups regulares e limpezas profissionais para manter o seu sorriso saudável.",
-  "relatedArticles": "Artigos Relacionados"
+  "relatedArticles": "Artigos Relacionados",
+  "chat": {
+    "greetingPrincipal": "Olá! 👋 Sou a assistente virtual da Porto Implantes.",
+    "greetingName": "Muito prazer, {{name}}! 😊 Como posso ajudar hoje?",
+    "helpQuestion": "Olá! Posso ajudar?",
+    "online": "Online Agora",
+    "agentName": "Sofia",
+    "typing": "A escrever...",
+    "menu": {
+      "treatments": "Conhecer Tratamentos",
+      "contact": "Falar com a Equipa"
+    },
+    "treatments": {
+      "prompt": "Excelente! Sobre qual tratamento gostaria de saber mais?",
+      "implants": {
+        "title": "Implantes Dentários",
+        "text": "Os implantes substituem a raiz do dente e dão suporte a uma prótese. São indicados para quem perdeu um ou mais dentes, devolvendo a função e estética com naturalidade."
+      },
+      "veneers": {
+        "title": "Facetas Dentárias",
+        "text": "Lâminas finas de porcelana ou resina aplicadas sobre os dentes. Corrigem a cor, formato e tamanho, proporcionando um sorriso harmonioso e brilhante."
+      },
+      "aligners": {
+        "title": "Alinhadores Invisíveis",
+        "text": "Aparelhos transparentes e removíveis para alinhar os dentes discretamente. Oferecem mais conforto e estética do que os aparelhos tradicionais."
+      },
+      "whitening": {
+        "title": "Branqueamento",
+        "text": "Procedimento seguro para clarear os dentes, removendo manchas e o amarelado, garantindo um sorriso mais jovem e iluminado."
+      },
+      "prevention": {
+        "title": "Prevenção e Limpeza",
+        "text": "Manutenção da saúde oral com limpeza profissional, destartarização e check-up completo para evitar problemas futuros."
+      }
+    },
+    "flow": {
+      "askMore": "Gostaria de receber mais informações sobre este tratamento?",
+      "askOther": "Sem problemas! Sobre qual outro tratamento gostaria de saber?",
+      "askContact": "Com certeza. Por favor, deixe o seu contacto (WhatsApp ou Email) para que a nossa equipa possa entrar em contacto consigo brevemente.",
+      "askContactSpecific": "Entendi. Para explicar melhor, deixe o seu contacto (WhatsApp ou Email):",
+      "askContactYes": "Perfeito! Qual é o seu número de WhatsApp ou Email? A nossa equipa entrará em contacto consigo para esclarecer todas as dúvidas.",
+      "confirmSend": "Obrigada! Posso enviar estes dados para a Dra. Kátia analisar e retornarmos o contacto?",
+      "sending": "A enviar as suas informações... ⏳",
+      "success": "Recebemos a sua mensagem! ✅ A nossa equipa entrará em contacto consigo muito em breve.",
+      "error": "Houve um erro ao enviar. Por favor, tente novamente ou utilize o WhatsApp."
+    },
+    "options": {
+      "yes": "Sim, quero saber mais",
+      "others": "Ver outros tratamentos",
+      "send": "Sim, enviar",
+      "implants": "Implantes",
+      "veneers": "Facetas",
+      "aligners": "Alinhadores",
+      "whitening": "Branqueamento",
+      "prevention": "Prevenção"
+    },
+    "input": {
+      "name": "Digite o seu nome...",
+      "contact": "O seu telemóvel ou email...",
+      "message": "Digite a sua mensagem..."
+    }
+  }
 }
