@@ -274,8 +274,8 @@ const Home = () => {
                             <div className="relative group max-w-sm w-full">
                                 <div className="absolute inset-0 bg-accent rounded-3xl transform translate-x-3 translate-y-3 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
                                 <img
-                                    src="/assets/uploads/clinic_doctor_desk.jpg"
-                                    alt="Dra. Diretora Clínica"
+                                    src="/assets/katiafragoso.jpeg"
+                                    alt="Dra. Kátia Fragoso"
                                     loading="lazy"
                                     className="relative rounded-3xl shadow-xl object-cover w-full h-auto max-h-[350px] z-10"
                                 />
