@@ -4,6 +4,7 @@ import { ArrowRight, Calendar, User, Clock } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 import { blogPosts } from '../data/blogPosts';
+import AppointmentSection from '../components/AppointmentSection';
 
 const Blog = () => {
     const { t } = useTranslation();
@@ -26,7 +27,7 @@ const Blog = () => {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-3 gap-8 mb-12">
                     {posts.map((post) => (
                         <article key={post.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col group h-full">
                             <div className="relative h-64 overflow-hidden">
@@ -69,6 +70,8 @@ const Blog = () => {
                     ))}
                 </div>
             </div>
+            
+            <AppointmentSection pageName="Blog List" />
         </div>
     );
 };

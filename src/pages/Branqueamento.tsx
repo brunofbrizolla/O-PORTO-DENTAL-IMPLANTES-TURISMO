@@ -1,17 +1,18 @@
-import { ArrowRight, Sparkles, Clock, ShieldCheck, Sun } from 'lucide-react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Sparkles, Clock, ShieldCheck, Sun } from 'lucide-react';
 
 import SEO from '../components/SEO';
+import AppointmentSection from '../components/AppointmentSection';
 
 const Branqueamento = () => {
     const { t } = useTranslation();
     return (
-        <div>
+        <div className="animate-fadeIn font-sans text-gray-800">
             <SEO
                 title={t('metaTitleWhitening')}
                 description={t('metaDescWhitening')}
             />
-            {/* 1. Hero Section - Cinematic (Matches others but Right Aligned) */}
             {/* 1. Hero Section - Cinematic (Standard Left Aligned) */}
             <section className="relative h-screen flex items-center bg-gray-900 overflow-hidden">
                 <div
@@ -32,9 +33,18 @@ const Branqueamento = () => {
                             {t('whiteningHeroText')}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
+                            {/* Desktop Button */}
                             <a
-                                href="#contact"
-                                className="inline-flex items-center justify-center px-8 py-4 bg-accent text-white rounded-full font-bold text-base shadow-lg hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105"
+                                href="#appointment"
+                                className="hidden md:inline-flex items-center justify-center px-8 py-4 bg-accent text-white rounded-full font-bold text-base shadow-lg hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105"
+                            >
+                                <Sun className="mr-3 w-5 h-5" />
+                                {t('whiteningCta')}
+                            </a>
+                            {/* Mobile Button */}
+                            <a
+                                href="tel:+351912092209"
+                                className="inline-flex md:hidden items-center justify-center px-8 py-4 bg-accent text-white rounded-full font-bold text-base shadow-lg hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105"
                             >
                                 <Sun className="mr-3 w-5 h-5" />
                                 {t('whiteningCta')}
@@ -103,24 +113,8 @@ const Branqueamento = () => {
                 </div>
             </section>
 
-            {/* 7. CTA Final */}
-            <section id="contact" className="py-6 bg-white text-center">
-                <div className="max-w-4xl mx-auto px-4">
-                    <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8 font-serif">
-                        {t('whiteningFinalCtaTitle')}
-                    </h2>
-                    <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-                        {t('whiteningFinalCtaText')}
-                    </p>
-                    <a
-                        href="/#appointment"
-                        className="inline-flex items-center px-12 py-6 bg-primary text-white text-xl font-bold rounded-full hover:bg-primary-dark shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all"
-                    >
-                        {t('whiteningFinalCtaButton')}
-                        <ArrowRight className="ml-3 w-6 h-6" />
-                    </a>
-                </div>
-            </section>
+            {/* Appointment Form */}
+            <AppointmentSection defaultTreatment="branqueamento" pageName="Branqueamento" />
         </div>
     );
 };

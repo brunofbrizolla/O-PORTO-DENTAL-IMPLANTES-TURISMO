@@ -1,13 +1,15 @@
-import { ArrowRight, ScanFace, MousePointerClick, Smile, CalendarCheck } from 'lucide-react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { ScanFace, MousePointerClick, Smile, CalendarCheck } from 'lucide-react';
 
 import SEO from '../components/SEO';
+import AppointmentSection from '../components/AppointmentSection';
 
 const Alinhadores = () => {
     const { t } = useTranslation();
 
     return (
-        <div>
+        <div className="animate-fadeIn font-sans text-gray-800">
             <SEO
                 title={t('metaTitleAligners')}
                 description={t('metaDescAligners')}
@@ -31,9 +33,18 @@ const Alinhadores = () => {
                         <p className="text-lg md:text-xl font-light mb-8 text-gray-200 leading-relaxed max-w-xl">
                             {t('alignersHeroText')}
                         </p>
+                        {/* Desktop Button */}
                         <a
-                            href="#contact"
-                            className="inline-flex items-center justify-center px-8 py-4 bg-accent text-white rounded-full font-bold text-base shadow-lg hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105"
+                            href="#appointment"
+                            className="hidden md:inline-flex items-center justify-center px-8 py-4 bg-accent text-white rounded-full font-bold text-base shadow-lg hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105"
+                        >
+                            <ScanFace className="mr-3 w-5 h-5" />
+                            {t('alignersCta')}
+                        </a>
+                        {/* Mobile Button */}
+                        <a
+                            href="tel:+351912092209"
+                            className="inline-flex md:hidden items-center justify-center px-8 py-4 bg-accent text-white rounded-full font-bold text-base shadow-lg hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105"
                         >
                             <ScanFace className="mr-3 w-5 h-5" />
                             {t('alignersCta')}
@@ -121,24 +132,8 @@ const Alinhadores = () => {
                 </div>
             </section>
 
-            {/* CTA Final */}
-            <section id="contact" className="py-6 bg-white text-center">
-                <div className="max-w-4xl mx-auto px-4">
-                    <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8 font-serif">
-                        {t('alignersFinalCtaTitle')}
-                    </h2>
-                    <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-                        {t('alignersFinalCtaText')}
-                    </p>
-                    <a
-                        href="/#appointment"
-                        className="inline-flex items-center px-12 py-6 bg-primary text-white text-xl font-bold rounded-full hover:bg-primary-dark shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all"
-                    >
-                        {t('alignersFinalCtaButton')}
-                        <ArrowRight className="ml-3 w-6 h-6" />
-                    </a>
-                </div>
-            </section>
+            {/* Appointment Form */}
+            <AppointmentSection defaultTreatment="alinhadores" pageName="Alinhadores" />
         </div>
     );
 };

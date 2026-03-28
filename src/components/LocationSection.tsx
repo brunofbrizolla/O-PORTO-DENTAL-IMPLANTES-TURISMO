@@ -72,8 +72,16 @@ const LocationSection = () => {
 
                         <div className="pt-6">
                             <a
-                                href="#contact"
-                                className="inline-flex items-center px-8 py-4 bg-accent text-white rounded-full font-bold text-lg shadow-lg hover:bg-primary transition-all duration-300 transform hover:-translate-y-1"
+                                href="#appointment"
+                                className="hidden md:inline-flex items-center px-8 py-4 bg-accent text-white rounded-full font-bold text-lg shadow-lg hover:bg-primary transition-all duration-300 transform hover:-translate-y-1"
+                            >
+                                <Calendar className="mr-3 w-5 h-5" />
+                                {t('locationCta')}
+                            </a>
+                            {/* Mobile Button */}
+                            <a
+                                href="tel:+351912092209"
+                                className="inline-flex md:hidden items-center px-8 py-4 bg-accent text-white rounded-full font-bold text-lg shadow-lg hover:bg-primary transition-all duration-300 transform hover:-translate-y-1"
                             >
                                 <Calendar className="mr-3 w-5 h-5" />
                                 {t('locationCta')}

@@ -1,13 +1,15 @@
-import { ShieldCheck, HeartPulse, Sparkles, CheckCircle2, ArrowRight, Stethoscope } from 'lucide-react';
+import React from 'react';
+import { ShieldCheck, HeartPulse, Sparkles, CheckCircle2, Stethoscope } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 import SEO from '../components/SEO';
+import AppointmentSection from '../components/AppointmentSection';
 
 const Prevencao = () => {
     const { t } = useTranslation();
 
     return (
-        <div>
+        <div className="animate-fadeIn font-sans text-gray-800">
             <SEO
                 title={t('metaTitlePrevention')}
                 description={t('metaDescPrevention')}
@@ -31,9 +33,18 @@ const Prevencao = () => {
                         <p className="text-lg md:text-xl font-light mb-8 text-gray-200 leading-relaxed max-w-lg">
                             {t('preventionHeroText')}
                         </p>
+                        {/* Desktop Button */}
                         <a
-                            href="#contact"
-                            className="inline-flex items-center justify-center px-8 py-4 bg-accent text-white rounded-full font-bold text-base shadow-lg hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105"
+                            href="#appointment"
+                            className="hidden md:inline-flex items-center justify-center px-8 py-4 bg-accent text-white rounded-full font-bold text-base shadow-lg hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105"
+                        >
+                            <Stethoscope className="mr-3 w-5 h-5" />
+                            {t('preventionCta')}
+                        </a>
+                        {/* Mobile Button */}
+                        <a
+                            href="tel:+351912092209"
+                            className="inline-flex md:hidden items-center justify-center px-8 py-4 bg-accent text-white rounded-full font-bold text-base shadow-lg hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105"
                         >
                             <Stethoscope className="mr-3 w-5 h-5" />
                             {t('preventionCta')}
@@ -117,21 +128,8 @@ const Prevencao = () => {
                 </div>
             </section>
 
-            {/* 4. CTA Final */}
-            <section className="py-6 bg-primary text-white text-center">
-                <div className="max-w-4xl mx-auto px-4">
-                    <h2 className="text-3xl md:text-3xl font-bold font-serif mb-6">{t('preventionFinalCtaTitle')}</h2>
-                    <p className="text-xl text-primary-light mb-8">
-                        {t('preventionFinalCtaSubtitle')}
-                    </p>
-                    <a
-                        href="#contact"
-                        className="inline-flex items-center bg-white text-primary px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors shadow-xl"
-                    >
-                        {t('preventionFinalCtaButton')} <ArrowRight className="ml-2 w-5 h-5" />
-                    </a>
-                </div>
-            </section>
+            {/* Appointment Form */}
+            <AppointmentSection defaultTreatment="prevencao" pageName="Prevenção" />
         </div>
     );
 };

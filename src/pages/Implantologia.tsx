@@ -2,6 +2,7 @@ import { CheckCircle2, PhoneCall, ShieldCheck, Clock, Gem, Smile, Layers, Activi
 import { useTranslation } from 'react-i18next';
 
 import SEO from '../components/SEO';
+import AppointmentSection from '../components/AppointmentSection';
 
 const Implantologia = () => {
     const { t } = useTranslation();
@@ -78,9 +79,18 @@ const Implantologia = () => {
                             {t('implantHeroText')}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
+                            {/* Desktop Button */}
                             <a
-                                href="#contact"
-                                className="inline-flex items-center justify-center px-8 py-4 bg-accent text-white rounded-full font-bold text-base shadow-lg hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105"
+                                href="#appointment"
+                                className="hidden md:inline-flex items-center justify-center px-8 py-4 bg-accent text-white rounded-full font-bold text-base shadow-lg hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105"
+                            >
+                                <PhoneCall className="mr-3 w-5 h-5" />
+                                {t('implantCta')}
+                            </a>
+                            {/* Mobile Button */}
+                            <a
+                                href="tel:+351912092209"
+                                className="inline-flex md:hidden items-center justify-center px-8 py-4 bg-accent text-white rounded-full font-bold text-base shadow-lg hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105"
                             >
                                 <PhoneCall className="mr-3 w-5 h-5" />
                                 {t('implantCta')}
@@ -190,17 +200,17 @@ const Implantologia = () => {
                                 desc: t('implantBen1Desc')
                             },
                             {
-                                icon: Smile, // Changed from Star to Smile as per original code's icon
+                                icon: Smile,
                                 title: t('implantBen2Title'),
                                 desc: t('implantBen2Desc')
                             },
                             {
-                                icon: Activity, // Changed from Shield to Activity as per original code's icon
+                                icon: Activity,
                                 title: t('implantBen3Title'),
                                 desc: t('implantBen3Desc')
                             },
                             {
-                                icon: ShieldCheck, // Changed from CheckCircle2 to ShieldCheck as per original code's icon
+                                icon: ShieldCheck,
                                 title: t('implantBen4Title'),
                                 desc: t('implantBen4Desc')
                             }
@@ -262,28 +272,8 @@ const Implantologia = () => {
                 </div>
             </section>
 
-            {/* 6. CTA Final */}
-            <section id="contact" className="py-24 bg-gray-50 text-center">
-                <div className="max-w-5xl mx-auto px-4">
-                    <span className="text-accent font-bold uppercase tracking-wider mb-2 block">{t('implantFinalCtaSubtitle')}</span>
-                    <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8 font-serif">
-                        {t('implantFinalCtaTitle')}
-                    </h2>
-                    <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-                        {t('implantFinalCtaText')}
-                    </p>
-                    <p className="text-lg text-primary font-medium mb-12 italic">
-                        {t('implantFinalCtaQuote')}
-                    </p>
-                    <a
-                        href="/#appointment"
-                        className="inline-flex items-center px-12 py-6 bg-accent text-white text-xl font-bold rounded-full hover:bg-primary shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all"
-                    >
-                        <PhoneCall className="mr-3 w-6 h-6" />
-                        {t('implantFinalCtaButton')}
-                    </a>
-                </div>
-            </section>
+            {/* Appointment Form */}
+            <AppointmentSection defaultTreatment="implantes" pageName="Implantologia" />
         </div>
     );
 };

@@ -1,65 +1,25 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import emailjs from '@emailjs/browser';
 import {
     PhoneCall,
-    CheckCircle2,
     Award,
-    Users,
     Star,
-    Loader2,
-    MessageCircleMore,
     ArrowRight,
     Sparkles,
-    Heart
+    Heart,
+    CheckCircle2,
+    Clock,
+    Shield
 } from 'lucide-react';
 
 import SEO from '../components/SEO';
 import { Helmet } from 'react-helmet-async';
 import { logEvent } from '../utils/analytics';
+import AppointmentSection from '../components/AppointmentSection';
 
 const Home = () => {
     const { t } = useTranslation();
-    const formRef = useRef<HTMLFormElement>(null);
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        phone: '',
-        message: '',
-    });
-    const [showSuccess, setShowSuccess] = useState(false);
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [error, setError] = useState('');
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-        setError('');
-
-        try {
-            await emailjs.sendForm(
-                'service_htj9n8s',
-                'template_zzz72ek',
-                formRef.current!,
-                'meaA1Ni7_dJtElS0x'
-            );
-            setShowSuccess(true);
-            logEvent('Contact', 'Form Submission', 'Home Page Appointment');
-            setFormData({ name: '', email: '', phone: '', message: '' });
-            setTimeout(() => setShowSuccess(false), 5000);
-        } catch (err) {
-            setError(t('formErrorMessage'));
-            console.error('EmailJS Error:', err);
-        } finally {
-            setIsSubmitting(false);
-        }
-    };
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
-    };
 
     const schemaData = {
         "@context": "https://schema.org",
@@ -137,10 +97,20 @@ const Home = () => {
                             {t('heroText')}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
+                            {/* Desktop Button */}
                             <a
                                 href="#appointment"
                                 onClick={() => logEvent('CTA', 'Hero Appointment Click', 'Home Hero')}
-                                className="flex items-center justify-center px-6 py-3 text-base font-medium bg-accent hover:bg-white hover:text-primary text-white rounded-full shadow-xl transition-all duration-300 transform hover:scale-105"
+                                className="hidden md:flex items-center justify-center px-6 py-3 text-base font-medium bg-accent hover:bg-white hover:text-primary text-white rounded-full shadow-xl transition-all duration-300 transform hover:scale-105"
+                            >
+                                <PhoneCall className="h-5 w-5 mr-3" />
+                                {t('heroCtaAppointment')}
+                            </a>
+                            {/* Mobile Button */}
+                            <a
+                                href="tel:+351912092209"
+                                onClick={() => logEvent('Contact', 'Mobile Hero Call', 'Home Hero')}
+                                className="flex md:hidden items-center justify-center px-6 py-3 text-base font-medium bg-accent hover:bg-white hover:text-primary text-white rounded-full shadow-xl transition-all duration-300 transform hover:scale-105"
                             >
                                 <PhoneCall className="h-5 w-5 mr-3" />
                                 {t('heroCtaAppointment')}
@@ -207,7 +177,10 @@ const Home = () => {
                             <span className="text-accent font-bold uppercase tracking-wider mb-2 block">{t('specialtiesSubtitle')}</span>
                             <h2 className="text-3xl font-bold text-primary font-serif">{t('specialtiesTitle')}</h2>
                         </div>
-                        <a href="#appointment" className="hidden md:flex items-center text-primary font-semibold hover:text-accent transition-colors mt-4 md:mt-0">
+                        <a href="#appointment" className="hidden lg:flex items-center text-primary font-semibold hover:text-accent transition-colors mt-4 md:mt-0">
+                            {t('bookAppointment')} <ArrowRight className="ml-2 w-5 h-5" />
+                        </a>
+                        <a href="tel:+351912092209" className="flex lg:hidden items-center text-primary font-semibold hover:text-accent transition-colors mt-4 md:mt-0">
                             {t('bookAppointment')} <ArrowRight className="ml-2 w-5 h-5" />
                         </a>
                     </div>
@@ -354,9 +327,20 @@ const Home = () => {
                                 <span dangerouslySetInnerHTML={{ __html: t('ourSpaceDesc') }}></span>
                             </p>
                             <div className="flex gap-4">
-                                <Link to="/implantologia" className="px-8 py-3 bg-primary text-white rounded-full font-medium hover:bg-primary-dark transition-colors shadow-lg">
-                                    {t('meetClinic')}
-                                </Link>
+                                {/* Desktop Button */}
+                                <a
+                                    href="#appointment"
+                                    className="hidden md:inline-flex px-8 py-3 bg-primary text-white rounded-full font-medium hover:bg-primary-dark transition-colors shadow-lg"
+                                >
+                                    {t('bookAppointment')}
+                                </a>
+                                {/* Mobile Button */}
+                                <a
+                                    href="tel:+351912092209"
+                                    className="inline-flex md:hidden px-8 py-3 bg-primary text-white rounded-full font-medium hover:bg-primary-dark transition-colors shadow-lg"
+                                >
+                                    {t('bookAppointment')}
+                                </a>
                             </div>
                         </div>
 
@@ -489,127 +473,7 @@ const Home = () => {
             </section>
 
             {/* Appointment Form */}
-            <section id="appointment" className="py-6 bg-primary relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="grid lg:grid-cols-2 gap-10 items-center">
-                        <div className="text-white">
-                            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">
-                                {t('appointmentTitle')}
-                            </h2>
-                            <p className="text-xl mb-8 text-primary-light opacity-90 leading-relaxed">
-                                {t('appointmentSubtitle')}
-                            </p>
-                            <div className="space-y-6">
-                                <div className="flex items-start gap-4">
-                                    <div className="p-3 bg-white/10 rounded-full">
-                                        <PhoneCall className="w-6 h-6 text-white" />
-                                    </div>
-                                    <div>
-                                        <h4 className="font-bold text-lg">{t('callUs')}</h4>
-                                        <p className="opacity-80">+351 912 092 209</p>
-                                        <br />
-                                        <h4 className="font-bold text-lg">{t('emergencyPhone')}</h4>
-                                        <p className="opacity-80">963 086 963</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="p-3 bg-white/10 rounded-full">
-                                        <Users className="w-6 h-6 text-white" />
-                                    </div>
-                                    <div>
-                                        <h4 className="font-bold text-lg">{t('visitUs')}</h4>
-                                        <p className="opacity-80">Rua Doutor Eduardo Torres 329<br />4450-116 Matosinhos</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="bg-white p-8 md:p-10 rounded-3xl shadow-2xl">
-                            {showSuccess && (
-                                <div className="mb-6 bg-green-50 text-green-700 px-6 py-4 rounded-xl flex items-center gap-3 animate-fadeIn">
-                                    <CheckCircle2 className="h-5 w-5" />
-                                    <span className="font-medium">{t('successMessage')}</span>
-                                </div>
-                            )}
-
-                            {error && (
-                                <div className="mb-6 bg-red-50 text-red-700 px-6 py-4 rounded-xl flex items-center gap-3 animate-fadeIn">
-                                    <span className="font-medium">{error}</span>
-                                </div>
-                            )}
-
-                            <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
-                                <div className="grid md:grid-cols-2 gap-5">
-                                    <div>
-                                        <label className="block text-gray-700 font-semibold mb-2 text-sm uppercase tracking-wide">{t('name')}</label>
-                                        <input
-                                            type="text"
-                                            name="name"
-                                            value={formData.name}
-                                            onChange={handleChange}
-                                            required
-                                            className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
-                                            placeholder={t('namePlaceholder')}
-                                        />
-                                    </div>
-                                    <div>
-                                        <label className="block text-gray-700 font-semibold mb-2 text-sm uppercase tracking-wide">{t('email')}</label>
-                                        <input
-                                            type="email"
-                                            name="email"
-                                            value={formData.email}
-                                            onChange={handleChange}
-                                            required
-                                            className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
-                                            placeholder={t('emailPlaceholder')}
-                                        />
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <label className="block text-gray-700 font-semibold mb-2 text-sm uppercase tracking-wide">{t('phone')}</label>
-                                    <input
-                                        type="tel"
-                                        name="phone"
-                                        value={formData.phone}
-                                        onChange={handleChange}
-                                        required
-                                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
-                                        placeholder={t('phonePlaceholder')}
-                                    />
-                                </div>
-
-                                <div>
-                                    <label className="block text-gray-700 font-semibold mb-2 text-sm uppercase tracking-wide">{t('message')}</label>
-                                    <textarea
-                                        name="message"
-                                        value={formData.message}
-                                        onChange={handleChange}
-                                        required
-                                        rows={4}
-                                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none resize-none"
-                                        placeholder={t('messagePlaceholder')}
-                                    ></textarea>
-                                </div>
-
-                                <button
-                                    type="submit"
-                                    disabled={isSubmitting}
-                                    className="w-full bg-accent hover:bg-accent/90 text-white font-bold py-4 px-6 rounded-xl transition-all transform hover:-translate-y-1 shadow-lg flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed mt-4"
-                                >
-                                    {isSubmitting ? (
-                                        <Loader2 className="h-5 w-5 animate-spin" />
-                                    ) : (
-                                        <MessageCircleMore className="h-5 w-5" />
-                                    )}
-                                    <span>{isSubmitting ? t('sending') : t('sendMessage')}</span>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <AppointmentSection pageName="Home" />
         </>
     );
 };

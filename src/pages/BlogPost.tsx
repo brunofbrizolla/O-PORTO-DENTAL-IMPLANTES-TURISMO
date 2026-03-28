@@ -5,6 +5,7 @@ import { ArrowLeft, Calendar, User, Clock, Share2, Tag } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { blogPosts } from '../data/blogPosts';
 import { logEvent } from '../utils/analytics';
+import AppointmentSection from '../components/AppointmentSection';
 
 const BlogPost = () => {
     const { t } = useTranslation();
@@ -144,7 +145,7 @@ const BlogPost = () => {
 
                     <h2 className="text-3xl font-bold text-primary font-serif mb-4 mt-8">Porquê o Porto?</h2>
                     <p className="mb-6">
-                        Eleito repetidamente como "Melhor Destino Europeu", o Porto oferece uma combinação única de história, cultura, gastronomia e hospitalidade. Mas mais do que isso, é um centro de excelência médica. As clínicas portuguesas são sujeitas a regulações rigorosas da União Europeia e da Ordem dos Médicos Dentistas, garantindo padrões de higiene e segurança impecáveis.
+                        Eleito repetidamente como "Melhor Destino Europeu", o Porto oferece uma combinação única de história, cultura, gastronomia e hospitalidade. Mas mais do que isso, é um centro de excelência médica. As clínicas portuguesas são sujeitas a regulações rigorosas da Ordem dos Médicos Dentistas, garantindo padrões de higiene e segurança impecáveis.
                     </p>
 
                     <h2 className="text-3xl font-bold text-primary font-serif mb-4 mt-8">A Matemática da Poupança</h2>
@@ -542,7 +543,7 @@ const BlogPost = () => {
             <section className="bg-gray-50 py-16 border-t border-gray-200">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h3 className="text-3xl font-bold text-primary mb-10 font-serif text-center">{t('relatedArticles')}</h3>
-                    <div className="grid md:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-3 gap-8 mb-12">
                         {relatedPosts.map((post) => (
                             <div key={post.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col group h-full">
                                 <Link to={`/blog/${post.slug}`} onClick={() => logEvent('Blog', 'Related Article Click', post.title)} className="block h-full flex flex-col">
@@ -579,6 +580,8 @@ const BlogPost = () => {
                     </div>
                 </div>
             </section>
+
+            <AppointmentSection pageName={`Blog Post: ${data.title}`} />
         </div>
     );
 };

@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { MessageCircle, X, Send, User, ChevronDown, Minimize2 } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
+import { X, Send, ChevronDown, Minimize2 } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { useTranslation } from 'react-i18next';
 
@@ -21,6 +21,7 @@ const ChatBot = () => {
     const { t } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
     const [isMinimized, setIsMinimized] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
     const [messages, setMessages] = useState<Message[]>([
         { id: 1, text: t('chat.greetingPrincipal'), sender: 'bot' },
     ]);
@@ -28,6 +29,20 @@ const ChatBot = () => {
     const [step, setStep] = useState<'GREETING' | 'NAME' | 'MENU' | 'TREATMENTS' | 'EXPLAIN' | 'CONTACT' | 'CONFIRM' | 'SENDING' | 'SUCCESS'>('GREETING');
     const [userData, setUserData] = useState<UserData>({ name: '', contact: '', interest: 'Geral' });
     const messagesEndRef = useRef<HTMLDivElement>(null);
+
+    // Visibility logic based on scroll
+    useEffect(() => {
+        const toggleVisibility = () => {
+            if (window.scrollY > 400) {
+                setIsVisible(true);
+            } else {
+                setIsVisible(false);
+            }
+        };
+
+        window.addEventListener('scroll', toggleVisibility);
+        return () => window.removeEventListener('scroll', toggleVisibility);
+    }, []);
 
     const TREATMENTS = {
         'implantes': {
@@ -252,6 +267,8 @@ const ChatBot = () => {
             setStep('CONFIRM');
         }
     };
+
+    if (!isVisible && !isOpen) return null;
 
     if (!isOpen) {
         return (

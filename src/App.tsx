@@ -90,7 +90,10 @@ function App() {
 
                 <Link to="/blog" className="nav-link text-gray-600 hover:text-primary font-medium uppercase tracking-wide text-sm transition-colors">Blog</Link>
 
-                <a href="#contact" className="px-6 py-2 bg-primary text-white rounded-full hover:bg-primary-dark transition-colors shadow-md hover:shadow-lg">{t('contact')}</a>
+                {/* Desktop Navbar Button */}
+                <a href="#appointment" className="hidden md:flex px-6 py-2 bg-primary text-white rounded-full hover:bg-primary-dark transition-colors shadow-md hover:shadow-lg uppercase tracking-wide text-xs font-bold items-center justify-center">{t('contact')}</a>
+                {/* Mobile Navbar Button (Simplified if needed, but the user requested mobile calling) */}
+                <a href="tel:+351912092209" className="flex md:hidden px-6 py-2 bg-primary text-white rounded-full hover:bg-primary-dark transition-colors shadow-md hover:shadow-lg uppercase tracking-wide text-xs font-bold items-center justify-center">{t('contact')}</a>
               </div>
 
               <div className="flex items-center space-x-4 border-l pl-6 border-gray-200">
@@ -137,7 +140,7 @@ function App() {
                   </Link>
 
                   <a
-                    href="#contact"
+                    href="tel:+351912092209"
                     onClick={() => setIsMenuOpen(false)}
                     className="mt-4 w-full bg-primary text-white text-center py-4 rounded-full font-bold shadow-lg"
                   >

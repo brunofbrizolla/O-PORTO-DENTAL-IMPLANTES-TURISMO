@@ -1,14 +1,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { ArrowRight, Sparkles, Wand2, Calculator } from 'lucide-react';
+import { ArrowRight, Sparkles, Wand2 } from 'lucide-react';
 
 import SEO from '../components/SEO';
+import AppointmentSection from '../components/AppointmentSection';
 
 const Facetas = () => {
     const { t } = useTranslation();
 
     return (
-        <div>
+        <div className="animate-fadeIn font-sans text-gray-800">
             <SEO
                 title={t('metaTitleVeneers')}
                 description={t('metaDescVeneers')}
@@ -32,9 +33,18 @@ const Facetas = () => {
                         <p className="text-lg md:text-xl font-light mb-8 text-gray-200 leading-relaxed">
                             {t('veneersHeroText')}
                         </p>
+                        {/* Desktop Button */}
                         <a
-                            href="#contact"
-                            className="inline-flex items-center justify-center px-8 py-4 bg-accent text-white rounded-full font-bold text-base shadow-lg hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105"
+                            href="#appointment"
+                            className="hidden md:inline-flex items-center justify-center px-8 py-4 bg-accent text-white rounded-full font-bold text-base shadow-lg hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105"
+                        >
+                            <Sparkles className="mr-3 w-5 h-5" />
+                            {t('veneersCta')}
+                        </a>
+                        {/* Mobile Button */}
+                        <a
+                            href="tel:+351912092209"
+                            className="inline-flex md:hidden items-center justify-center px-8 py-4 bg-accent text-white rounded-full font-bold text-base shadow-lg hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105"
                         >
                             <Sparkles className="mr-3 w-5 h-5" />
                             {t('veneersCta')}
@@ -137,24 +147,8 @@ const Facetas = () => {
                 </div>
             </section>
 
-            {/* CTA Final */}
-            <section id="contact" className="py-6 bg-white text-center">
-                <div className="max-w-4xl mx-auto px-4">
-                    <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8 font-serif">
-                        {t('veneersFinalCtaTitle')}
-                    </h2>
-                    <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-                        {t('veneersFinalCtaText')}
-                    </p>
-                    <a
-                        href="/#appointment"
-                        className="inline-flex items-center px-12 py-6 bg-primary text-white text-xl font-bold rounded-full hover:bg-primary-dark shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all"
-                    >
-                        {t('veneersFinalCtaButton')}
-                        <ArrowRight className="ml-3 w-6 h-6" />
-                    </a>
-                </div>
-            </section>
+            {/* Appointment Form */}
+            <AppointmentSection defaultTreatment="facetas" pageName="Facetas" />
         </div>
     );
 };
