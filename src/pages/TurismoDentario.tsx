@@ -97,38 +97,38 @@ const TurismoDentario = () => {
             />
 
             {/* 1. Hero Section */}
-            <section className="relative h-screen flex items-center bg-gray-900 overflow-hidden">
+            <section className="relative min-h-[100svh] flex items-center bg-gray-900 overflow-hidden">
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                     style={{ 
                         backgroundImage: 'url("/assets/uploads/home_hero_new.jpg")',
-                        backgroundAttachment: 'fixed'
+                        backgroundAttachment: window.innerWidth > 768 ? 'fixed' : 'scroll'
                     }}
                 ></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent z-10"></div>
 
-                <div className="relative z-20 max-w-7xl mx-auto px-4 w-full">
+                <div className="relative z-20 max-w-7xl mx-auto px-6 w-full pt-20 pb-12">
                     <div className="max-w-2xl text-white pl-4 border-l-4 border-accent animate-slideIn">
-                        <span className="text-accent font-bold tracking-[0.2em] uppercase mb-4 block text-sm">
+                        <span className="text-accent font-black tracking-[0.3em] uppercase mb-4 block text-[10px] md:text-sm">
                             {t('dentalTourism.heroSubtitle')}
                         </span>
-                        <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif leading-tight">
+                        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 font-serif leading-tight">
                             <span dangerouslySetInnerHTML={{ __html: t('dentalTourism.heroTitle') }} />
                         </h1>
-                        <p className="text-lg md:text-xl font-light mb-8 text-gray-200 leading-relaxed max-w-xl">
+                        <p className="text-base md:text-xl font-light mb-10 text-gray-200 leading-relaxed max-w-xl">
                             {t('dentalTourism.heroText')}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <a
                                 href="#remote-quote"
-                                className="inline-flex items-center justify-center px-8 py-4 bg-accent text-white rounded-full font-bold shadow-lg hover:bg-white hover:text-primary transition-all duration-300"
+                                className="inline-flex items-center justify-center px-8 py-5 bg-accent text-white rounded-2xl font-bold shadow-xl hover:bg-white hover:text-primary transition-all duration-300 active:scale-95"
                             >
                                 <MessageSquare className="mr-3 w-5 h-5" />
                                 {t('dentalTourism.remoteQuoteButton')}
                             </a>
                             <a
                                 href="#why-portugal"
-                                className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white rounded-full font-bold hover:bg-white hover:text-primary transition-all duration-300"
+                                className="inline-flex items-center justify-center px-8 py-5 border-2 border-white/30 text-white rounded-2xl font-bold backdrop-blur-sm hover:bg-white hover:text-primary transition-all duration-300"
                             >
                                 {t('knowMore')}
                             </a>
@@ -163,58 +163,64 @@ const TurismoDentario = () => {
             </section>
 
             {/* 3. Why Portugal & Quality Objection */}
-            <section id="why-portugal" className="py-24 bg-gray-50 overflow-hidden">
+            <section id="why-portugal" className="py-16 md:py-24 bg-gray-50 overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        <div className="relative lg:order-2">
+                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                        <div className="relative order-1 lg:order-2">
                             <div className="absolute -top-10 -left-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl"></div>
-                            <span className="text-accent font-bold uppercase tracking-widest mb-4 block">PORTUGAL #1 DESTINATION</span>
-                            <h2 className="text-4xl md:text-5xl font-bold text-primary font-serif mb-8 leading-tight">
+                            <span className="text-accent font-black uppercase tracking-[0.2em] mb-4 block text-xs">PORTUGAL #1 DESTINATION</span>
+                            <h2 className="text-3xl md:text-5xl font-bold text-primary font-serif mb-6 md:mb-8 leading-tight">
                                 {t('dentalTourism.whyTitle')}
                             </h2>
                             <div className="space-y-6">
-                                <div className="p-6 bg-white rounded-2xl border-l-4 border-accent shadow-sm">
+                                <div className="p-6 md:p-8 bg-white rounded-3xl border-l-8 border-accent shadow-xl shadow-primary/5">
                                     <h3 className="text-xl font-bold text-primary mb-3">Premium Quality, Portuguese Costs</h3>
-                                    <p className="text-gray-600 leading-relaxed text-justify">
+                                    <p className="text-gray-600 leading-relaxed text-sm md:text-base text-justify">
                                         {t('dentalTourism.qualityObjectionText')}
                                     </p>
                                 </div>
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
-                                    <div className="text-center">
-                                        <div className="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-3">
-                                            <Banknote className="w-6 h-6 text-primary" />
+                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6">
+                                    <div className="flex sm:flex-col items-center gap-4 sm:gap-0 sm:text-center">
+                                        <div className="w-14 h-14 bg-white rounded-2xl shadow-lg flex items-center justify-center mb-3 text-primary flex-shrink-0">
+                                            <Banknote className="w-7 h-7" />
                                         </div>
-                                        <h4 className="font-bold text-sm mb-1">{t('dentalTourism.advantage1Title')}</h4>
-                                        <p className="text-xs text-gray-500">{t('dentalTourism.advantage1Desc')}</p>
+                                        <div>
+                                            <h4 className="font-bold text-sm mb-1">{t('dentalTourism.advantage1Title')}</h4>
+                                            <p className="text-xs text-gray-400">{t('dentalTourism.advantage1Desc')}</p>
+                                        </div>
                                     </div>
-                                    <div className="text-center">
-                                        <div className="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-3">
-                                            <Zap className="w-6 h-6 text-primary" />
+                                    <div className="flex sm:flex-col items-center gap-4 sm:gap-0 sm:text-center">
+                                        <div className="w-14 h-14 bg-white rounded-2xl shadow-lg flex items-center justify-center mb-3 text-primary flex-shrink-0">
+                                            <Zap className="w-7 h-7" />
                                         </div>
-                                        <h4 className="font-bold text-sm mb-1">{t('dentalTourism.advantage2Title')}</h4>
-                                        <p className="text-xs text-gray-500">{t('dentalTourism.advantage2Desc')}</p>
+                                        <div>
+                                            <h4 className="font-bold text-sm mb-1">{t('dentalTourism.advantage2Title')}</h4>
+                                            <p className="text-xs text-gray-400">{t('dentalTourism.advantage2Desc')}</p>
+                                        </div>
                                     </div>
-                                    <div className="text-center">
-                                        <div className="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-3">
-                                            <Clock className="w-6 h-6 text-primary" />
+                                    <div className="flex sm:flex-col items-center gap-4 sm:gap-0 sm:text-center">
+                                        <div className="w-14 h-14 bg-white rounded-2xl shadow-lg flex items-center justify-center mb-3 text-primary flex-shrink-0">
+                                            <Clock className="w-7 h-7" />
                                         </div>
-                                        <h4 className="font-bold text-sm mb-1">{t('dentalTourism.advantage3Title')}</h4>
-                                        <p className="text-xs text-gray-500">{t('dentalTourism.advantage3Desc')}</p>
+                                        <div>
+                                            <h4 className="font-bold text-sm mb-1">{t('dentalTourism.advantage3Title')}</h4>
+                                            <p className="text-xs text-gray-400">{t('dentalTourism.advantage3Desc')}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="relative lg:order-1">
-                            <div className="rounded-3xl overflow-hidden shadow-2xl">
-                                <img src="/assets/uploads/clinic_office.jpg" alt="Porto Implantes Office" className="w-full h-full object-cover" />
+                        <div className="relative order-2 lg:order-1 mt-8 lg:mt-0">
+                            <div className="rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
+                                <img src="/assets/uploads/clinic_office.jpg" alt="Porto Implantes Office" className="w-full h-[300px] md:h-[500px] object-cover hover:scale-105 transition-transform duration-700" />
                             </div>
-                            <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl flex items-center gap-4 border border-gray-100">
-                                <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white">
+                            <div className="absolute -bottom-4 md:-bottom-6 -right-2 md:-right-6 bg-white p-4 md:p-6 rounded-[2rem] shadow-2xl flex items-center gap-4 border border-gray-100 animate-bounce-slow">
+                                <div className="w-10 h-10 md:w-12 md:h-12 bg-green-500 rounded-2xl flex items-center justify-center text-white flex-shrink-0">
                                     <ShieldCheck className="w-6 h-6" />
                                 </div>
                                 <div>
-                                    <p className="font-bold text-primary text-sm">EU Standards Certified</p>
-                                    <p className="text-xs text-gray-500">Maximum Safety & Sterilization</p>
+                                    <p className="font-black text-primary text-xs md:text-sm">EU Standards Certified</p>
+                                    <p className="text-[10px] md:text-xs text-gray-400">Maximum Safety Guaranteed</p>
                                 </div>
                             </div>
                         </div>
@@ -322,54 +328,54 @@ const TurismoDentario = () => {
             <section className="py-24 bg-white overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        <div className="order-2 lg:order-1 grid grid-cols-2 gap-4">
+                        <div className="order-2 lg:order-1 grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div className="space-y-4">
-                                <div className="h-64 rounded-3xl overflow-hidden shadow-lg group relative">
+                                <div className="h-48 md:h-64 rounded-3xl overflow-hidden shadow-lg group relative">
                                     <img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?q=80&w=800&auto=format&fit=crop" alt="Porto Ribeira" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                                     <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-4 py-1.5 rounded-full text-xs font-black text-primary shadow-sm tracking-wider">PORTO & DOURO</div>
                                 </div>
-                                <div className="h-48 rounded-3xl overflow-hidden shadow-lg group relative">
+                                <div className="h-40 md:h-48 rounded-3xl overflow-hidden shadow-lg group relative">
                                     <img src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?q=80&w=800&auto=format&fit=crop" alt="Lisbon Alfama" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                                     <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-4 py-1.5 rounded-full text-xs font-black text-primary shadow-sm tracking-wider">LISBON</div>
                                 </div>
                             </div>
-                            <div className="space-y-4 pt-12">
-                                <div className="h-48 rounded-3xl overflow-hidden shadow-lg group relative">
+                            <div className="space-y-4 sm:pt-12">
+                                <div className="h-40 md:h-48 rounded-3xl overflow-hidden shadow-lg group relative">
                                     <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=800&auto=format&fit=crop" alt="Santorini like Algarve" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                                     <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-4 py-1.5 rounded-full text-xs font-black text-primary shadow-sm tracking-wider">ALGARVE</div>
                                 </div>
-                                <div className="h-64 rounded-3xl overflow-hidden shadow-lg group relative">
+                                <div className="h-48 md:h-64 rounded-3xl overflow-hidden shadow-lg group relative">
                                     <img src="https://images.unsplash.com/photo-1507901747481-84a4f64fda6d?q=80&w=800&auto=format&fit=crop" alt="Pena Palace Sintra" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                                     <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-4 py-1.5 rounded-full text-xs font-black text-primary shadow-sm tracking-wider">SINTRA</div>
                                 </div>
                             </div>
                         </div>
                         <div className="order-1 lg:order-2">
-                             <span className="text-accent font-bold uppercase tracking-widest mb-2 block">{t('dentalTourism.portoSubtitle')}</span>
-                             <h2 className="text-4xl md:text-5xl font-bold text-primary font-serif mb-8 leading-tight">
+                             <span className="text-accent font-black uppercase tracking-[0.2em] mb-2 block text-xs">{t('dentalTourism.portoSubtitle')}</span>
+                             <h2 className="text-3xl md:text-5xl font-bold text-primary font-serif mb-6 md:mb-8 leading-tight">
                                 {t('dentalTourism.portoTitle')}
                              </h2>
-                             <p className="text-gray-600 text-lg leading-relaxed mb-10 text-justify">
+                             <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-10 text-justify">
                                 {t('dentalTourism.portoText')}
                              </p>
-                             <div className="space-y-5">
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent flex-shrink-0">
+                             <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4">
+                                <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-2xl">
+                                    <div className="w-10 h-10 bg-accent/20 rounded-xl flex items-center justify-center text-accent flex-shrink-0">
                                         <Compass className="w-5 h-5" />
                                     </div>
-                                    <p className="font-bold text-primary">{t('dentalTourism.portoItem1')}</p>
+                                    <p className="font-bold text-primary text-sm">{t('dentalTourism.portoItem1')}</p>
                                 </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent flex-shrink-0">
+                                <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-2xl">
+                                    <div className="w-10 h-10 bg-accent/20 rounded-xl flex items-center justify-center text-accent flex-shrink-0">
                                         <Landmark className="w-5 h-5" />
                                     </div>
-                                    <p className="font-bold text-primary">{t('dentalTourism.portoItem2')}</p>
+                                    <p className="font-bold text-primary text-sm">{t('dentalTourism.portoItem2')}</p>
                                 </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent flex-shrink-0">
+                                <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-2xl">
+                                    <div className="w-10 h-10 bg-accent/20 rounded-xl flex items-center justify-center text-accent flex-shrink-0">
                                         <Palmtree className="w-5 h-5" />
                                     </div>
-                                    <p className="font-bold text-primary">{t('dentalTourism.portoItem3')}</p>
+                                    <p className="font-bold text-primary text-sm">{t('dentalTourism.portoItem3')}</p>
                                 </div>
                              </div>
                         </div>
@@ -382,37 +388,45 @@ const TurismoDentario = () => {
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="bg-white rounded-[40px] shadow-2xl overflow-hidden border border-gray-100">
                         <div className="grid lg:grid-cols-3">
-                            <div className="lg:col-span-1 bg-primary p-12 text-white flex flex-col justify-center">
-                                <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mb-8 shadow-lg">
-                                    <Banknote className="w-8 h-8 text-white" />
+                            <div className="lg:col-span-1 bg-primary p-12 text-white flex flex-col justify-center text-center lg:text-left">
+                                <div className="w-20 h-20 bg-accent rounded-3xl flex items-center justify-center mb-8 shadow-xl mx-auto lg:mx-0">
+                                    <Banknote className="w-10 h-10 text-white" />
                                 </div>
                                 <h3 className="text-3xl font-bold font-serif mb-6 leading-tight">{t('dentalTourism.economySubtitle')}</h3>
                                 <p className="text-primary-light/80 text-lg mb-8 leading-relaxed italic">
-                                    Your dental treatment shouldn't just be an expense. Let it fund your Portuguese dream trip.
+                                    "Your dental treatment shouldn't just be an expense. Let it fund your Portuguese dream trip."
                                 </p>
                             </div>
-                            <div className="lg:col-span-2 p-8 lg:p-12">
-                                <div className="overflow-x-auto">
-                                    <table className="w-full text-left">
+                            <div className="lg:col-span-2 p-6 md:p-12 relative">
+                                <div className="absolute top-4 right-8 flex items-center gap-2 text-primary/30 animate-pulse md:hidden">
+                                     <span className="text-[10px] font-black uppercase tracking-widest">Swipe for more</span>
+                                     <ArrowRight className="w-3 h-3" />
+                                </div>
+                                <div className="overflow-x-auto pb-4 scrollbar-hide">
+                                    <table className="w-full text-left min-w-[500px]">
                                         <thead>
-                                            <tr>
-                                                <th className="py-4 text-xs font-bold text-gray-400 uppercase tracking-widest">{t('dentalTourism.tableProcedure')}</th>
-                                                <th className="py-4 px-4 text-xs font-bold text-gray-400 uppercase tracking-widest text-center">{t('dentalTourism.tableHomeCountry')}</th>
-                                                <th className="py-4 px-4 text-xs font-bold text-accent uppercase tracking-widest text-center">{t('dentalTourism.tablePorto')}</th>
-                                                <th className="py-4 text-xs font-bold text-green-600 uppercase tracking-widest text-right">{t('dentalTourism.tableSavings')}</th>
+                                            <tr className="border-b border-gray-100">
+                                                <th className="py-6 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">{t('dentalTourism.tableProcedure')}</th>
+                                                <th className="py-6 px-4 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] text-center">{t('dentalTourism.tableHomeCountry')}</th>
+                                                <th className="py-6 px-4 text-[10px] font-black text-accent uppercase tracking-[0.2em] text-center">{t('dentalTourism.tablePorto')}</th>
+                                                <th className="py-6 text-[10px] font-black text-green-600 uppercase tracking-[0.2em] text-right">{t('dentalTourism.tableSavings')}</th>
                                             </tr>
                                         </thead>
-                                        <tbody className="divide-y divide-gray-100">
+                                        <tbody className="divide-y divide-gray-50">
                                             {[
                                                 { proc: t('cardImplantTitle') + " Unit.", home: "€2.800", porto: "€950", save: t('dentalTourism.implantSaving') },
                                                 { proc: "All-on-4 (Full Arch)", home: "€14.000", porto: "€5.500", save: t('dentalTourism.allOn4Saving') },
                                                 { proc: t('cardVeneersTitle') + " (Set 6)", home: "€6.000", porto: "€2.400", save: t('dentalTourism.veneersSaving') }
                                             ].map((row, i) => (
-                                                <tr key={i} className="group hover:bg-gray-50 transition-colors">
-                                                    <td className="py-6 font-bold text-primary">{row.proc}</td>
-                                                    <td className="py-6 px-4 text-gray-400 text-center font-mono">{row.home}</td>
-                                                    <td className="py-6 px-4 text-primary font-extrabold text-center bg-accent/5 rounded-lg group-hover:bg-accent/10 transition-colors">{row.porto}</td>
-                                                    <td className="py-6 text-green-600 font-black text-right">{row.save}</td>
+                                                <tr key={i} className="group hover:bg-gray-50/50 transition-colors">
+                                                    <td className="py-8 font-bold text-primary text-sm md:text-base leading-tight pr-4">{row.proc}</td>
+                                                    <td className="py-8 px-4 text-gray-400 text-center font-mono text-sm">{row.home}</td>
+                                                    <td className="py-8 px-4">
+                                                        <div className="bg-accent/5 rounded-2xl py-3 px-4 text-primary font-black text-center text-sm md:text-base border border-accent/10 group-hover:bg-accent/10 transition-colors">
+                                                            {row.porto}
+                                                        </div>
+                                                    </td>
+                                                    <td className="py-8 text-green-600 font-black text-right text-sm md:text-base">{row.save}</td>
                                                 </tr>
                                             ))}
                                         </tbody>

@@ -126,51 +126,52 @@ function App() {
 
             {/* Mobile Menu Overlay */}
             {isMenuOpen && (
-              <div className="md:hidden bg-white border-t border-gray-100 absolute w-full left-0 top-24 shadow-xl z-40 animate-slideIn">
-                <div className="flex flex-col px-4 py-6 space-y-4 h-[calc(100vh-6rem)] overflow-y-auto">
+              <div className="md:hidden bg-white fixed inset-0 top-16 shadow-2xl z-50 animate-slideIn">
+                <div className="flex flex-col px-6 py-8 space-y-6 h-full overflow-y-auto pb-24">
                   <Link
                     to="/"
                     onClick={() => setIsMenuOpen(false)}
-                    className="text-lg font-medium text-gray-800 hover:text-primary border-b border-gray-50 pb-2"
+                    className="text-xl font-bold text-primary border-b border-gray-100 pb-4"
                   >
                     {t('home')}
                   </Link>
 
-                  <div className="space-y-2">
-                    <span className="text-sm font-bold text-accent uppercase tracking-wider block mb-2">{t('treatments')}</span>
-                    {currentSite.services.includes('implantologia') && <Link to="/implantologia" onClick={() => setIsMenuOpen(false)} className="block pl-4 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg">Implantologia</Link>}
-                    {currentSite.services.includes('facetas') && <Link to="/facetas" onClick={() => setIsMenuOpen(false)} className="block pl-4 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg">Facetas</Link>}
-                    {currentSite.services.includes('alinhadores') && <Link to="/alinhadores" onClick={() => setIsMenuOpen(false)} className="block pl-4 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg">Alinhadores</Link>}
-                    {currentSite.services.includes('branqueamento') && <Link to="/branqueamento" onClick={() => setIsMenuOpen(false)} className="block pl-4 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg">Branqueamento</Link>}
-                    {currentSite.services.includes('prevencao') && <Link to="/prevencao" onClick={() => setIsMenuOpen(false)} className="block pl-4 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg">Prevenção</Link>}
+                  <div className="space-y-4">
+                    <span className="text-sm font-black text-accent uppercase tracking-[0.2em] block mb-2">{t('treatments')}</span>
+                    <div className="grid grid-cols-1 gap-3">
+                      {currentSite.services.includes('implantologia') && <Link to="/implantologia" onClick={() => setIsMenuOpen(false)} className="block pl-4 py-3 text-gray-700 bg-gray-50 rounded-xl hover:text-primary active:bg-primary/5 transition-all font-medium">Implantologia</Link>}
+                      {currentSite.services.includes('facetas') && <Link to="/facetas" onClick={() => setIsMenuOpen(false)} className="block pl-4 py-3 text-gray-700 bg-gray-50 rounded-xl hover:text-primary active:bg-primary/5 transition-all font-medium">Facetas</Link>}
+                      {currentSite.services.includes('alinhadores') && <Link to="/alinhadores" onClick={() => setIsMenuOpen(false)} className="block pl-4 py-3 text-gray-700 bg-gray-50 rounded-xl hover:text-primary active:bg-primary/5 transition-all font-medium">Alinhadores</Link>}
+                      {currentSite.services.includes('branqueamento') && <Link to="/branqueamento" onClick={() => setIsMenuOpen(false)} className="block pl-4 py-3 text-gray-700 bg-gray-50 rounded-xl hover:text-primary active:bg-primary/5 transition-all font-medium">Branqueamento</Link>}
+                      {currentSite.services.includes('prevencao') && <Link to="/prevencao" onClick={() => setIsMenuOpen(false)} className="block pl-4 py-3 text-gray-700 bg-gray-50 rounded-xl hover:text-primary active:bg-primary/5 transition-all font-medium">Prevenção</Link>}
+                    </div>
                   </div>
 
                   <Link
                     to="/blog"
                     onClick={() => setIsMenuOpen(false)}
-                    className="text-lg font-medium text-gray-800 hover:text-primary border-b border-gray-50 pb-2"
+                    className="text-xl font-bold text-primary border-b border-gray-100 pb-4"
                   >
                     Blog
                   </Link>
 
-                  <a
-                    href="tel:+351912092209"
-                    onClick={() => setIsMenuOpen(false)}
-                    className="mt-4 w-full bg-primary text-white text-center py-4 rounded-full font-bold shadow-lg"
-                  >
-                    {t('contact')}
-                  </a>
+                  <div className="pt-4 space-y-4">
+                    <a
+                      href="tel:+351912092209"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="flex items-center justify-center gap-3 w-full bg-primary text-white py-4 rounded-2xl font-bold shadow-lg shadow-primary/20"
+                    >
+                      <Phone className="w-5 h-5" />
+                      {t('contact')}
+                    </a>
+                    
+                    <div className="flex justify-center space-x-8 pt-4">
+                        <button onClick={() => { i18n.changeLanguage('pt'); setIsMenuOpen(false); }} className={`text-lg font-black ${i18n.language === 'pt' ? 'text-primary' : 'text-gray-300'}`}>PT</button>
+                        <button onClick={() => { i18n.changeLanguage('en'); setIsMenuOpen(false); }} className={`text-lg font-black ${i18n.language === 'en' ? 'text-primary' : 'text-gray-300'}`}>EN</button>
+                    </div>
+                  </div>
                 </div>
               </div>
-            )}
-
-            {/* Overlay Background to close when clicking outside */}
-            {isMenuOpen && (
-              <div
-                className="md:hidden fixed inset-0 bg-black/50 z-30"
-                style={{ top: '96px' }}
-                onClick={() => setIsMenuOpen(false)}
-              ></div>
             )}
           </nav>
 
@@ -237,27 +238,27 @@ function App() {
 
                 <div>
                   <h3 className="text-lg font-bold mb-6 border-b border-accent/30 pb-2 w-fit">{t('footerContactsTitle')}</h3>
-                  <div className="space-y-4">
+                  <div className="space-y-5">
                     <a href="tel:+351912092209" onClick={() => logEvent('Contact', 'Phone Click', 'Footer')} className="flex items-center group">
-                      <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mr-3 group-hover:bg-accent transition-colors">
-                        <Phone className="h-4 w-4" />
+                      <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center mr-4 group-hover:bg-accent transition-all">
+                        <Phone className="h-5 w-5" />
                       </div>
-                      <div>
-                        <span className="text-primary-light/80 group-hover:text-white transition-colors block">+351 912 092 209</span>
-                        <span className="text-primary-light/60 text-xs group-hover:text-white transition-colors block mt-1">{t('emergencyPhone')}: 963 086 963</span>
+                      <div className="flex flex-col">
+                        <span className="text-white font-bold text-lg group-hover:text-accent transition-colors">+351 912 092 209</span>
+                        <span className="text-primary-light/60 text-xs">{t('emergencyPhone')}: 963 086 963</span>
                       </div>
                     </a>
                     <a href="mailto:contacto@portoimplantes.pt" onClick={() => logEvent('Contact', 'Email Click', 'Footer')} className="flex items-center group">
-                      <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mr-3 group-hover:bg-accent transition-colors">
-                        <Mail className="h-4 w-4" />
+                      <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center mr-4 group-hover:bg-accent transition-all">
+                        <Mail className="h-5 w-5" />
                       </div>
-                      <span className="text-primary-light/80 group-hover:text-white transition-colors">contacto@portoimplantes.pt</span>
+                      <span className="text-primary-light/80 group-hover:text-white transition-colors break-all">contacto@portoimplantes.pt</span>
                     </a>
                     <div className="flex items-center">
-                      <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mr-3">
-                        <MapPin className="h-4 w-4" />
+                      <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center mr-4">
+                        <MapPin className="h-5 w-5" />
                       </div>
-                      <span className="text-primary-light/80">{t('clinicAddress')}</span>
+                      <span className="text-primary-light/80 text-sm leading-snug">{t('clinicAddress')}</span>
                     </div>
                   </div>
                 </div>
