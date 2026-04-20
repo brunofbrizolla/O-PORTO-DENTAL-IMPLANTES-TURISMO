@@ -44,7 +44,7 @@ const FacetasTurismo = () => {
     ];
 
     return (
-        <div className="animate-fadeIn font-sans text-gray-800">
+        <div className="animate-fadeIn font-sans text-gray-800 overflow-x-hidden max-w-full">
             <SEO
                 title={t('metaTitleVeneers')}
                 description={t('metaDescVeneers')}

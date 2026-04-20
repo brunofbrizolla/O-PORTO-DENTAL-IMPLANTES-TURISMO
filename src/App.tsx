@@ -68,7 +68,7 @@ function App() {
         <AnalyticsTracker />
         <ScrollToTop />
         <ChatBot />
-        <div className="min-h-screen bg-primary-light font-sans text-gray-800">
+        <div className="min-h-screen bg-primary-light font-sans text-gray-800 overflow-x-hidden max-w-full">
 
 
           {/* Navbar */}

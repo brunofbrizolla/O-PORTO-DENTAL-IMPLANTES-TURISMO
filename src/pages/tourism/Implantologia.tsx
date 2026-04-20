@@ -43,7 +43,7 @@ const ImplantologiaTurismo = () => {
     ];
 
     return (
-        <div className="animate-fadeIn font-sans text-gray-800">
+        <div className="animate-fadeIn font-sans text-gray-800 overflow-x-hidden max-w-full">
             <SEO
                 title={t('metaTitleImplantology')}
                 description={t('metaDescImplantology')}
@@ -52,7 +52,7 @@ const ImplantologiaTurismo = () => {
             {/* 1. Hero Section - Specialized for Tourism */}
             <section className="relative min-h-[100svh] flex items-center bg-gray-900 overflow-hidden">
                 <div
-                    className="absolute inset-0 bg-contain bg-no-repeat bg-right-bottom opacity-40 translate-x-10 md:translate-x-20"
+                    className="absolute inset-0 bg-contain bg-no-repeat bg-right-bottom opacity-40 translate-x-4 md:translate-x-20"
                     style={{ backgroundImage: 'url("/assets/all_on_4_diagram.png")' }}
                 ></div>
 

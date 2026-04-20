@@ -77,7 +77,7 @@ const TurismoDentario = () => {
     ];
 
     return (
-        <div className="animate-fadeIn font-sans text-gray-800">
+        <div className="animate-fadeIn font-sans text-gray-800 overflow-x-hidden max-w-full">
             <style dangerouslySetInnerHTML={{ __html: `
                 @keyframes scroll {
                     0% { transform: translateX(0); }
@@ -108,7 +108,7 @@ const TurismoDentario = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent z-10"></div>
 
                 <div className="relative z-20 max-w-7xl mx-auto px-6 w-full pt-20 pb-12">
-                    <div className="max-w-2xl text-white pl-4 border-l-4 border-accent animate-slideIn">
+                    <div className="max-w-2xl text-white pl-4 border-l-4 border-accent animate-slideIn break-words overflow-x-hidden">
                         <span className="text-accent font-black tracking-[0.3em] uppercase mb-4 block text-[10px] md:text-sm">
                             {t('dentalTourism.heroSubtitle')}
                         </span>
@@ -121,14 +121,14 @@ const TurismoDentario = () => {
                         <div className="flex flex-col sm:flex-row gap-4">
                             <a
                                 href="#remote-quote"
-                                className="inline-flex items-center justify-center px-8 py-5 bg-accent text-white rounded-2xl font-bold shadow-xl hover:bg-white hover:text-primary transition-all duration-300 active:scale-95"
+                                className="inline-flex items-center justify-center px-6 py-4 sm:px-8 sm:py-5 bg-accent text-white rounded-2xl font-bold text-sm sm:text-base shadow-xl hover:bg-white hover:text-primary transition-all duration-300 active:scale-95"
                             >
                                 <MessageSquare className="mr-3 w-5 h-5" />
                                 {t('dentalTourism.remoteQuoteButton')}
                             </a>
                             <a
                                 href="#why-portugal"
-                                className="inline-flex items-center justify-center px-8 py-5 border-2 border-white/30 text-white rounded-2xl font-bold backdrop-blur-sm hover:bg-white hover:text-primary transition-all duration-300"
+                                className="inline-flex items-center justify-center px-6 py-4 sm:px-8 sm:py-5 border-2 border-white/30 text-white rounded-2xl font-bold text-sm sm:text-base backdrop-blur-sm hover:bg-white hover:text-primary transition-all duration-300"
                             >
                                 {t('knowMore')}
                             </a>
@@ -327,7 +327,7 @@ const TurismoDentario = () => {
             {/* 6. Discover Portugal Section */}
             <section className="py-24 bg-white overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                         <div className="order-2 lg:order-1 grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div className="space-y-4">
                                 <div className="h-48 md:h-64 rounded-3xl overflow-hidden shadow-lg group relative">
@@ -350,12 +350,12 @@ const TurismoDentario = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="order-1 lg:order-2">
+                        <div className="order-1 lg:order-2 overflow-x-hidden">
                              <span className="text-accent font-black uppercase tracking-[0.2em] mb-2 block text-xs">{t('dentalTourism.portoSubtitle')}</span>
                              <h2 className="text-3xl md:text-5xl font-bold text-primary font-serif mb-6 md:mb-8 leading-tight">
                                 {t('dentalTourism.portoTitle')}
                              </h2>
-                             <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-10 text-justify">
+                             <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-10 text-left md:text-justify">
                                 {t('dentalTourism.portoText')}
                              </p>
                              <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4">
