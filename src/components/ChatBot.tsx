@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { X, Send, ChevronDown, Minimize2 } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { useTranslation } from 'react-i18next';
+import { currentSite } from '../config/siteConfig';
 
 interface Message {
     id: number;
@@ -23,7 +24,7 @@ const ChatBot = () => {
     const [isMinimized, setIsMinimized] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
     const [messages, setMessages] = useState<Message[]>([
-        { id: 1, text: t('chat.greetingPrincipal'), sender: 'bot' },
+        { id: 1, text: currentSite.chatConfig.greeting, sender: 'bot' },
     ]);
     const [inputValue, setInputValue] = useState('');
     const [step, setStep] = useState<'GREETING' | 'NAME' | 'MENU' | 'TREATMENTS' | 'EXPLAIN' | 'CONTACT' | 'CONFIRM' | 'SENDING' | 'SUCCESS'>('GREETING');
@@ -70,7 +71,7 @@ const ChatBot = () => {
     // Update initial message when language changes if it's the only message
     useEffect(() => {
         if (messages.length === 1 && messages[0].sender === 'bot') {
-            setMessages([{ id: 1, text: t('chat.greetingPrincipal'), sender: 'bot' }]);
+            setMessages([{ id: 1, text: currentSite.chatConfig.greeting, sender: 'bot' }]);
         }
     }, [t]);
 
@@ -115,7 +116,14 @@ const ChatBot = () => {
                 { label: t('chat.options.aligners'), value: 'alinhadores' },
                 { label: t('chat.options.whitening'), value: 'branqueamento' },
                 { label: t('chat.options.prevention'), value: 'prevencao' }
-            ]);
+            ].filter(opt => {
+                if (opt.value === 'implantes') return currentSite.services.includes('implantologia');
+                if (opt.value === 'facetas') return currentSite.services.includes('facetas');
+                if (opt.value === 'alinhadores') return currentSite.services.includes('alinhadores');
+                if (opt.value === 'branqueamento') return currentSite.services.includes('branqueamento');
+                if (opt.value === 'prevencao') return currentSite.services.includes('prevencao');
+                return true;
+            }));
             return;
         }
 
@@ -150,7 +158,14 @@ const ChatBot = () => {
                         { label: t('chat.options.aligners'), value: 'alinhadores' },
                         { label: t('chat.options.whitening'), value: 'branqueamento' },
                         { label: t('chat.options.prevention'), value: 'prevencao' }
-                    ]);
+                    ].filter(opt => {
+                        if (opt.value === 'implantes') return currentSite.services.includes('implantologia');
+                        if (opt.value === 'facetas') return currentSite.services.includes('facetas');
+                        if (opt.value === 'alinhadores') return currentSite.services.includes('alinhadores');
+                        if (opt.value === 'branqueamento') return currentSite.services.includes('branqueamento');
+                        if (opt.value === 'prevencao') return currentSite.services.includes('prevencao');
+                        return true;
+                    }));
                 } else {
                     setStep('CONTACT');
                     setUserData(prev => ({ ...prev, interest: 'Contacto Geral' }));
@@ -186,7 +201,14 @@ const ChatBot = () => {
                             { label: t('chat.options.aligners'), value: 'alinhadores' },
                             { label: t('chat.options.whitening'), value: 'branqueamento' },
                             { label: t('chat.options.prevention'), value: 'prevencao' }
-                        ]);
+                        ].filter(opt => {
+                            if (opt.value === 'implantes') return currentSite.services.includes('implantologia');
+                            if (opt.value === 'facetas') return currentSite.services.includes('facetas');
+                            if (opt.value === 'alinhadores') return currentSite.services.includes('alinhadores');
+                            if (opt.value === 'branqueamento') return currentSite.services.includes('branqueamento');
+                            if (opt.value === 'prevencao') return currentSite.services.includes('prevencao');
+                            return true;
+                        }));
                         return;
                     }
 
@@ -208,7 +230,14 @@ const ChatBot = () => {
                         { label: t('chat.options.aligners'), value: 'alinhadores' },
                         { label: t('chat.options.whitening'), value: 'branqueamento' },
                         { label: t('chat.options.prevention'), value: 'prevencao' }
-                    ]);
+                    ].filter(opt => {
+                        if (opt.value === 'implantes') return currentSite.services.includes('implantologia');
+                        if (opt.value === 'facetas') return currentSite.services.includes('facetas');
+                        if (opt.value === 'alinhadores') return currentSite.services.includes('alinhadores');
+                        if (opt.value === 'branqueamento') return currentSite.services.includes('branqueamento');
+                        if (opt.value === 'prevencao') return currentSite.services.includes('prevencao');
+                        return true;
+                    }));
                 }
                 break;
 
@@ -317,7 +346,7 @@ const ChatBot = () => {
                             <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 rounded-full border-2 border-primary"></div>
                         </div>
                         <div>
-                            <h3 className="font-bold text-sm leading-tight">{t('chat.agentName')}</h3>
+                            <h3 className="font-bold text-sm leading-tight">{currentSite.chatConfig.agentName}</h3>
                             <div className="flex items-center gap-1">
                                 <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
                                 <p className="text-[10px] text-primary-light/90 uppercase tracking-wide font-medium">{t('chat.online')}</p>

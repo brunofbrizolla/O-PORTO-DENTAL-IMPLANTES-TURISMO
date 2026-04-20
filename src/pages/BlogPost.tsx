@@ -440,6 +440,88 @@ const BlogPost = () => {
                     </div>
                 </>
             )
+        },
+        'novo-sorriso-nova-vida-porto-turismo-dental': {
+            title: 'Novo Sorriso, Nova Vida: Por que o Porto é o Destino Nº 1 para a sua Transformação Dentária',
+            date: '30 Mar 2024',
+            author: 'Dra. Kátia Fragoso',
+            readTime: '6 min',
+            category: 'Tourism',
+            image: '/assets/uploads/clinic_reception.jpg',
+            content: (
+                <>
+                    <p className="lead text-xl text-gray-600 mb-8 font-light italic">
+                        Imagine isto: Acorda numa manhã ensolarada no Porto, com vista para o Rio Douro. Bebe o seu café com total confiança, sabendo que a sua cirurgia foi um sucesso e que o seu sorriso está, finalmente, como sempre sonhou. E o melhor? Economizou milhares de euros sem abdicar de um único milímetro de qualidade.
+                    </p>
+                    <p className="mb-6">
+                        Parece um sonho? Na Porto Implantes, transformamos este cenário na realidade de centenas de pacientes que viajam de toda a Europa para as mãos da Dra. Kátia Fragoso. Se está cansado de orçamentos exorbitantes no seu país ou de soluções temporárias que não resolvem o seu problema, este guia é para si. Descubra por que o turismo dental na Porto Implantes é a decisão mais inteligente que tomará este ano.
+                    </p>
+
+                    <h2 className="text-3xl font-bold text-primary font-serif mb-4 mt-8">1. A Excelência Brasileira no Coração de Portugal</h2>
+                    <p className="mb-6">
+                        Não é segredo: o Brasil é a maior autoridade mundial em estética dentária. A Dra. Kátia Fragoso traz essa "escola brasileira" de perfeccionismo e naturalidade para o Porto. Aqui, não fazemos apenas "dentes novos". Desenhamos sorrisos que harmonizam com o seu rosto. Seja através de Implantes All-on-4, Facetas de Cerâmica ou Alinhadores Invisíveis, o nosso foco é um resultado tão natural que ninguém dirá que fez um tratamento – apenas que está com um aspeto fantástico.
+                    </p>
+
+                    <h2 className="text-3xl font-bold text-primary font-serif mb-4 mt-8">2. Tecnologia 3D: O Futuro é Agora</h2>
+                    <p className="mb-6">
+                        Esqueça as massas de moldagem desconfortáveis e as esperas intermináveis. Na Porto Implantes, investimos no que há de mais moderno:
+                    </p>
+                    <ul className="list-disc pl-6 mb-6 space-y-2 text-gray-700 marker:text-accent">
+                        <li><strong>Scanner Intraoral 3D:</strong> Criamos um mapa digital da sua boca em segundos.</li>
+                        <li><strong>Cirurgia Guiada por Computador:</strong> Colocamos implantes com precisão milimétrica, o que significa menos inchaço, menos dor e uma recuperação recorde.</li>
+                        <li><strong>Digital Smile Design:</strong> Quer ver o seu novo sorriso antes mesmo de começarmos? Nós mostramos-lhe o projeto final no ecrã.</li>
+                    </ul>
+
+                    <h2 className="text-3xl font-bold text-primary font-serif mb-4 mt-8">3. O Mito do Preço: Por que é mais acessível?</h2>
+                    <p className="mb-6">
+                        Uma das perguntas que mais recebemos é: "Como podem ser 60% mais baratos que no meu país se usam os mesmos materiais?"
+                        A resposta é simples: Eficiência Económica. Em Portugal, os custos fixos de estrutura e os impostos profissionais são diferentes de Londres, Paris ou Genebra.
+                    </p>
+                    <ul className="list-disc pl-6 mb-6 space-y-2 text-gray-700 marker:text-accent">
+                        <li><strong>Mesmos Materiais:</strong> Utilizamos marcas globais líderes (como Straumann ou Nobel Biocare).</li>
+                        <li><strong>Mesma Segurança:</strong> Estamos registados na ERS e seguimos as normas de saúde da União Europeia.</li>
+                        <li><strong>Mais Valor:</strong> O valor que economiza paga a sua viagem de luxo ao Porto e ainda sobra.</li>
+                    </ul>
+
+                    <h2 className="text-3xl font-bold text-primary font-serif mb-4 mt-8">4. Tratamentos Express: Otimizados para quem viaja</h2>
+                    <p className="mb-6">
+                        Sabemos que o seu tempo é precioso. Por isso, os nossos protocolos de Turismo Dental são intensivos:
+                    </p>
+                    <ul className="list-disc pl-6 mb-6 space-y-4 text-gray-700 marker:text-accent">
+                        <li><strong>Implantes All-on-4 (Dentes em 24h):</strong> Entre na clínica de manhã e saia com dentes fixos no final do dia. Recuperação total da mastigação imediata.</li>
+                        <li><strong>Facetas de Alta Precisão:</strong> Transformação estética completa em apenas uma semana.</li>
+                        <li><strong>Alinhadores Invisíveis:</strong> Planeamos tudo digitalmente e enviamos os seus kits para qualquer parte do mundo.</li>
+                    </ul>
+
+                    <h2 className="text-3xl font-bold text-primary font-serif mb-4 mt-8">5. Do Primeiro Clique ao Novo Sorriso: Como funciona?</h2>
+                    <p className="mb-6">
+                        Viajar para um tratamento médico pode parecer assustador, mas nós tornamos tudo simples:
+                    </p>
+                    <ul className="list-disc pl-6 mb-8 space-y-2 text-gray-700 marker:text-accent">
+                        <li><strong>Consulta Virtual Gratuita:</strong> Envie-nos o seu Raio-X ou fotos por WhatsApp. Terá uma análise preliminar da Dra. Kátia sem sair do sofá.</li>
+                        <li><strong>Plano de Viagem Personalizado:</strong> Recebe um orçamento fechado e o cronograma exato da sua estadia.</li>
+                        <li><strong>Concierge Porto Implantes:</strong> Recomendamos os melhores hotéis a passos da nossa clínica e garantimos que se sinta em casa.</li>
+                        <li><strong>Acompanhamento Vitalício:</strong> O nosso compromisso não termina quando apanha o avião de volta. Estamos sempre disponíveis para suporte pós-tratamento.</li>
+                    </ul>
+
+                    <div className="bg-primary text-white p-10 rounded-[2.5rem] shadow-2xl text-center my-12 relative overflow-hidden group">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-accent/20 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl group-hover:bg-accent/30 transition-all duration-700"></div>
+                        <h3 className="text-3xl font-bold mb-6 font-serif">O Porto espera por si. O seu sorriso também.</h3>
+                        <p className="text-lg text-primary-light/90 mb-8 leading-relaxed">
+                            Não deixe para amanhã a confiança que pode recuperar hoje. A Porto Implantes combina a segurança da medicina europeia com o brilho da estética brasileira, tudo numa das cidades mais bonitas do mundo.
+                        </p>
+                        <a 
+                            href="https://wa.me/351912092209" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center px-10 py-5 bg-accent hover:bg-white hover:text-primary text-white rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-xl"
+                        >
+                            Fale connosco via WhatsApp
+                        </a>
+                        <p className="mt-6 text-sm text-primary-light/60">Receba a sua pré-avaliação gratuita em menos de 24 horas.</p>
+                    </div>
+                </>
+            )
         }
     };
 

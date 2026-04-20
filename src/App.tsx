@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react
 import { HelmetProvider } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import i18n from './i18n';
+import { currentSite } from './config/siteConfig';
 import {
   Phone,
   Mail,
@@ -21,11 +22,24 @@ import { initGA, logPageView, logEvent } from './utils/analytics';
 
 // Lazy Load Pages
 const Home = lazy(() => import('./pages/Home'));
-const Implantologia = lazy(() => import('./pages/Implantologia'));
-const Facetas = lazy(() => import('./pages/Facetas'));
-const Alinhadores = lazy(() => import('./pages/Alinhadores'));
+const Implantologia = lazy(() => 
+  currentSite.id === 'dental-tourism' 
+    ? import('./pages/tourism/Implantologia') 
+    : import('./pages/Implantologia')
+);
+const Facetas = lazy(() => 
+  currentSite.id === 'dental-tourism' 
+    ? import('./pages/tourism/Facetas') 
+    : import('./pages/Facetas')
+);
+const Alinhadores = lazy(() => 
+  currentSite.id === 'dental-tourism' 
+    ? import('./pages/tourism/Alinhadores') 
+    : import('./pages/Alinhadores')
+);
 const Branqueamento = lazy(() => import('./pages/Branqueamento'));
 const Prevencao = lazy(() => import('./pages/Prevencao'));
+const TurismoDentario = lazy(() => import('./pages/TurismoDentario'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
 
@@ -63,8 +77,8 @@ function App() {
               <Link to="/" className="flex items-center group gap-2">
                 <div className="h-12 w-12 overflow-hidden rounded-full border-2 border-primary/10 bg-white flex items-center justify-center shadow-md">
                   <img
-                    src="/assets/uploads/logo_header.png"
-                    alt="Porto Implantes"
+                    src={currentSite.logo}
+                    alt={currentSite.name}
                     className="h-full w-full object-contain transform scale-[1.35]"
                   />
                 </div>
@@ -80,11 +94,11 @@ function App() {
                     <span className="ml-1 text-xs">▼</span>
                   </button>
                   <div className="absolute top-full left-0 w-56 bg-white shadow-xl rounded-b-lg overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                    <Link to="/implantologia" className="block px-6 py-3 text-gray-600 hover:bg-primary-light hover:text-primary border-b border-gray-100">Implantologia</Link>
-                    <Link to="/facetas" className="block px-6 py-3 text-gray-600 hover:bg-primary-light hover:text-primary border-b border-gray-100">Facetas</Link>
-                    <Link to="/alinhadores" className="block px-6 py-3 text-gray-600 hover:bg-primary-light hover:text-primary border-b border-gray-100">Alinhadores</Link>
-                    <Link to="/branqueamento" className="block px-6 py-3 text-gray-600 hover:bg-primary-light hover:text-primary border-b border-gray-100">Branqueamento</Link>
-                    <Link to="/prevencao" className="block px-6 py-3 text-gray-600 hover:bg-primary-light hover:text-primary">Prevenção</Link>
+                    {currentSite.services.includes('implantologia') && <Link to="/implantologia" className="block px-6 py-3 text-gray-600 hover:bg-primary-light hover:text-primary border-b border-gray-100">Implantologia</Link>}
+                    {currentSite.services.includes('facetas') && <Link to="/facetas" className="block px-6 py-3 text-gray-600 hover:bg-primary-light hover:text-primary border-b border-gray-100">Facetas</Link>}
+                    {currentSite.services.includes('alinhadores') && <Link to="/alinhadores" className="block px-6 py-3 text-gray-600 hover:bg-primary-light hover:text-primary border-b border-gray-100">Alinhadores</Link>}
+                    {currentSite.services.includes('branqueamento') && <Link to="/branqueamento" className="block px-6 py-3 text-gray-600 hover:bg-primary-light hover:text-primary border-b border-gray-100">Branqueamento</Link>}
+                    {currentSite.services.includes('prevencao') && <Link to="/prevencao" className="block px-6 py-3 text-gray-600 hover:bg-primary-light hover:text-primary">Prevenção</Link>}
                   </div>
                 </div>
 
@@ -124,11 +138,11 @@ function App() {
 
                   <div className="space-y-2">
                     <span className="text-sm font-bold text-accent uppercase tracking-wider block mb-2">{t('treatments')}</span>
-                    <Link to="/implantologia" onClick={() => setIsMenuOpen(false)} className="block pl-4 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg">Implantologia</Link>
-                    <Link to="/facetas" onClick={() => setIsMenuOpen(false)} className="block pl-4 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg">Facetas</Link>
-                    <Link to="/alinhadores" onClick={() => setIsMenuOpen(false)} className="block pl-4 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg">Alinhadores</Link>
-                    <Link to="/branqueamento" onClick={() => setIsMenuOpen(false)} className="block pl-4 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg">Branqueamento</Link>
-                    <Link to="/prevencao" onClick={() => setIsMenuOpen(false)} className="block pl-4 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg">Prevenção</Link>
+                    {currentSite.services.includes('implantologia') && <Link to="/implantologia" onClick={() => setIsMenuOpen(false)} className="block pl-4 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg">Implantologia</Link>}
+                    {currentSite.services.includes('facetas') && <Link to="/facetas" onClick={() => setIsMenuOpen(false)} className="block pl-4 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg">Facetas</Link>}
+                    {currentSite.services.includes('alinhadores') && <Link to="/alinhadores" onClick={() => setIsMenuOpen(false)} className="block pl-4 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg">Alinhadores</Link>}
+                    {currentSite.services.includes('branqueamento') && <Link to="/branqueamento" onClick={() => setIsMenuOpen(false)} className="block pl-4 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg">Branqueamento</Link>}
+                    {currentSite.services.includes('prevencao') && <Link to="/prevencao" onClick={() => setIsMenuOpen(false)} className="block pl-4 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg">Prevenção</Link>}
                   </div>
 
                   <Link
@@ -177,12 +191,17 @@ function App() {
           {/* Routes */}
           <Suspense fallback={<LoadingSpinner />}>
             <Routes>
-              <Route path="/" element={<Home />} />
+              {currentSite.id === 'porto-implantes' ? (
+                <Route path="/" element={<Home />} />
+              ) : (
+                <Route path="/" element={<TurismoDentario />} />
+              )}
               <Route path="/implantologia" element={<Implantologia />} />
               <Route path="/facetas" element={<Facetas />} />
               <Route path="/alinhadores" element={<Alinhadores />} />
               <Route path="/branqueamento" element={<Branqueamento />} />
               <Route path="/prevencao" element={<Prevencao />} />
+              <Route path="/turismo-dentario" element={<TurismoDentario />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
             </Routes>

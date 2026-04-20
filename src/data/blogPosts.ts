@@ -34,8 +34,8 @@ export const blogPosts = [
     },
     {
         id: 4,
-        slug: 'invisalign-vs-aparelho-fixo',
-        title: 'Invisalign ou Aparelho Fixo: Qual é a Melhor Opção para Si?',
+        slug: 'alinhadores-invisiveis-vs-aparelho-fixo',
+        title: 'Alinhadores Invisíveis ou Aparelho Fixo: Qual é a Melhor Opção para Si?',
         excerpt: 'Alinhadores invisíveis ou brackets metálicos? Comparámos custos, tempo de tratamento e conforto para o ajudar a decidir o melhor caminho para o seu sorriso perfeito.',
         date: '15 Fev 2024',
         author: 'Porto Implantes',
@@ -97,5 +97,38 @@ export const blogPosts = [
         readTime: '6 min',
         image: '/assets/uploads/clinic_office.jpg',
         category: 'Tecnologia'
+    },
+    {
+        id: 10,
+        slug: 'saving-60-dental-implants-portugal',
+        title: 'How to save 60% on Dental Implants with EU Quality in Portugal',
+        excerpt: 'Thinking about dental implants abroad? Discover how Porto combines high-end technology with significantly lower costs than the UK or USA.',
+        date: '20 Mar 2024',
+        author: 'Porto Implantes',
+        readTime: '12 min',
+        image: 'https://images.unsplash.com/photo-1594539829553-27083815ba40?q=80&w=800&auto=format&fit=crop',
+        category: 'Tourism'
+    },
+    {
+        id: 11,
+        slug: 'porto-dental-trip-itinerary',
+        title: 'Your 7-Day Dental Trip to Porto: A Complete Step-by-Step Itinerary',
+        excerpt: 'Planning your visit? From the first consultation to exploring the Douro Valley, here is how to enjoy Porto while you transform your smile.',
+        date: '25 Mar 2024',
+        author: 'Porto Implantes',
+        readTime: '15 min',
+        image: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?q=80&w=800&auto=format&fit=crop',
+        category: 'Tourism'
+    },
+    {
+        id: 12,
+        slug: 'novo-sorriso-nova-vida-porto-turismo-dental',
+        title: 'Novo Sorriso, Nova Vida: Por que o Porto é o Destino Nº 1 para a sua Transformação Dentária',
+        excerpt: 'Imagine acordar no Porto com um novo sorriso e ter economizado milhares de euros. Descubra por que a Porto Implantes é a escolha inteligente de centenas de pacientes europeus.',
+        date: '30 Mar 2024',
+        author: 'Dra. Kátia Fragoso',
+        readTime: '6 min',
+        image: '/assets/uploads/clinic_reception.jpg',
+        category: 'Tourism'
     }
 ];

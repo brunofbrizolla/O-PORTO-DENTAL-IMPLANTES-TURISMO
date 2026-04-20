@@ -5,10 +5,13 @@ import { useTranslation } from 'react-i18next';
 
 import { blogPosts } from '../data/blogPosts';
 import AppointmentSection from '../components/AppointmentSection';
+import { currentSite } from '../config/siteConfig';
 
 const Blog = () => {
     const { t } = useTranslation();
-    const posts = blogPosts;
+    const posts = currentSite.id === 'dental-tourism'
+        ? blogPosts.filter(post => post.category === 'Tourism' || post.category === 'Turismo')
+        : blogPosts.filter(post => post.category !== 'Tourism' && post.category !== 'Turismo');
 
     return (
         <div className="pt-24 bg-gray-50 min-h-screen">
