@@ -107,8 +107,10 @@ const ChatBot = () => {
         // Global Navigation / Intents (To allow changing mind at any step)
         if (lowerInput.includes('conhecer tratamentos') ||
             lowerInput.includes('learn about treatments') ||
+            lowerInput.includes('connaître les traitements') ||
             lowerInput === 'tratamentos' ||
-            lowerInput === 'treatments') {
+            lowerInput === 'treatments' ||
+            lowerInput === 'traitements') {
             setStep('TREATMENTS');
             addBotMessage(t('chat.treatments.prompt'), [
                 { label: t('chat.options.implants'), value: 'implantes' },
@@ -129,6 +131,7 @@ const ChatBot = () => {
 
         if (lowerInput.includes('falar com a equipa') ||
             lowerInput.includes('talk to the team') ||
+            lowerInput.includes('parler à l\'équipe') ||
             lowerInput === 'contacto' ||
             lowerInput === 'contact') {
             setStep('CONTACT');
@@ -179,8 +182,8 @@ const ChatBot = () => {
                 if (lowerInput.includes('implant')) key = 'implantes';
                 else if (lowerInput.includes('faceta') || lowerInput.includes('veneer')) key = 'facetas';
                 else if (lowerInput.includes('alinhador') || lowerInput.includes('aligner')) key = 'alinhadores';
-                else if (lowerInput.includes('branqueamento') || lowerInput.includes('whiten')) key = 'branqueamento';
-                else if (lowerInput.includes('preven') || lowerInput.includes('clean')) key = 'prevencao';
+                else if (lowerInput.includes('branqueamento') || lowerInput.includes('whiten') || lowerInput.includes('blanchiment')) key = 'branqueamento';
+                else if (lowerInput.includes('preven') || lowerInput.includes('clean') || lowerInput.includes('nettoyage')) key = 'prevencao';
 
                 if (key) {
                     setUserData(prev => ({ ...prev, interest: TREATMENTS[key].title }));

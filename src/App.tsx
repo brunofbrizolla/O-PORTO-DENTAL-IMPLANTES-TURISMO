@@ -111,8 +111,8 @@ function App() {
               </div>
 
               <div className="flex items-center space-x-4 border-l pl-6 border-gray-200">
-                <button onClick={() => i18n.changeLanguage('pt')} className={`font-bold ${i18n.language === 'pt' ? 'text-primary' : 'text-gray-400'} hover:text-primary transition`}>PT</button>
-                <button onClick={() => i18n.changeLanguage('en')} className={`font-bold ${i18n.language === 'en' ? 'text-primary' : 'text-gray-400'} hover:text-primary transition`}>EN</button>
+                <button onClick={() => i18n.changeLanguage('en')} className={`font-bold ${i18n.language === 'en' ? 'text-primary' : 'text-gray-400'} hover:text-primary transition uppercase text-sm`}>EN</button>
+                <button onClick={() => i18n.changeLanguage('fr')} className={`font-bold ${i18n.language === 'fr' ? 'text-primary' : 'text-gray-400'} hover:text-primary transition uppercase text-sm`}>FR</button>
               </div>
 
               {/* Mobile Menu Button */}
@@ -166,8 +166,8 @@ function App() {
                     </a>
                     
                     <div className="flex justify-center space-x-8 pt-4">
-                        <button onClick={() => { i18n.changeLanguage('pt'); setIsMenuOpen(false); }} className={`text-lg font-black ${i18n.language === 'pt' ? 'text-primary' : 'text-gray-300'}`}>PT</button>
                         <button onClick={() => { i18n.changeLanguage('en'); setIsMenuOpen(false); }} className={`text-lg font-black ${i18n.language === 'en' ? 'text-primary' : 'text-gray-300'}`}>EN</button>
+                        <button onClick={() => { i18n.changeLanguage('fr'); setIsMenuOpen(false); }} className={`text-lg font-black ${i18n.language === 'fr' ? 'text-primary' : 'text-gray-300'}`}>FR</button>
                     </div>
                   </div>
                 </div>

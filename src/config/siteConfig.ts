@@ -27,9 +27,9 @@ const portoConfig: SiteConfig = {
   whatsappNumber: '351912092209',
   chatConfig: {
     agentName: 'Sofia',
-    greeting: 'Olá! 👋 Sou a assistente virtual da Porto Implantes.',
-    initialStep: 'Como posso ajudar com o seu sorriso hoje?',
-    whatsappPrompt: 'Falar com a Equipa no Porto'
+    greeting: 'Hi! 👋 I am the virtual assistant at Porto Implantes.',
+    initialStep: 'How can I help you with your smile today?',
+    whatsappPrompt: 'Talk to the Team in Porto'
   },
   homePage: 'Home',
   services: ['implantologia', 'facetas', 'alinhadores', 'branqueamento', 'prevencao']
@@ -54,7 +54,7 @@ const tourismConfig: SiteConfig = {
   services: ['implantologia', 'facetas', 'alinhadores']
 };
 
-// Aqui definimos qual site carregar baseado em uma variável de ambiente
+// Here we define which site to load based on an environment variable
 const siteMode = import.meta.env.VITE_SITE_MODE || 'dental-tourism';
 
 export const currentSite = siteMode === 'porto-implantes' ? portoConfig : tourismConfig;

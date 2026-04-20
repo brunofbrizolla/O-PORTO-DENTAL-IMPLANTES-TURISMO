@@ -3,13 +3,13 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 import translationEN from './Locales/en.json';
-import translationPT from './Locales/pt.json';
+import translationFR from './Locales/fr.json';
 
 import { currentSite } from './config/siteConfig';
 
 const resources = {
   en: { translation: translationEN },
-  pt: { translation: translationPT },
+  fr: { translation: translationFR },
 };
 
 i18n
@@ -17,7 +17,7 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: currentSite.id === 'dental-tourism' ? 'en' : 'pt',
+    fallbackLng: 'en',
     interpolation: { escapeValue: false },
   });
 
