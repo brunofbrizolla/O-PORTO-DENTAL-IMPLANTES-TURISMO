@@ -392,8 +392,8 @@ const TurismoDentario = () => {
                                 <div className="w-20 h-20 bg-accent rounded-3xl flex items-center justify-center mb-8 shadow-xl mx-auto lg:mx-0">
                                     <Banknote className="w-10 h-10 text-white" />
                                 </div>
-                                <h3 className="text-3xl font-bold font-serif mb-6 leading-tight">{t('dentalTourism.economySubtitle')}</h3>
-                                <p className="text-primary-light/80 text-lg mb-8 leading-relaxed italic">
+                                <h3 className="text-2xl md:text-3xl font-bold font-serif mb-4 md:mb-6 leading-tight">{t('dentalTourism.economySubtitle')}</h3>
+                                <p className="text-primary-light/80 text-sm md:text-lg mb-6 md:mb-8 leading-relaxed italic">
                                     "Your dental treatment shouldn't just be an expense. Let it fund your Portuguese dream trip."
                                 </p>
                             </div>
@@ -485,13 +485,13 @@ const TurismoDentario = () => {
             </section>
 
              {/* 9. About Section */}
-             <section className="py-24 bg-gray-50">
+             <section id="about" className="py-16 md:py-24 bg-gray-50 overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="order-2 lg:order-1">
                             <span className="text-accent font-bold uppercase tracking-widest mb-2 block">{t('clinicDirector')}</span>
-                            <h2 className="text-4xl font-bold font-serif mb-6 text-primary">{t('aboutTitle')}</h2>
-                            <p className="text-gray-600 leading-relaxed text-lg mb-8 text-justify">
+                            <h2 className="text-2xl md:text-4xl font-bold font-serif mb-4 md:mb-6 text-primary">{t('aboutTitle')}</h2>
+                            <p className="text-gray-600 leading-relaxed text-sm md:text-lg mb-8 text-left md:text-justify break-words">
                                 <span dangerouslySetInnerHTML={{ __html: t('aboutDescription') }}></span>
                             </p>
                             <div className="flex gap-12">
@@ -507,7 +507,7 @@ const TurismoDentario = () => {
                         </div>
                         <div className="order-1 lg:order-2">
                              <div className="relative group mx-auto max-sm">
-                                <div className="absolute inset-0 bg-accent rounded-[3rem] transform translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
+                                <div className="absolute inset-0 bg-accent rounded-[3rem] transform lg:translate-x-4 lg:translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
                                 <img
                                     src="/assets/katiafragoso.jpeg"
                                     alt="Dra. Kátia Fragoso"
