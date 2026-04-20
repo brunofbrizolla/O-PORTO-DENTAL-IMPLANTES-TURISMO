@@ -55,6 +55,6 @@ const tourismConfig: SiteConfig = {
 };
 
 // Aqui definimos qual site carregar baseado em uma variável de ambiente
-const siteMode = import.meta.env.VITE_SITE_MODE || 'porto-implantes';
+const siteMode = import.meta.env.VITE_SITE_MODE || 'dental-tourism';
 
-export const currentSite = siteMode === 'dental-tourism' ? tourismConfig : portoConfig;
+export const currentSite = siteMode === 'porto-implantes' ? portoConfig : tourismConfig;

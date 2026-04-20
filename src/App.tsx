@@ -215,7 +215,7 @@ function App() {
               <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
                 <div className="col-span-1 md:col-span-2">
                   <div className="flex items-center mb-6">
-                    <span className="text-3xl font-serif font-bold text-white tracking-wide">Porto Implantes</span>
+                    <span className="text-3xl font-serif font-bold text-white tracking-wide">{currentSite.name}</span>
                   </div>
                   <p className="text-primary-light/80 leading-relaxed mb-8 max-w-sm">
                     {t('footerText')}
@@ -264,7 +264,7 @@ function App() {
               </div>
 
               <div className="mt-16 pt-8 border-t border-white/10 text-center text-primary-light/60 text-sm">
-                <p>&copy; {new Date().getFullYear()} Porto Implantes. {t('footerRights')}</p>
+                <p>&copy; {new Date().getFullYear()} {currentSite.name}. {t('footerRights')}</p>
                 <div className="mt-4 flex justify-center space-x-6">
                   <a href="#" className="hover:text-white transition-colors">{t('footerTerms')}</a>
                   <a href="#" className="hover:text-white transition-colors">{t('footerPrivacy')}</a>

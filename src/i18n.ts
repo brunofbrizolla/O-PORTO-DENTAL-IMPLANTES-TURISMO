@@ -5,6 +5,8 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import translationEN from './Locales/en.json';
 import translationPT from './Locales/pt.json';
 
+import { currentSite } from './config/siteConfig';
+
 const resources = {
   en: { translation: translationEN },
   pt: { translation: translationPT },
@@ -15,7 +17,7 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: 'pt', // Usa inglês se o idioma do navegador não for encontrado
+    fallbackLng: currentSite.id === 'dental-tourism' ? 'en' : 'pt',
     interpolation: { escapeValue: false },
   });
 
