@@ -248,11 +248,11 @@ function App() {
                         <span className="text-primary-light/60 text-xs">{t('emergencyPhone')}: 963 086 963</span>
                       </div>
                     </a>
-                    <a href="mailto:contacto@portoimplantes.pt" onClick={() => logEvent('Contact', 'Email Click', 'Footer')} className="flex items-center group">
+                    <a href={`mailto:${currentSite.contactEmail}`} onClick={() => logEvent('Contact', 'Email Click', 'Footer')} className="flex items-center group">
                       <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center mr-4 group-hover:bg-accent transition-all">
                         <Mail className="h-5 w-5" />
                       </div>
-                      <span className="text-primary-light/80 group-hover:text-white transition-colors break-all">contacto@portoimplantes.pt</span>
+                      <span className="text-primary-light/80 group-hover:text-white transition-colors break-all">{currentSite.contactEmail}</span>
                     </a>
                     <div className="flex items-center">
                       <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center mr-4">
