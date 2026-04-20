@@ -388,7 +388,7 @@ const TurismoDentario = () => {
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="bg-white rounded-[40px] shadow-2xl overflow-hidden border border-gray-100">
                         <div className="grid lg:grid-cols-3">
-                            <div className="lg:col-span-1 bg-primary p-12 text-white flex flex-col justify-center text-center lg:text-left">
+                            <div className="lg:col-span-1 bg-primary p-8 md:p-12 text-white flex flex-col justify-center text-center lg:text-left">
                                 <div className="w-20 h-20 bg-accent rounded-3xl flex items-center justify-center mb-8 shadow-xl mx-auto lg:mx-0">
                                     <Banknote className="w-10 h-10 text-white" />
                                 </div>
@@ -397,7 +397,7 @@ const TurismoDentario = () => {
                                     "Your dental treatment shouldn't just be an expense. Let it fund your Portuguese dream trip."
                                 </p>
                             </div>
-                            <div className="lg:col-span-2 p-6 md:p-12 relative">
+                            <div className="lg:col-span-2 p-4 md:p-12 relative overflow-hidden">
                                 <div className="absolute top-4 right-8 flex items-center gap-2 text-primary/30 animate-pulse md:hidden">
                                      <span className="text-[10px] font-black uppercase tracking-widest">Swipe for more</span>
                                      <ArrowRight className="w-3 h-3" />
