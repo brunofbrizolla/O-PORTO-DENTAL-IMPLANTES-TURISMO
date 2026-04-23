@@ -131,7 +131,7 @@ const BlogPost = () => {
             )
         },
         'turismo-dentario-porto': {
-            title: 'Turismo Dentário no Porto: Tratamentos de Luxo a Preços Acessíveis',
+            title: 'Turismo Dentário no Porto: Tratamentos de Luxo e Experiência Inesquecível',
             date: '28 Dez 2023',
             author: 'Porto Implantes',
             readTime: '7 min',
@@ -140,7 +140,7 @@ const BlogPost = () => {
             content: (
                 <>
                     <p className="lead text-xl text-gray-600 mb-8 font-light">
-                        Imagine combinar as suas férias numa das cidades mais vibrantes da Europa com tratamentos dentários de topo, poupando até 60% em comparação com os preços do Norte da Europa. Bem-vindo ao Turismo Dentário no Porto.
+                        Imagine combinar as suas férias numa das cidades mais vibrantes da Europa com tratamentos dentários de topo, aliando saúde e turismo numa experiência memorável. Bem-vindo ao Turismo Dentário no Porto.
                     </p>
 
                     <h2 className="text-3xl font-bold text-primary font-serif mb-4 mt-8">Porquê o Porto?</h2>
@@ -148,11 +148,11 @@ const BlogPost = () => {
                         Eleito repetidamente como "Melhor Destino Europeu", o Porto oferece uma combinação única de história, cultura, gastronomia e hospitalidade. Mas mais do que isso, é um centro de excelência médica. As clínicas portuguesas são sujeitas a regulações rigorosas da Ordem dos Médicos Dentistas, garantindo padrões de higiene e segurança impecáveis.
                     </p>
 
-                    <h2 className="text-3xl font-bold text-primary font-serif mb-4 mt-8">A Matemática da Poupança</h2>
+                    <h2 className="text-3xl font-bold text-primary font-serif mb-4 mt-8">A Excelência da Experiência</h2>
                     <p className="mb-6">
-                        Em países como França, Reino Unido, Suíça ou EUA, os custos fixos de uma clínica são astronómicos. Em Portugal, devido a um custo de vida mais equilibrado, conseguimos oferecer <strong>exatamente os mesmos materiais de topo (implantes suíços, cerâmicas alemãs)</strong> por uma fração do preço.
+                        No Porto, proporcionamos um atendimento personalizado num ambiente acolhedor. Aliamos tecnologia de ponta e materiais de topo (implantes suíços, cerâmicas alemãs) a uma estadia relaxante e inesquecível.
                     </p>
-                    <p className="mb-6 font-bold text-primary">Não é "low cost", é "custo justo". Não poupamos na qualidade, poupamos na sua fatura.</p>
+                    <p className="mb-6 font-bold text-primary">A sua saúde e bem-estar são a nossa prioridade. Focamo-nos em oferecer um tratamento humanizado, sem nunca descurar a qualidade.</p>
 
                     <h2 className="text-3xl font-bold text-primary font-serif mb-4 mt-8">Tratamentos Mais Procurados</h2>
                     <ul className="list-disc pl-6 mb-6 space-y-2 text-gray-700">
@@ -451,10 +451,10 @@ const BlogPost = () => {
             content: (
                 <>
                     <p className="lead text-xl text-gray-600 mb-8 font-light italic">
-                        Imagine isto: Acorda numa manhã ensolarada no Porto, com vista para o Rio Douro. Bebe o seu café com total confiança, sabendo que a sua cirurgia foi um sucesso e que o seu sorriso está, finalmente, como sempre sonhou. E o melhor? Economizou milhares de euros sem abdicar de um único milímetro de qualidade.
+                        Imagine isto: Acorda numa manhã ensolarada no Porto, com vista para o Rio Douro. Bebe o seu café com total confiança, sabendo que a sua cirurgia foi um sucesso e que o seu sorriso está, finalmente, como sempre sonhou. E o melhor? Desfrutou de uma experiência de luxo e bem-estar sem abdicar de um único milímetro de qualidade.
                     </p>
                     <p className="mb-6">
-                        Parece um sonho? Na Porto Implantes, transformamos este cenário na realidade de centenas de pacientes que viajam de toda a Europa para as mãos da Dra. Kátia Fragoso. Se está cansado de orçamentos exorbitantes no seu país ou de soluções temporárias que não resolvem o seu problema, este guia é para si. Descubra por que o turismo dental na Porto Implantes é a decisão mais inteligente que tomará este ano.
+                        Parece um sonho? Na Porto Implantes, transformamos este cenário na realidade de centenas de pacientes que viajam de toda a Europa para as mãos da Dra. Kátia Fragoso. Se procura uma solução definitiva e uma experiência inesquecível com o máximo conforto, este guia é para si. Descubra por que o turismo dental na Porto Implantes é a decisão mais inteligente que tomará este ano.
                     </p>
 
                     <h2 className="text-3xl font-bold text-primary font-serif mb-4 mt-8">1. A Excelência Brasileira no Coração de Portugal</h2>
@@ -472,15 +472,15 @@ const BlogPost = () => {
                         <li><strong>Digital Smile Design:</strong> Quer ver o seu novo sorriso antes mesmo de começarmos? Nós mostramos-lhe o projeto final no ecrã.</li>
                     </ul>
 
-                    <h2 className="text-3xl font-bold text-primary font-serif mb-4 mt-8">3. O Mito do Preço: Por que é mais acessível?</h2>
+                    <h2 className="text-3xl font-bold text-primary font-serif mb-4 mt-8">3. Uma Experiência de Cuidado Integral</h2>
                     <p className="mb-6">
-                        Uma das perguntas que mais recebemos é: "Como podem ser 60% mais baratos que no meu país se usam os mesmos materiais?"
-                        A resposta é simples: Eficiência Económica. Em Portugal, os custos fixos de estrutura e os impostos profissionais são diferentes de Londres, Paris ou Genebra.
+                        Uma das vantagens do nosso serviço é aliar o tratamento dentário a uma experiência turística memorável.
+                        No Porto, encontrará um ambiente acolhedor e uma equipa focada no seu conforto desde o primeiro momento até ao fim da sua estadia.
                     </p>
                     <ul className="list-disc pl-6 mb-6 space-y-2 text-gray-700 marker:text-accent">
                         <li><strong>Mesmos Materiais:</strong> Utilizamos marcas globais líderes (como Straumann ou Nobel Biocare).</li>
                         <li><strong>Mesma Segurança:</strong> Estamos registados na ERS e seguimos as normas de saúde da União Europeia.</li>
-                        <li><strong>Mais Valor:</strong> O valor que economiza paga a sua viagem de luxo ao Porto e ainda sobra.</li>
+                        <li><strong>Experiência Completa:</strong> Combinamos a excelência clínica com a descoberta de uma das cidades mais belas da Europa.</li>
                     </ul>
 
                     <h2 className="text-3xl font-bold text-primary font-serif mb-4 mt-8">4. Tratamentos Express: Otimizados para quem viaja</h2>

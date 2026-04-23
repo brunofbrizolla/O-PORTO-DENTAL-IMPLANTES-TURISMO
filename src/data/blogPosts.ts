@@ -24,7 +24,7 @@ export const blogPosts = [
     {
         id: 3,
         slug: 'turismo-dentario-porto',
-        title: 'Turismo Dentário no Porto: Tratamentos de Luxo a Preços Acessíveis',
+        title: 'Turismo Dentário no Porto: Tratamentos de Luxo e Experiência Inesquecível',
         excerpt: 'Descubra por que pacientes de todo o mundo escolhem o Porto para realizar implantes e facetas. Qualidade de classe mundial, segurança e uma cidade incrível para visitar.',
         date: '28 Dez 2023',
         author: 'Porto Implantes',
@@ -101,8 +101,8 @@ export const blogPosts = [
     {
         id: 10,
         slug: 'saving-60-dental-implants-portugal',
-        title: 'How to save 60% on Dental Implants with EU Quality in Portugal',
-        excerpt: 'Thinking about dental implants abroad? Discover how Porto combines high-end technology with significantly lower costs than the UK or USA.',
+        title: 'The Ultimate Experience in Dental Implants with EU Quality in Portugal',
+        excerpt: 'Thinking about dental implants abroad? Discover how Porto combines high-end technology with an unforgettable tourism experience.',
         date: '20 Mar 2024',
         author: 'Porto Implantes',
         readTime: '12 min',
@@ -124,7 +124,7 @@ export const blogPosts = [
         id: 12,
         slug: 'novo-sorriso-nova-vida-porto-turismo-dental',
         title: 'Novo Sorriso, Nova Vida: Por que o Porto é o Destino Nº 1 para a sua Transformação Dentária',
-        excerpt: 'Imagine acordar no Porto com um novo sorriso e ter economizado milhares de euros. Descubra por que a Porto Implantes é a escolha inteligente de centenas de pacientes europeus.',
+        excerpt: 'Imagine acordar no Porto com um novo sorriso após uma estadia memorável. Descubra por que a Porto Implantes é a escolha inteligente de centenas de pacientes europeus.',
         date: '30 Mar 2024',
         author: 'Dra. Kátia Fragoso',
         readTime: '6 min',

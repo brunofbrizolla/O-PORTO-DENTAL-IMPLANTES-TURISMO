@@ -28,7 +28,11 @@ import {
     Compass,
     Landmark,
     ChevronLeft,
-    ChevronRight
+    ChevronRight,
+    Target,
+    Microscope,
+    UserCircle,
+    Shield
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
@@ -46,17 +50,17 @@ const TurismoDentario = () => {
         },
         // Case 2: Implants (Senior Patient from Assets)
         { 
-            before: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=400&auto=format&fit=crop", 
+            before: "/assets/uploads/branqueamento_before_after.png", 
             after: "/assets/uploads/senior_smiling_dental.png" 
         },
         // Case 3: Veneers (Real Veneers Hero)
         { 
-            before: "https://images.unsplash.com/photo-1461611030354-94677939103b?q=80&w=400&auto=format&fit=crop", 
+            before: "/assets/uploads/clinic_waiting_room_1.jpg", 
             after: "/assets/uploads/facetas_hero_new.jpg" 
         },
         // Case 4: Aligners (Real Aligners Hero)
         { 
-            before: "https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?q=80&w=400&auto=format&fit=crop", 
+            before: "/assets/uploads/clinic_office.jpg", 
             after: "/assets/uploads/alinhadores_hero_new.jpg" 
         },
         // Case 5: Clinical Excellence
@@ -109,14 +113,11 @@ const TurismoDentario = () => {
 
                 <div className="relative z-20 max-w-7xl mx-auto px-6 w-full pt-20 pb-12">
                     <div className="max-w-2xl text-white pl-4 border-l-4 border-accent animate-slideIn break-words overflow-x-hidden">
-                        <span className="text-accent font-black tracking-[0.3em] uppercase mb-4 block text-[10px] md:text-sm">
-                            {t('dentalTourism.heroSubtitle')}
-                        </span>
-                        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 font-serif leading-tight">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 font-serif leading-tight">
                             <span dangerouslySetInnerHTML={{ __html: t('dentalTourism.heroTitle') }} />
                         </h1>
-                        <p className="text-base md:text-xl font-light mb-10 text-gray-200 leading-relaxed max-w-xl">
-                            {t('dentalTourism.heroText')}
+                        <p className="text-lg md:text-xl font-light mb-10 text-gray-200 leading-relaxed max-w-xl">
+                            {t('dentalTourism.heroSubtitle')}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <a
@@ -124,37 +125,177 @@ const TurismoDentario = () => {
                                 className="inline-flex items-center justify-center px-6 py-4 sm:px-8 sm:py-5 bg-accent text-white rounded-2xl font-bold text-sm sm:text-base shadow-xl hover:bg-white hover:text-primary transition-all duration-300 active:scale-95"
                             >
                                 <MessageSquare className="mr-3 w-5 h-5" />
-                                {t('dentalTourism.remoteQuoteButton')}
+                                {t('dentalTourism.heroCta1')}
                             </a>
                             <a
-                                href="#why-portugal"
+                                href="#remote-quote"
                                 className="inline-flex items-center justify-center px-6 py-4 sm:px-8 sm:py-5 border-2 border-white/30 text-white rounded-2xl font-bold text-sm sm:text-base backdrop-blur-sm hover:bg-white hover:text-primary transition-all duration-300"
                             >
-                                {t('knowMore')}
+                                {t('dentalTourism.heroCta2')}
                             </a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* 2. MINIMALIST INFINITE RESULTS STRIP with CUSTOM TITLE & CLINIC ASSETS */}
-            <section className="py-16 bg-white overflow-hidden border-y border-gray-100">
+            {/* 2. PROVA IMEDIATA */}
+            <section className="py-8 bg-primary text-white border-y border-white/10">
+                <div className="max-w-7xl mx-auto px-4">
+                    <div className="flex flex-wrap justify-center md:justify-between items-center gap-6 text-sm font-semibold tracking-wide">
+                        <div className="flex items-center gap-2">
+                            <ShieldCheck className="w-5 h-5 text-accent"/> 
+                            {t('dentalTourism.immediateProof1')}
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <Target className="w-5 h-5 text-accent"/> 
+                            {t('dentalTourism.immediateProof2')}
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <CheckCircle2 className="w-5 h-5 text-accent"/> 
+                            {t('dentalTourism.immediateProof3')}
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <UserCircle className="w-5 h-5 text-accent"/> 
+                            {t('dentalTourism.immediateProof4')}
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <Search className="w-5 h-5 text-accent"/> 
+                            {t('dentalTourism.immediateProof5')}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 3. WHY PORTUGAL */}
+            <section id="why-portugal" className="py-20 md:py-24 bg-gray-50">
+                <div className="max-w-4xl mx-auto px-4 text-center">
+                    <span className="text-accent font-black uppercase tracking-[0.2em] mb-4 block text-xs">DESTINATION</span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-primary font-serif mb-8">{t('dentalTourism.whyPortugalTitle')}</h2>
+                    <p className="text-gray-600 leading-relaxed text-lg md:text-xl text-justify md:text-center">
+                        {t('dentalTourism.whyPortugalText')}
+                    </p>
+                </div>
+            </section>
+
+            {/* 4. DIFERENCIAL CLÍNICO */}
+            <section className="py-24 bg-white border-y border-gray-100">
+                <div className="max-w-7xl mx-auto px-4">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl md:text-5xl font-bold text-primary font-serif">{t('dentalTourism.clinicalDiffTitle')}</h2>
+                    </div>
+                    <div className="grid md:grid-cols-3 gap-12">
+                        <div className="text-center group p-6 rounded-3xl hover:bg-gray-50 transition-colors">
+                            <div className="w-20 h-20 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6 text-accent group-hover:bg-accent group-hover:text-white transition-all shadow-sm">
+                                <Microscope className="w-10 h-10" />
+                            </div>
+                            <h3 className="text-xl font-bold text-primary mb-4">{t('dentalTourism.clinicalDiff1Title')}</h3>
+                            <p className="text-gray-600 leading-relaxed">{t('dentalTourism.clinicalDiff1Desc')}</p>
+                        </div>
+                        <div className="text-center group p-6 rounded-3xl hover:bg-gray-50 transition-colors">
+                            <div className="w-20 h-20 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6 text-accent group-hover:bg-accent group-hover:text-white transition-all shadow-sm">
+                                <Award className="w-10 h-10" />
+                            </div>
+                            <h3 className="text-xl font-bold text-primary mb-4">{t('dentalTourism.clinicalDiff2Title')}</h3>
+                            <p className="text-gray-600 leading-relaxed">{t('dentalTourism.clinicalDiff2Desc')}</p>
+                        </div>
+                        <div className="text-center group p-6 rounded-3xl hover:bg-gray-50 transition-colors">
+                            <div className="w-20 h-20 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6 text-accent group-hover:bg-accent group-hover:text-white transition-all shadow-sm">
+                                <Heart className="w-10 h-10" />
+                            </div>
+                            <h3 className="text-xl font-bold text-primary mb-4">{t('dentalTourism.clinicalDiff3Title')}</h3>
+                            <p className="text-gray-600 leading-relaxed">{t('dentalTourism.clinicalDiff3Desc')}</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 5. Star Treatments Section */}
+            <section id="treatments" className="py-24 bg-gray-50">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <span className="text-accent font-bold uppercase tracking-widest mb-2 block">TECHNICAL EXCELLENCE</span>
+                        <h2 className="text-4xl font-bold text-primary font-serif">{t('dentalTourism.starTreatmentsTitle')}</h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {/* Implantologia */}
+                        <Link to="/implantologia" className="group cursor-pointer">
+                            <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl">
+                                <img src="/assets/uploads/doctor_implant_hero_new.jpg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Implantologia" loading="lazy" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8">
+                                    <h3 className="text-3xl font-bold text-white mb-2">{t('dentalTourism.starImplantsTitle')}</h3>
+                                    <p className="text-gray-200 mb-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                                        {t('dentalTourism.starImplantsSubtitle')}
+                                    </p>
+                                    <span className="flex items-center text-accent font-medium group-hover:translate-x-2 transition-transform">
+                                        LEARN TECHNICAL DETAILS <ArrowRight className="ml-2 w-4 h-4" />
+                                    </span>
+                                </div>
+                            </div>
+                        </Link>
+
+                        {/* Facetas */}
+                        <Link to="/facetas" className="group cursor-pointer">
+                            <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl">
+                                <img src="/assets/uploads/facetas_hero_new.jpg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Facetas" loading="lazy" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8">
+                                    <h3 className="text-3xl font-bold text-white mb-2">{t('dentalTourism.starVeneersTitle')}</h3>
+                                    <p className="text-gray-200 mb-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                                        {t('dentalTourism.starVeneersSubtitle')}
+                                    </p>
+                                    <span className="flex items-center text-accent font-medium group-hover:translate-x-2 transition-transform">
+                                        DESIGN MY SMILE <ArrowRight className="ml-2 w-4 h-4" />
+                                    </span>
+                                </div>
+                            </div>
+                        </Link>
+
+                        {/* Alinhadores */}
+                        <Link to="/alinhadores" className="group cursor-pointer">
+                            <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl">
+                                <img src="/assets/uploads/alinhadores_hero_new.jpg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Ortodontia" loading="lazy" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8">
+                                    <h3 className="text-3xl font-bold text-white mb-2">{t('dentalTourism.starAlignersTitle')}</h3>
+                                    <p className="text-gray-200 mb-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                                        {t('dentalTourism.starAlignersSubtitle')}
+                                    </p>
+                                    <span className="flex items-center text-accent font-medium group-hover:translate-x-2 transition-transform">
+                                        START 3D PLANNING <ArrowRight className="ml-2 w-4 h-4" />
+                                    </span>
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* 6. EXPERIÊNCIA */}
+            <section className="py-24 bg-white border-b border-gray-100">
+                <div className="max-w-4xl mx-auto px-4 text-center">
+                    <h2 className="text-4xl md:text-5xl font-bold text-primary font-serif mb-8">{t('dentalTourism.experienceTitle')}</h2>
+                    <p className="text-gray-600 leading-relaxed text-lg md:text-xl">
+                        {t('dentalTourism.experienceText')}
+                    </p>
+                </div>
+            </section>
+
+            {/* 7. PROVA SOCIAL */}
+            <section className="py-20 bg-gray-50 overflow-hidden">
                 <div className="text-center mb-12 px-4">
-                    <span className="text-accent font-bold uppercase tracking-widest mb-3 block text-sm italic">{t('dentalTourism.whyPortugalPortoSubtitle')}</span>
-                    <h2 className="text-3xl md:text-5xl font-bold text-primary font-serif tracking-tight">{t('dentalTourism.whyPortugalPortoTitle')}</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold text-primary font-serif tracking-tight">{t('dentalTourism.socialProofTitle')}</h2>
                 </div>
                 
                 <div className="relative flex overflow-hidden group">
-                    <div className="flex gap-6 animate-infinite-scroll py-2">
+                    <div className="flex gap-6 animate-infinite-scroll py-4">
                         {infiniteResults.map((item, idx) => (
-                            <div key={idx} className="flex gap-1.5 bg-white p-2.5 rounded-3xl shadow-md border border-gray-50 hover:border-accent/30 transition-all duration-500">
-                                <div className="w-[120px] h-[120px] rounded-2xl overflow-hidden relative shadow-inner">
+                            <div key={idx} className="flex gap-1.5 bg-white p-3 rounded-3xl shadow-lg border border-gray-100 hover:border-accent/30 transition-all duration-500">
+                                <div className="w-[140px] h-[140px] rounded-2xl overflow-hidden relative shadow-inner">
                                     <img src={item.before} alt="Before Treatment" className="w-full h-full object-cover grayscale-[0.3] opacity-80" loading="lazy" />
-                                    <div className="absolute top-1.5 left-1.5 bg-black/60 backdrop-blur-sm text-[7px] text-white px-2 py-0.5 rounded-full uppercase font-black tracking-tighter">Bef.</div>
+                                    <div className="absolute top-2 left-2 bg-black/60 backdrop-blur-sm text-[8px] text-white px-2 py-0.5 rounded-full uppercase font-black tracking-tighter">Bef.</div>
                                 </div>
-                                <div className="w-[120px] h-[120px] rounded-2xl overflow-hidden relative shadow-sm">
+                                <div className="w-[140px] h-[140px] rounded-2xl overflow-hidden relative shadow-sm">
                                     <img src={item.after} alt="After Treatment" className="w-full h-full object-cover" loading="lazy" />
-                                    <div className="absolute top-1.5 left-1.5 bg-accent text-[7px] text-white px-2 py-0.5 rounded-full uppercase font-black tracking-tighter">Aft.</div>
+                                    <div className="absolute top-2 left-2 bg-accent text-[8px] text-white px-2 py-0.5 rounded-full uppercase font-black tracking-tighter">Aft.</div>
                                 </div>
                             </div>
                         ))}
@@ -162,127 +303,7 @@ const TurismoDentario = () => {
                 </div>
             </section>
 
-            {/* 3. Why Portugal & Quality Objection */}
-            <section id="why-portugal" className="py-16 md:py-24 bg-gray-50 overflow-hidden">
-                <div className="max-w-7xl mx-auto px-4">
-                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                        <div className="relative order-1 lg:order-2">
-                            <div className="absolute -top-10 -left-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl"></div>
-                            <span className="text-accent font-black uppercase tracking-[0.2em] mb-4 block text-xs">PORTUGAL #1 DESTINATION</span>
-                            <h2 className="text-3xl md:text-5xl font-bold text-primary font-serif mb-6 md:mb-8 leading-tight">
-                                {t('dentalTourism.whyTitle')}
-                            </h2>
-                            <div className="space-y-6">
-                                <div className="p-6 md:p-8 bg-white rounded-3xl border-l-8 border-accent shadow-xl shadow-primary/5">
-                                    <h3 className="text-xl font-bold text-primary mb-3">Premium Quality, Portuguese Costs</h3>
-                                    <p className="text-gray-600 leading-relaxed text-sm md:text-base text-justify">
-                                        {t('dentalTourism.qualityObjectionText')}
-                                    </p>
-                                </div>
-                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6">
-                                    <div className="flex sm:flex-col items-center gap-4 sm:gap-0 sm:text-center">
-                                        <div className="w-14 h-14 bg-white rounded-2xl shadow-lg flex items-center justify-center mb-3 text-primary flex-shrink-0">
-                                            <Banknote className="w-7 h-7" />
-                                        </div>
-                                        <div>
-                                            <h4 className="font-bold text-sm mb-1">{t('dentalTourism.advantage1Title')}</h4>
-                                            <p className="text-xs text-gray-400">{t('dentalTourism.advantage1Desc')}</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex sm:flex-col items-center gap-4 sm:gap-0 sm:text-center">
-                                        <div className="w-14 h-14 bg-white rounded-2xl shadow-lg flex items-center justify-center mb-3 text-primary flex-shrink-0">
-                                            <Zap className="w-7 h-7" />
-                                        </div>
-                                        <div>
-                                            <h4 className="font-bold text-sm mb-1">{t('dentalTourism.advantage2Title')}</h4>
-                                            <p className="text-xs text-gray-400">{t('dentalTourism.advantage2Desc')}</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex sm:flex-col items-center gap-4 sm:gap-0 sm:text-center">
-                                        <div className="w-14 h-14 bg-white rounded-2xl shadow-lg flex items-center justify-center mb-3 text-primary flex-shrink-0">
-                                            <Clock className="w-7 h-7" />
-                                        </div>
-                                        <div>
-                                            <h4 className="font-bold text-sm mb-1">{t('dentalTourism.advantage3Title')}</h4>
-                                            <p className="text-xs text-gray-400">{t('dentalTourism.advantage3Desc')}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="relative order-2 lg:order-1 mt-8 lg:mt-0">
-                            <div className="rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
-                                <img src="/assets/uploads/clinic_office.jpg" alt="Porto Implantes Office" className="w-full h-[300px] md:h-[500px] object-cover hover:scale-105 transition-transform duration-700" />
-                            </div>
-                            <div className="absolute -bottom-4 md:-bottom-6 -right-2 md:-right-6 bg-white p-4 md:p-6 rounded-[2rem] shadow-2xl flex items-center gap-4 border border-gray-100 animate-bounce-slow">
-                                <div className="w-10 h-10 md:w-12 md:h-12 bg-green-500 rounded-2xl flex items-center justify-center text-white flex-shrink-0">
-                                    <ShieldCheck className="w-6 h-6" />
-                                </div>
-                                <div>
-                                    <p className="font-black text-primary text-xs md:text-sm">EU Standards Certified</p>
-                                    <p className="text-[10px] md:text-xs text-gray-400">Maximum Safety Guaranteed</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* 4. Star Treatments Section */}
-            <section id="treatments" className="py-24 bg-white">
-                <div className="max-w-7xl mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <span className="text-accent font-bold uppercase tracking-widest mb-2 block">TECHNICAL EXCELLENCE</span>
-                        <h2 className="text-4xl font-bold text-primary font-serif">{t('dentalTourism.starTreatmentsTitle')}</h2>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="bg-gray-50 rounded-3xl p-8 shadow-sm hover:-translate-y-2 transition-all border border-gray-100 text-center">
-                            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
-                                <Award className="w-8 h-8" />
-                            </div>
-                            <h3 className="text-2xl font-bold text-primary mb-2">{t('dentalTourism.starImplantsTitle')}</h3>
-                            <p className="text-accent font-bold text-sm mb-4">{t('dentalTourism.starImplantsSubtitle')}</p>
-                            <p className="text-gray-600 text-[15px] leading-relaxed mb-6">
-                                {t('dentalTourism.starImplantsDesc')}
-                            </p>
-                            <Link to="/implantologia" className="inline-flex items-center text-primary font-bold hover:text-accent transition-colors">
-                                LEARN TECHNICAL DETAILS <ArrowRight className="ml-2 w-4 h-4" />
-                            </Link>
-                        </div>
-
-                        <div className="bg-gray-50 rounded-3xl p-8 shadow-sm hover:-translate-y-2 transition-all border border-gray-100 text-center">
-                            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
-                                <Sparkles className="w-8 h-8" />
-                            </div>
-                            <h3 className="text-2xl font-bold text-primary mb-2">{t('dentalTourism.starVeneersTitle')}</h3>
-                            <p className="text-accent font-bold text-sm mb-4">{t('dentalTourism.starVeneersSubtitle')}</p>
-                            <p className="text-gray-600 text-[15px] leading-relaxed mb-6">
-                                {t('dentalTourism.starVeneersDesc')}
-                            </p>
-                            <Link to="/facetas" className="inline-flex items-center text-primary font-bold hover:text-accent transition-colors">
-                                DESIGN MY SMILE <ArrowRight className="ml-2 w-4 h-4" />
-                            </Link>
-                        </div>
-
-                        <div className="bg-gray-50 rounded-3xl p-8 shadow-sm hover:-translate-y-2 transition-all border border-gray-100 text-center">
-                            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
-                                <CheckCircle2 className="w-8 h-8" />
-                            </div>
-                            <h3 className="text-2xl font-bold text-primary mb-2">{t('dentalTourism.starAlignersTitle')}</h3>
-                            <p className="text-accent font-bold text-sm mb-4">{t('dentalTourism.starAlignersSubtitle')}</p>
-                            <p className="text-gray-600 text-[15px] leading-relaxed mb-6">
-                                {t('dentalTourism.starAlignersDesc')}
-                            </p>
-                            <Link to="/alinhadores" className="inline-flex items-center text-primary font-bold hover:text-accent transition-colors">
-                                START 3D PLANNING <ArrowRight className="ml-2 w-4 h-4" />
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* 5. Patient Guide (The Process) */}
+            {/* 8. Patient Guide (The Process) */}
             <section className="py-24 bg-primary text-white overflow-hidden relative">
                 <div className="absolute top-0 right-0 w-96 h-96 bg-accent opacity-5 blur-3xl -translate-y-1/2 translate-x-1/2"></div>
                 <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -324,7 +345,67 @@ const TurismoDentario = () => {
                 </div>
             </section>
 
-            {/* 6. Discover Portugal Section */}
+            {/* 8.5 Concierge / Worry-Free Experience */}
+            <section className="py-24 bg-gray-50 border-t border-gray-100">
+                <div className="max-w-7xl mx-auto px-4">
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+                        <div className="order-2 lg:order-1">
+                            <span className="text-accent font-bold uppercase tracking-widest mb-2 block">{t('dentalTourism.conciergeSubtitle')}</span>
+                            <h2 className="text-4xl md:text-5xl font-bold text-primary font-serif mb-8 leading-tight">
+                                {t('dentalTourism.conciergeTitle')}
+                            </h2>
+                            <p className="text-gray-600 text-lg leading-relaxed mb-10 text-justify">
+                                {t('dentalTourism.conciergeText')}
+                            </p>
+                            
+                            <div className="space-y-6">
+                                <div className="flex gap-4 group">
+                                    <div className="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-accent flex-shrink-0 border border-gray-100 group-hover:bg-accent group-hover:text-white transition-colors">
+                                        <Landmark className="w-6 h-6" />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-bold text-primary text-xl mb-1">{t('dentalTourism.conciergeHotelTitle')}</h3>
+                                        <p className="text-gray-500 text-sm leading-relaxed">{t('dentalTourism.conciergeHotelDesc')}</p>
+                                    </div>
+                                </div>
+                                <div className="flex gap-4 group">
+                                    <div className="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-accent flex-shrink-0 border border-gray-100 group-hover:bg-accent group-hover:text-white transition-colors">
+                                        <Plane className="w-6 h-6" />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-bold text-primary text-xl mb-1">{t('dentalTourism.conciergeTravelTitle')}</h3>
+                                        <p className="text-gray-500 text-sm leading-relaxed">{t('dentalTourism.conciergeTravelDesc')}</p>
+                                    </div>
+                                </div>
+                                <div className="flex gap-4 group">
+                                    <div className="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-accent flex-shrink-0 border border-gray-100 group-hover:bg-accent group-hover:text-white transition-colors">
+                                        <MapPin className="w-6 h-6" />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-bold text-primary text-xl mb-1">{t('dentalTourism.conciergeTransferTitle')}</h3>
+                                        <p className="text-gray-500 text-sm leading-relaxed">{t('dentalTourism.conciergeTransferDesc')}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="relative order-1 lg:order-2">
+                            <div className="absolute inset-0 bg-accent rounded-[3rem] transform translate-x-4 translate-y-4"></div>
+                            <img src="/assets/uploads/clinic_waiting_room_2.jpg" alt="Premium Experience" className="relative rounded-[3rem] shadow-2xl object-cover w-full h-[500px] z-10" />
+                            <div className="absolute top-8 -left-4 md:-left-8 bg-white p-5 md:p-6 rounded-3xl shadow-xl z-20 flex items-center gap-4 border border-gray-100">
+                                <div className="w-12 h-12 md:w-14 md:h-14 bg-green-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <CheckCircle2 className="w-6 h-6 md:w-8 md:h-8 text-green-500" />
+                                </div>
+                                <div>
+                                    <p className="font-bold text-primary text-sm md:text-base">All-Inclusive</p>
+                                    <p className="text-xs md:text-sm text-gray-500">Premium Support</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 9. Discover Portugal Section */}
             <section className="py-24 bg-white overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -383,62 +464,7 @@ const TurismoDentario = () => {
                 </div>
             </section>
 
-            {/* 7. Economy Table Section */}
-            <section id="economy" className="py-24 bg-gray-50 overflow-hidden">
-                <div className="max-w-7xl mx-auto px-4">
-                    <div className="bg-white rounded-[40px] shadow-2xl overflow-hidden border border-gray-100">
-                        <div className="grid lg:grid-cols-3">
-                            <div className="lg:col-span-1 bg-primary p-8 md:p-12 text-white flex flex-col justify-center text-center lg:text-left">
-                                <div className="w-20 h-20 bg-accent rounded-3xl flex items-center justify-center mb-8 shadow-xl mx-auto lg:mx-0">
-                                    <Banknote className="w-10 h-10 text-white" />
-                                </div>
-                                <h3 className="text-2xl md:text-3xl font-bold font-serif mb-4 md:mb-6 leading-tight">{t('dentalTourism.economySubtitle')}</h3>
-                                <p className="text-primary-light/80 text-sm md:text-lg mb-6 md:mb-8 leading-relaxed italic">
-                                    "Your dental treatment shouldn't just be an expense. Let it fund your Portuguese dream trip."
-                                </p>
-                            </div>
-                            <div className="lg:col-span-2 p-4 md:p-12 relative overflow-hidden">
-                                <div className="absolute top-4 right-8 flex items-center gap-2 text-primary/30 animate-pulse md:hidden">
-                                     <span className="text-[10px] font-black uppercase tracking-widest">Swipe for more</span>
-                                     <ArrowRight className="w-3 h-3" />
-                                </div>
-                                <div className="overflow-x-auto pb-4 scrollbar-hide">
-                                    <table className="w-full text-left min-w-[500px]">
-                                        <thead>
-                                            <tr className="border-b border-gray-100">
-                                                <th className="py-6 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">{t('dentalTourism.tableProcedure')}</th>
-                                                <th className="py-6 px-4 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] text-center">{t('dentalTourism.tableHomeCountry')}</th>
-                                                <th className="py-6 px-4 text-[10px] font-black text-accent uppercase tracking-[0.2em] text-center">{t('dentalTourism.tablePorto')}</th>
-                                                <th className="py-6 text-[10px] font-black text-green-600 uppercase tracking-[0.2em] text-right">{t('dentalTourism.tableSavings')}</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody className="divide-y divide-gray-50">
-                                            {[
-                                                { proc: t('cardImplantTitle') + " Unit.", home: "€2.800", porto: "€950", save: t('dentalTourism.implantSaving') },
-                                                { proc: "All-on-4 (Full Arch)", home: "€14.000", porto: "€5.500", save: t('dentalTourism.allOn4Saving') },
-                                                { proc: t('cardVeneersTitle') + " (Set 6)", home: "€6.000", porto: "€2.400", save: t('dentalTourism.veneersSaving') }
-                                            ].map((row, i) => (
-                                                <tr key={i} className="group hover:bg-gray-50/50 transition-colors">
-                                                    <td className="py-8 font-bold text-primary text-sm md:text-base leading-tight pr-4">{row.proc}</td>
-                                                    <td className="py-8 px-4 text-gray-400 text-center font-mono text-sm">{row.home}</td>
-                                                    <td className="py-8 px-4">
-                                                        <div className="bg-accent/5 rounded-2xl py-3 px-4 text-primary font-black text-center text-sm md:text-base border border-accent/10 group-hover:bg-accent/10 transition-colors">
-                                                            {row.porto}
-                                                        </div>
-                                                    </td>
-                                                    <td className="py-8 text-green-600 font-black text-right text-sm md:text-base">{row.save}</td>
-                                                </tr>
-                                            ))}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-             {/* 8. Warranty & Aftercare Section */}
+             {/* 10. Warranty & Aftercare Section */}
              <section className="py-24 bg-primary overflow-hidden relative">
                 <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
                      <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -484,7 +510,7 @@ const TurismoDentario = () => {
                 </div>
             </section>
 
-             {/* 9. About Section */}
+             {/* 11. About Section */}
              <section id="about" className="py-16 md:py-24 bg-gray-50 overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -519,8 +545,78 @@ const TurismoDentario = () => {
                 </div>
             </section>
 
-            {/* 10. FAQ Section */}
-            <section className="py-24 bg-white">
+            {/* 11.5 Clinic Gallery Section - "Our Space" (Split Layout) */}
+            <section className="py-24 bg-white overflow-hidden border-b border-gray-100">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid lg:grid-cols-2 gap-10 items-center">
+                        {/* Text Content - Left Side */}
+                        <div className="order-1">
+                            <span className="text-accent font-bold uppercase tracking-wider mb-2 block">{t('ourSpaceTitle')}</span>
+                            <h2 className="text-4xl md:text-5xl font-bold text-primary font-serif mb-8 leading-tight">
+                                <span dangerouslySetInnerHTML={{ __html: t('ourSpaceHeading') }}></span>
+                            </h2>
+                            <p className="text-gray-600 text-lg leading-loose mb-8 text-justify">
+                                <span dangerouslySetInnerHTML={{ __html: t('ourSpaceDesc') }}></span>
+                            </p>
+                            <div className="flex gap-4">
+                                {/* Desktop Button */}
+                                <button
+                                    onClick={() => document.getElementById('remote-quote-form')?.scrollIntoView({ behavior: 'smooth' })}
+                                    className="hidden md:inline-flex px-8 py-3 bg-primary text-white rounded-full font-medium hover:bg-primary-dark transition-colors shadow-lg"
+                                >
+                                    {t('bookAppointment')}
+                                </button>
+                                {/* Mobile Button */}
+                                <a
+                                    href="tel:+351912092209"
+                                    className="inline-flex md:hidden px-8 py-3 bg-primary text-white rounded-full font-medium hover:bg-primary-dark transition-colors shadow-lg"
+                                >
+                                    {t('bookAppointment')}
+                                </a>
+                            </div>
+                        </div>
+
+                        {/* Image Collage - Right Side */}
+                        <div className="order-2 grid grid-cols-2 gap-4">
+                            <div className="space-y-4 pt-8">
+                                <div className="h-64 rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-1 transition-transform duration-500">
+                                    <img
+                                        src="/assets/uploads/clinic_reception.jpg"
+                                        alt="Recepção Porto Implantes"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                                <div className="h-48 rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-1 transition-transform duration-500">
+                                    <img
+                                        src="/assets/uploads/clinic_waiting_room_1.jpg"
+                                        alt="Sala de Espera"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            </div>
+                            <div className="space-y-4">
+                                <div className="h-48 rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-1 transition-transform duration-500">
+                                    <img
+                                        src="/assets/uploads/clinic_office.jpg"
+                                        alt="Consultório"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                                <div className="h-64 rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-1 transition-transform duration-500">
+                                    <img
+                                        src="/assets/uploads/clinic_waiting_room_2.jpg"
+                                        alt="Área de Conforto"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 12. FAQ Section */}
+            <section className="py-24 bg-gray-50 border-b border-gray-100">
                 <div className="max-w-4xl mx-auto px-4">
                     <div className="text-center mb-16">
                         <span className="text-accent font-bold uppercase tracking-widest mb-2 block">{t('dentalTourism.faqTitle')}</span>
@@ -548,20 +644,27 @@ const TurismoDentario = () => {
                 </div>
             </section>
 
-            {/* 11. Final CTA */}
+            {/* 13. Final CTA */}
             <section id="remote-quote" className="py-24 bg-gray-50">
                 <div className="max-w-4xl mx-auto px-4 text-center mb-12">
-                    <div className="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-8 animate-pulse">
-                        <PhoneCall className="w-10 h-10 text-accent" />
-                    </div>
-                    <h2 className="text-4xl md:text-5xl font-bold text-primary font-serif mb-8 leading-tight">
-                        {t('implantFinalCtaTitle')}
+                    <h2 className="text-4xl md:text-5xl font-bold text-primary font-serif mb-6 leading-tight">
+                        {t('dentalTourism.finalCtaTitle')}
                     </h2>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-4">
-                        {t('dentalTourism.remoteQuoteDesc')}
+                    <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                        {t('dentalTourism.finalCtaText')}
                     </p>
+                    <a
+                        href="#remote-quote"
+                        className="inline-flex items-center justify-center px-8 py-5 bg-accent text-white rounded-full font-bold shadow-xl hover:bg-primary transition-all duration-300"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            document.getElementById('remote-quote-form')?.scrollIntoView({ behavior: 'smooth' });
+                        }}
+                    >
+                        {t('dentalTourism.finalCtaButton')} <ArrowRight className="ml-3 w-5 h-5" />
+                    </a>
                 </div>
-                <div className="max-w-5xl mx-auto px-4 bg-white rounded-[3rem] shadow-2xl p-4 lg:p-12 border border-gray-100">
+                <div id="remote-quote-form" className="max-w-5xl mx-auto px-4 bg-white rounded-[3rem] shadow-2xl p-4 lg:p-12 border border-gray-100">
                    <AppointmentSection pageName="Tourism Landing Final" defaultTreatment="implantes" />
                 </div>
             </section>

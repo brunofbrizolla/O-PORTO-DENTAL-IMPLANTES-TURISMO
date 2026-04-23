@@ -221,61 +221,6 @@ const ImplantologiaTurismo = () => {
                 </div>
             </section>
 
-            {/* ECONOMY TABLE (From Home) */}
-            <section className="py-24 bg-white overflow-hidden">
-                <div className="max-w-7xl mx-auto px-4">
-                    <div className="bg-gray-50 rounded-[40px] shadow-2xl overflow-hidden border border-gray-100">
-                        <div className="grid lg:grid-cols-3">
-                            <div className="lg:col-span-1 bg-primary p-12 text-white flex flex-col justify-center text-center lg:text-left">
-                                <div className="w-20 h-20 bg-accent rounded-3xl flex items-center justify-center mb-8 shadow-xl mx-auto lg:mx-0">
-                                    <Banknote className="w-10 h-10 text-white" />
-                                </div>
-                                <h3 className="text-3xl font-bold font-serif mb-6 leading-tight">{t('dentalTourism.economySubtitle')}</h3>
-                                <p className="text-primary-light/80 text-lg mb-8 leading-relaxed italic">
-                                    World-class dental treatment at a fraction of the cost in UK/France. 
-                                </p>
-                            </div>
-                            <div className="lg:col-span-2 p-6 md:p-12 relative">
-                                <div className="absolute top-4 right-8 flex items-center gap-2 text-primary/30 animate-pulse md:hidden">
-                                     <span className="text-[10px] font-black uppercase tracking-widest">Swipe for more</span>
-                                     <ArrowRight className="w-3 h-3" />
-                                </div>
-                                <div className="overflow-x-auto pb-4 scrollbar-hide">
-                                    <table className="w-full text-left min-w-[500px]">
-                                        <thead>
-                                            <tr className="border-b border-gray-100">
-                                                <th className="py-6 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">{t('dentalTourism.tableProcedure')}</th>
-                                                <th className="py-6 px-4 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] text-center">{t('dentalTourism.tableHomeCountry')}</th>
-                                                <th className="py-6 px-4 text-[10px] font-black text-accent uppercase tracking-[0.2em] text-center">{t('dentalTourism.tablePorto')}</th>
-                                                <th className="py-6 text-[10px] font-black text-green-600 uppercase tracking-[0.2em] text-right">{t('dentalTourism.tableSavings')}</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody className="divide-y divide-gray-50">
-                                            {[
-                                                { proc: t('dentalTourism.starImplantsTitle') + " Unit.", home: "€2,800", porto: "€950", save: t('dentalTourism.implantSaving') },
-                                                { proc: "All-on-4 (Full Arch)", home: "€14,000", porto: "€5,500", save: t('dentalTourism.allOn4Saving') },
-                                                { proc: "Full Mouth (Zirconia Bridge)", home: "€22,000", porto: "€8,900", save: "Save ~60%" },
-                                                { proc: "Bone Graft / Sinus Lift", home: "€1,200", porto: "€450", save: "Save ~60%" }
-                                            ].map((row, i) => (
-                                                <tr key={i} className="group hover:bg-white transition-colors">
-                                                    <td className="py-8 font-bold text-primary text-sm md:text-base leading-tight pr-4">{row.proc}</td>
-                                                    <td className="py-8 px-4 text-gray-400 text-center font-mono text-sm">{row.home}</td>
-                                                    <td className="py-8 px-4">
-                                                        <div className="bg-accent/5 rounded-2xl py-3 px-4 text-primary font-black text-center text-sm md:text-base border border-accent/10 group-hover:bg-accent/10 transition-colors">
-                                                            {row.porto}
-                                                        </div>
-                                                    </td>
-                                                    <td className="py-8 text-green-600 font-black text-right text-sm md:text-base">{row.save}</td>
-                                                </tr>
-                                            ))}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
              {/* DISCOVER PORTUGAL (From Home) */}
              <section className="py-24 bg-gray-50 overflow-hidden">
