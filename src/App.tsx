@@ -19,6 +19,7 @@ import ScrollToTop from './components/ScrollToTop';
 import ChatBot from './components/ChatBot';
 import LoadingSpinner from './components/LoadingSpinner';
 import { initGA, logPageView, logEvent } from './utils/analytics';
+import { fireGoogleAdsTag } from './utils/googleAds';
 
 // Lazy Load Pages
 const Home = lazy(() => import('./pages/Home'));
@@ -42,6 +43,7 @@ const Prevencao = lazy(() => import('./pages/Prevencao'));
 const TurismoDentario = lazy(() => import('./pages/TurismoDentario'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
+const Obrigado = lazy(() => import('./pages/Obrigado'));
 
 // Component to track page views
 const AnalyticsTracker = () => {
@@ -180,7 +182,10 @@ function App() {
             href="https://wa.me/351912092209"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => logEvent('Contact', 'WhatsApp Click', 'Float Button')}
+            onClick={() => {
+              logEvent('Contact', 'WhatsApp Click', 'Float Button');
+              fireGoogleAdsTag();
+            }}
             className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:bg-[#20b858] transition-all duration-300 hover:scale-110 flex items-center justify-center animate-bounce-slow"
             aria-label="WhatsApp"
           >
@@ -205,6 +210,7 @@ function App() {
               <Route path="/turismo-dentario" element={<TurismoDentario />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
+              <Route path="/obrigado" element={<Obrigado />} />
             </Routes>
           </Suspense>
 

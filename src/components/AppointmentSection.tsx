@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
+import { useNavigate } from 'react-router-dom';
 import {
     PhoneCall,
     CheckCircle2,
@@ -20,6 +21,7 @@ interface AppointmentSectionProps {
 
 const AppointmentSection: React.FC<AppointmentSectionProps> = ({ defaultTreatment = '', pageName = 'Home' }) => {
     const { t } = useTranslation();
+    const navigate = useNavigate();
     const formRef = useRef<HTMLFormElement>(null);
     const [formData, setFormData] = useState({
         name: '',
@@ -44,10 +46,9 @@ const AppointmentSection: React.FC<AppointmentSectionProps> = ({ defaultTreatmen
                 formRef.current!,
                 'meaA1Ni7_dJtElS0x'
             );
-            setShowSuccess(true);
             logEvent('Contact', 'Form Submission', `${pageName} Page Appointment`);
             setFormData({ name: '', email: '', phone: '', message: '', treatment: defaultTreatment });
-            setTimeout(() => setShowSuccess(false), 5000);
+            navigate('/obrigado');
         } catch (err) {
             setError(t('formErrorMessage'));
             console.error('EmailJS Error:', err);
