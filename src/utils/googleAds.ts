@@ -5,7 +5,7 @@ declare global {
   }
 }
 
-export const fireGoogleAdsTag = () => {
+export const fireGoogleAdsTag = (eventType: 'form' | 'whatsapp' = 'whatsapp') => {
   if (typeof window === 'undefined') return;
 
   if (!document.getElementById('google-ads-script')) {
@@ -24,7 +24,22 @@ export const fireGoogleAdsTag = () => {
       gtag('config', 'AW-11336332840');
     `;
     document.head.appendChild(inlineScript);
-  } else if (window.gtag) {
-    window.gtag('event', 'conversion', { 'send_to': 'AW-11336332840' });
+  }
+
+  // Fire specific event based on type
+  if (window.gtag) {
+    if (eventType === 'form') {
+      window.gtag('event', 'conversion', {
+          'send_to': 'AW-11336332840/at_8CLGCscAcEKjsyp0q',
+          'value': 1.0,
+          'currency': 'EUR'
+      });
+    } else if (eventType === 'whatsapp') {
+      window.gtag('event', 'conversion', {
+          'send_to': 'AW-11336332840/IoxhCNjxlcAcEKjsyp0q',
+          'value': 1.0,
+          'currency': 'EUR'
+      });
+    }
   }
 };

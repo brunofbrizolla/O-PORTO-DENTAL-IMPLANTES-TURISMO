@@ -3,6 +3,7 @@ import { X, Send, ChevronDown, Minimize2 } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { useTranslation } from 'react-i18next';
 import { currentSite } from '../config/siteConfig';
+import { useNavigate } from 'react-router-dom';
 
 interface Message {
     id: number;
@@ -20,6 +21,7 @@ interface UserData {
 
 const ChatBot = () => {
     const { t } = useTranslation();
+    const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
     const [isMinimized, setIsMinimized] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
@@ -291,8 +293,13 @@ const ChatBot = () => {
                 'meaA1Ni7_dJtElS0x'
             );
 
-            addBotMessage(t('chat.flow.success'));
-            setStep('SUCCESS');
+            if (currentSite.id === 'dental-tourism') {
+                setIsOpen(false);
+                navigate('/obrigado');
+            } else {
+                addBotMessage(t('chat.flow.success'));
+                setStep('SUCCESS');
+            }
         } catch (error) {
             console.error('Erro ao enviar:', error);
             addBotMessage(t('chat.flow.error'));

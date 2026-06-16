@@ -13,6 +13,7 @@ import {
     Heart
 } from 'lucide-react';
 import { logEvent } from '../utils/analytics';
+import { currentSite } from '../config/siteConfig';
 
 interface AppointmentSectionProps {
     defaultTreatment?: string;
@@ -48,7 +49,13 @@ const AppointmentSection: React.FC<AppointmentSectionProps> = ({ defaultTreatmen
             );
             logEvent('Contact', 'Form Submission', `${pageName} Page Appointment`);
             setFormData({ name: '', email: '', phone: '', message: '', treatment: defaultTreatment });
-            navigate('/obrigado');
+            
+            if (currentSite.id === 'dental-tourism') {
+                navigate('/obrigado');
+            } else {
+                setShowSuccess(true);
+                setTimeout(() => setShowSuccess(false), 5000);
+            }
         } catch (err) {
             setError(t('formErrorMessage'));
             console.error('EmailJS Error:', err);

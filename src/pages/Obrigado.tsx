@@ -5,7 +5,7 @@ import { fireGoogleAdsTag } from '../utils/googleAds';
 
 const Obrigado = () => {
     useEffect(() => {
-        fireGoogleAdsTag();
+        fireGoogleAdsTag('form');
     }, []);
 
     return (
