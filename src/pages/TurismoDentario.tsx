@@ -568,7 +568,7 @@ const TurismoDentario = () => {
                                 </button>
                                 {/* Mobile Button */}
                                 <a
-                                    href="tel:+351912092209"
+                                    href="tel:+351963086963"
                                     className="inline-flex md:hidden px-8 py-3 bg-primary text-white rounded-full font-medium hover:bg-primary-dark transition-colors shadow-lg"
                                 >
                                     {t('bookAppointment')}

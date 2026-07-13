@@ -41,9 +41,9 @@ const tourismConfig: SiteConfig = {
   logo: '/assets/uploads/logo_header.png',
   primaryColor: '#004B57',
   accentColor: '#DAA520',
-  contactPhone: '+351 912 092 209',
+  contactPhone: '+351 963 086 963',
   contactEmail: 'savings@portoimplantes.pt',
-  whatsappNumber: '351912092209',
+  whatsappNumber: '351963086963',
   chatConfig: {
     agentName: 'Elena',
     greeting: 'Hi! Looking to save up to 60% on your dental treatment? 👋',

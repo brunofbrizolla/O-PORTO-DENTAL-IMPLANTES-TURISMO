@@ -109,7 +109,7 @@ function App() {
                 {/* Desktop Navbar Button */}
                 <a href="#appointment" className="hidden md:flex px-6 py-2 bg-primary text-white rounded-full hover:bg-primary-dark transition-colors shadow-md hover:shadow-lg uppercase tracking-wide text-xs font-bold items-center justify-center">{t('contact')}</a>
                 {/* Mobile Navbar Button (Simplified if needed, but the user requested mobile calling) */}
-                <a href="tel:+351912092209" className="flex md:hidden px-6 py-2 bg-primary text-white rounded-full hover:bg-primary-dark transition-colors shadow-md hover:shadow-lg uppercase tracking-wide text-xs font-bold items-center justify-center">{t('contact')}</a>
+                <a href={`tel:${currentSite.contactPhone.replace(/\s/g, '')}`} className="flex md:hidden px-6 py-2 bg-primary text-white rounded-full hover:bg-primary-dark transition-colors shadow-md hover:shadow-lg uppercase tracking-wide text-xs font-bold items-center justify-center">{t('contact')}</a>
               </div>
 
               <div className="flex items-center space-x-4 border-l pl-6 border-gray-200">
@@ -179,7 +179,7 @@ function App() {
 
           {/* WhatsApp Float */}
           <a
-            href="https://wa.me/351912092209"
+            href={`https://wa.me/${currentSite.whatsappNumber}`}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => {
